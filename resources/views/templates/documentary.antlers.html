@@ -1,0 +1,187 @@
+{{ push:styles }}
+    <style>
+        .headerBG{
+            background-image: url(https://lc360-ir.s3.ir-tbz-sh1.arvanstorage.ir/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .divider{
+            display: flex;
+            align-items:center;
+        }
+        .divider::after{
+            content: "";
+            flex: 1;
+            padding: 1px;
+            background-color: black;
+            margin-right: 10px;
+            border-radius: 5px;
+            
+        }
+        .docsummary a{
+            color: #cc3265;
+        }
+    </style>
+{{ /push:styles }}
+<main class="bg-[#e8f6eb] min-h-screen">
+    <!-- start header section -->
+    <div class="wrapper">
+
+        <div class="relative flex flex-col justify-center">
+            <div class="headerBG pc:h-[500px] mobile:h-[800px] tablet:h-[500px] relative top-0 left-0">
+            </div>
+            <div class="bg-black opacity-60 mobile:h-[800px] tablet:h-[500px] pc:h-[500px] absolute top-0 left-0 bottom-0 right-0">
+            </div>
+            <div class="absolute pc:top-[15%] pc:right-[200px] flex mobile:flex-col tablet:flex-row mo justify-center items-center mobile:left-[10%] mobile:top-[5%] w-fit tablet:right-[50px]">
+                <div class="mobile:mb-5">
+                    <img class="rounded-[8px] mobile:mx-auto" src="{{featuredImage}}" alt="{{featuredImage:alt}}">
+                </div>
+                <div class="flex flex-col justify-center items-center ms-5 max-w-[1350px]">
+                    <div>
+                        <h2 class="text-right iransans-bold text-white mb-2">
+                            {{documentaryFarsiName}} | {{documentaryEnName}}
+                        </h2>
+                    </div>
+                    <hr class="text-left" height="5px" width="80%">
+                    <div class="w-full">
+                        <p class="text-right iransans-bold before:content-['نام_کارگردان:_'] text-white my-2">
+                            {{director}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['ژانر:_'] text-white my-2">
+                            {{genre}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['سال_انتشار:_'] text-white my-2">
+                            {{productinYear}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['زبان:_'] text-white my-2">
+                            {{language}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['مدت_زمان:_'] text-white my-2">
+                            {{documentaryTime}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['محصول:_'] text-white my-2">
+                            {{productionCountry}}
+                        </p>
+                        <p class="text-right iransans-bold before:content-['زیرنویس:_'] text-white my-2">
+                            {{ if sutitle}}
+                            دارد
+                            {{ else }}
+                            ندارد
+                            {{ /if }}
+                        </p>
+                        
+                    </div>
+
+                    
+    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <!-- anchors menu -->
+    <div class=" mobile:hidden tablet:block pc:flex flex-col justify-between items-center my-5">
+        <div class="flex flex-row justify-between items-center mx-auto max-w-[1140px] w-full">
+            <div class="mx-10">
+                <button class="bg-[#e7b109] rounded-[20px] px-5 py-[7px]">
+                    <a class="text-[#f7f1e5] iransans-bold" href="#docsummary">درباره مستند</a>
+                </button>
+            </div>
+            <div class="mx-10">
+                <button class="bg-[#e7b109] rounded-[20px] px-5 py-[7px]">
+                    <a class="text-[#f7f1e5] iransans-bold" href="#">دریافت مستند</a>
+                </button>
+            </div>
+            <div class="mx-10">
+                <button class="bg-[#e7b109] rounded-[20px] px-5 py-[7px]">
+                    <a class="text-[#f7f1e5] iransans-bold" href="#">مستند های پیشنهادی</a>
+                </button>
+            </div>
+            <div class="mx-10">
+                <button class="bg-[#e7b109] rounded-[20px] px-5 py-[7px]">
+                    <a class="text-[#f7f1e5] iransans-bold" href="#">دیدگاه‌ها</a>
+                </button>
+            </div>
+        </div>
+        <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+            درباره مستند
+        </div>
+    </div>
+    <!-- end anchors menu -->
+
+
+
+    <!-- doc summary -->
+    <div class="flex mobile:flex-col-reverse tablet:flex-row justify-center items center max-w-[1140px] mx-auto mobile:mt-5" id="docsummary">
+        <div class="basis-1/2 mx-5 mobile:my-5">
+            <video class="rounded-[8px] w-full h-full" controls poster="{{trailerPoster}}">
+                <source src="{{documentaryTrailer}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <div class="basis-1/2 iransans-500 mx-5 flex flex-col justify-center items-center">
+            <div class="text-justify">
+                <div class="text-right">
+                    <h2 class="text-[22px]">داستان فیلم</h2>
+                </div>
+                <div class="docsummary">
+                    {{documentarySummary}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- end doc summary -->
+
+    <!-- download info for docs -->
+    <div class="flex flex-col justify-between items-center">
+        <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+            دانلود مستند {{documentaryFarsiName}}
+        </div>
+        
+        {{ documentaryDownload }}
+            <div class="flex flex-row justify-between items-center bg-[#053310] p-2 w-full max-w-[1140px] my-3 border-s-[10px] border-[#e7b109] rounded-[8px]">
+                <div class="before:content-['کیفیت:_'] text-[#f7f1e5] iransans-bold">{{quality}}</div>
+                <div class="before:content-['نسخه:_'] text-[#f7f1e5] iransans-bold">{{DocInfo}}</div>
+                <div class="before:content-['حجم_دانلود:_'] text-[#f7f1e5] iransans-bold">{{downloadSize}}</div>
+                <div>
+                    <button class="bg-[#e7b109] rounded-[20px] p-1">
+                        <a class="text-[#f7f1e5] iransans-bold px-5" href="{{docLink}}">
+                          دانلود
+                        </a>
+                    </button>
+                    
+                </div>
+            </div>
+       
+        {{ /documentaryDownload }}
+        <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+            دانلود زیرنویس {{documentaryFarsiName}}
+        </div>
+    </div>
+    <!-- end download info for docs -->
+
+    <div class="flex flex-row justify-between items-center max-w-[1140px] mx-auto">
+        
+        {{ docSubtitleInfo }}
+            <div class="flex flex-row justify-between items-center bg-[#053310] p-3 w-full  my-3 border-s-[10px] border-[#e7b109] rounded-[8px]">
+                <div class="before:content-['نوع_زیرنویس:_'] text-[#f7f1e5] iransans-bold">{{subtitleType}}</div>
+                <div>
+                    <button class="bg-[#e7b109] rounded-[20px] p-1">
+                        <a class="text-[#f7f1e5] iransans-bold px-5" href="{{subtitleLink}}">
+                          دانلود
+                        </a>
+                    </button>
+                    
+                </div>
+            </div>
+       
+        {{ /docSubtitleInfo }}
+    </div>
+
+</main>

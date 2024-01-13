@@ -1,0 +1,49 @@
+title: 'meta data'
+fields:
+  -
+    handle: featuredImagePost
+    field:
+      max_files: 1
+      mode: grid
+      container: lifecycle
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'تصویر شاخص پست'
+      icon: assets
+      instructions: 'لطفا تصویر شاخص مربوط مناسب به این پست را انتخاب کنید'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: postSummary
+    field:
+      placeholder: 'خلاصه پست...'
+      character_limit: '100'
+      antlers: false
+      type: textarea
+      display: 'خلاصه پست'
+      icon: textarea
+      instructions: 'در این قسمت خلاصه ای از پست خود را قرار دهید'
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: starContent
+    field:
+      default: false
+      type: toggle
+      display: 'پست ویژه'
+      icon: toggle
+      instructions: 'اگر پست شما یک پست ویژه هست دکمه را روشن کنید'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

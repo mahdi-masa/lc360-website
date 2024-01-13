@@ -1,0 +1,15 @@
+name: lifecycle
+super: true
+id: c1ede7bd-11c2-4af0-9224-2178b8f71939
+password_hash: $2y$12$M.aTkhrbnRJan9yiYNFf5.qnMcO9z.UaXMm1ZoqadfMEgtpCUD0ba
+preferences:
+  collections:
+    booklets:
+      after_save: continue_editing
+    documentry:
+      after_save: continue_editing
+    news:
+      after_save: continue_editing
+  assets:
+    lifecycle:
+      mode: grid

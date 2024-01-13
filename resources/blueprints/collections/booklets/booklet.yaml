@@ -1,0 +1,430 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'SEO related things'
+        instructions: 'لطفا در این قسمت تمامی اطلاعات مربوط به سئو صفحه را پر کنید'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: seofields
+      -
+        display: 'اطلاعات کلی کتابچه'
+        instructions: 'در این قسمت اطلاعات کلی کتابچه قرار میگیرد'
+        fields:
+          -
+            handle: bookletAuthor
+            field:
+              input_type: text
+              placeholder: 'علی صفایی حایری'
+              antlers: false
+              type: text
+              display: 'نویسنده کتاب'
+              icon: text
+              instructions: 'در این قسمت نام نویسنده کتابچه را قرار دهید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              character_limit: 25
+          -
+            handle: bookletName
+            field:
+              input_type: text
+              placeholder: 'جمع ها و حاصل جمع ها'
+              antlers: false
+              type: text
+              display: 'نام کتابچه'
+              icon: text
+              instructions: 'در این قسمت نام کتابچه مورد نظر خود را قرار دهید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              character_limit: 20
+          -
+            handle: pageNumber
+            field:
+              input_type: text
+              placeholder: ۳۴۳
+              antlers: false
+              type: text
+              display: 'تعداد صفحات کتابچه'
+              icon: text
+              instructions: 'در این قسمت تعداد صفحات کتابچه خود را قرار دهید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              character_limit: 3
+          -
+            handle: yearPublish
+            field:
+              input_type: text
+              placeholder: ۱۳۹۶
+              antlers: false
+              type: text
+              display: 'سال انتشار کتابچه'
+              icon: text
+              instructions: 'در این قسمت سال انتشار کتابچه را قرار دهید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              character_limit: 4
+          -
+            handle: bookletPicture
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'عکس کتابچه'
+              icon: assets
+              instructions: 'از این قسمت عکسی مناسب برای کتابچه خود انتخاب کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: bookletLink
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'لینک دانلود کتابچه'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: summaryPart1
+            field:
+              buttons:
+                - h1
+                - h2
+                - h3
+                - h4
+                - h5
+                - h6
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'اولین بریده برگزیده کتابچه'
+              icon: bard
+              instructions: 'در این قسمت اولین بریده برگزیده کتابچه را بنویسید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              container: lifecycle
+          -
+            handle: summaryPart2
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'دومین بریده برگزیده کتابچه'
+              icon: bard
+              instructions: 'در این قسمت دومین بریده برگزیده کتابچه را بنویسید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: summaryPart3
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'سومین بریده برگزیده کتابچه'
+              icon: bard
+              instructions: 'در این قسمت سومین بریده برگزیده کتابچه را بنویسید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'قسمت معرفی و تحلیل کتاب'
+        instructions: 'در این قسمت محتوای معرفی و تحلیل کتاب را قرار دهید'
+        fields:
+          -
+            handle: bookletIntro
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: false
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              placeholder: 'معرفی کتابجه'
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'معرفی کتاب'
+              icon: bard
+              instructions: 'در این قسمت کتابچه خود را معرفی کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              container: lifecycle
+          -
+            handle: bookletAnalize
+            field:
+              buttons:
+                - h1
+                - h2
+                - h3
+                - h4
+                - h5
+                - h6
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+                - horizontalrule
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: false
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              placeholder: 'تحلیل کتابچه'
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'تحلیل کتاب'
+              icon: bard
+              instructions: 'در این قسمت تحلیل کتابچه خود را قرار دهید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              container: lifecycle
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            import: meta_data
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+title: 'کتابچه ها'

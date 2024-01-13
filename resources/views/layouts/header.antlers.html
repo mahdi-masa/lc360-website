@@ -1,0 +1,73 @@
+<!--nav-->
+<nav class="flex flex-col">
+    <!--desktop nav-->
+    <div class="bg-[#1F6136] h-[34px] text-end my-auto hidden pc:block">
+        <div class="flex flex-row justify-end m-0 items-center mt-[4px] max-w-[1350px] mx-auto">
+            
+            <a href="#" class="iransans-bold text-[16px] text-white no-underline">چرخه حیات</a>
+            <a href="#" class="iransans-bold text-[16px] text-white no-underline mr-[21px]">زیست محیط</a>
+            <a href="#" class="iransans-bold text-[16px] text-white no-underline mr-[20px]">کارزار</a>
+            <a href="#" class="iransans-bold text-[16px] text-white no-underline mr-[23px]">پویش ها</a>
+            <a href="#" class="iransans-bold text-[16px] text-white no-underline mr-[18px]">کودک</a>
+        </div>
+    </div>
+    <!--end desktop nav-->
+
+    <!--always nav-->
+    <div class="bg-white w-full h-[60px] flex flex-col justify-between items-center">
+
+        <div class="flex justify-between flex-row items-center max-w-[1350px] w-full">
+            <div>
+                <a class="cursor-pointer">
+                    <img src="{{ vite:asset src='resources/assets/icon/iconsvg.svg'}}" alt="چرخه حیات" class="mr-[15px]">
+                </a>
+            </div>
+            <!--desktop nav number 2-->
+            <div class="hidden pc:block">
+                <div class="flex items-center justify-center">
+                    <a href="#">
+                        <img src="{{ vite:asset src='resources/assets/icon/homesvg.svg'}}" alt="">
+                    </a>
+                    {{ taxonomy from="categories" }}
+                        <a class="iransans-bold text-[16px] no-underline text-center mr-[28px]" href="{{ url }}">{{ title }}</a>
+                    {{ /taxonomy }}
+                    
+                </div>
+            </div>
+            <!--end desktop nav number 2-->
+            <div class="flex justify-center flex-row items-center">
+                <div class="w-[30px] h-[30.02px] mt-[14.6px] mb-[15.3px] ml-[15px]"> 
+                    <button class="cursor-pointer bg-white border-none" onclick="toggleSearchElement()">
+                        <img src="{{ vite:asset src='resources/assets/icon/searchsvg.svg'}}" alt="search">
+                    </button>
+                </div>
+    
+                <div class="h-[21.22px] mt-[19px] mb-[19.7px] ml-[15px]">
+                    <button class="cursor-pointer bg-white border-none" onclick="openSidebar()">
+                        <img src="{{ vite:asset src='resources/assets/icon/menusvg.svg'}}" alt="menu">
+                    </button>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="w-full hidden justify-center items-center flex-row bg-[#206136] p-4" id="searchelement">
+        <div class="flex items-center justify-center flex-col" onclick="toggleSearchElement()">
+            <button class="transition-all duration-300 ease-linear hover:scale-125">
+                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}" alt="">
+            </button>
+        </div>
+        <div class="pc:w-[45%] mobile:w-[60%] ms-5">
+            <input class="iransans-500 border-0 rounded-[8px] h-[30px] w-full indent-[10px]" type="text" placeholder="جستجو برای ...">
+        </div>
+        <div class="flex items-center justify-center flex-col ms-3">
+            <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
+                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}" alt="">
+            </button>
+        </div>
+    </div>
+    <!--end always nav-->
+</nav>
+<!--end nav-->

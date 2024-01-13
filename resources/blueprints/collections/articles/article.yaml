@@ -1,0 +1,212 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: seofields
+      -
+        display: 'محتوای مقاله'
+        instructions: 'محتوای مقاله خود را وارد کنید'
+        fields:
+          -
+            handle: mainTitle
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: تیتر
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: soduTitleArticle
+            field:
+              buttons:
+                - h1
+                - h2
+                - h3
+                - h4
+                - h5
+                - h6
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - underline
+                - strikethrough
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              container: lifecycle
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'سوتیتر مقاله'
+              icon: bard
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: articleContext
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    articleContext:
+                      display: 'محتوای مقاله'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: articleContent
+                          field:
+                            buttons:
+                              - h1
+                              - h2
+                              - h3
+                              - h4
+                              - h5
+                              - h6
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - quote
+                              - anchor
+                              - image
+                              - table
+                              - underline
+                              - alignleft
+                              - aligncenter
+                              - alignright
+                              - alignjustify
+                            smart_typography: true
+                            save_html: true
+                            inline: false
+                            toolbar_mode: fixed
+                            reading_time: true
+                            word_count: true
+                            fullscreen: true
+                            allow_source: true
+                            enable_input_rules: true
+                            enable_paste_rules: true
+                            remove_empty_nodes: false
+                            antlers: false
+                            link_noopener: false
+                            link_noreferrer: false
+                            target_blank: true
+                            always_show_set_button: false
+                            collapse: false
+                            previews: true
+                            type: bard
+                            icon: bard
+                            instructions: 'در این قسمت مطالب مقاله خود را بنویسید'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            display: 'محتوای مقاله'
+                            container: lifecycle
+                        -
+                          handle: articleCLip
+                          field:
+                            max_files: 1
+                            mode: grid
+                            container: lifecycle
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'کلیپ مقاله'
+                            icon: assets
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'محتوای مقاله'
+              icon: replicator
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            import: meta_data
+          -
+            handle: categories
+            field:
+              type: terms
+              taxonomies:
+                - categories
+              display: categories
+              mode: select
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+title: مقاله‌ها

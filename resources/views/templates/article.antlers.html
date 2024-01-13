@@ -1,0 +1,67 @@
+{{ push:styles }}
+<style>
+    #articleContent {
+        
+        padding: 0 10px 0 10px;
+    }
+    #articleContent p {
+        
+        line-height: 40px;
+    }
+
+    #articleContent img {
+        margin: 15px auto;
+        width: 65%;
+        border-radius: 8px;
+    }
+
+    @media screen and (max-width: 767px) {
+        #articleContent img {
+            width: 95%;
+        }
+        video{
+            width: 95%!important;
+        }
+
+    }
+
+</style>
+    
+{{ /push:styles }}
+
+
+
+<!-- title and sudo title section -->
+<div class="max-w-[1350px] mx-auto mt-[50px]">
+    <div class="iransans-600 my-5 text-[20px] mobile:w-[95%] pc:w-full mx-auto">
+        {{mainTitle}}
+    </div>
+    <div class="bg-[#b5b5b5] iransans-600 my-5 rounded-tl-[20px] rounded-br-[20px] mobile:w-[95%] pc:w-full mx-auto">
+        <div class="p-5 text-[#454545] text-[18px] text-justify">
+            {{soduTitleArticle}}
+        </div>
+    </div>
+</div>
+
+<div class="max-w-[1350px] mx-auto">
+    {{ articleContext }}
+    <div>
+        {{ if articleCLip }}
+        <div class="mx-auto my-5">
+            <video class="w-[65%] mx-auto rounded-[8px]" controls>
+                <source src="{{articleCLip}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        {{ /if }}
+        <div class="text-justify iransans-500 text-[16px] leading-[20px]" id="articleContent">
+
+            {{articleContent}}
+        </div>
+        
+        
+    </div>    
+
+    {{ /articleContext }}
+</div>

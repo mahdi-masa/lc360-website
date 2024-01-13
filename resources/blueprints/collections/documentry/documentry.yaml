@@ -1,0 +1,639 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'اطلاعات سئو'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: seofields
+      -
+        display: 'اطلاعات مستند'
+        instructions: 'در این قسمت اطلاعاتی که برای نمایش مستند نیاز می باشد را وارد کنید'
+        fields:
+          -
+            handle: documentaryFarsiName
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'نام فارسی مستند'
+              icon: text
+              instructions: 'نام فارسی مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: documentaryEnName
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'نام انگلیسی مستند'
+              icon: text
+              instructions: 'نام انگلیسی مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: director
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: کارگردان
+              icon: text
+              instructions: 'نام کارگردان مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: genre
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: ژانر
+              icon: text
+              instructions: 'ژانر مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: productinYear
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'سال تولید'
+              icon: text
+              instructions: 'سال تولید مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: language
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: زبان
+              icon: text
+              instructions: 'زبان مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: documentaryTime
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'زمان مستند'
+              icon: text
+              instructions: 'زمان مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: productionCountry
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'کشور سازنده'
+              icon: text
+              instructions: 'کشور سازنده'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: featuredImage
+            field:
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'تصویر شاخص'
+              icon: assets
+              instructions: 'تصویر شاخص مستند'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              max_files: 1
+          -
+            handle: subtitle
+            field:
+              default: false
+              type: toggle
+              display: زیرنویس
+              icon: toggle
+              instructions: 'آیا مستند زیرنویس دارد؟'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: headerBG
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'پس زمینه هدر صفحه مستند'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'اطلاعات مربوط به خلاصه مستند'
+        fields:
+          -
+            handle: documentarySummary
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              container: lifecycle
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'خلاصه مستند'
+              icon: bard
+              instructions: 'خلاصه مستند را وارد کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: documentaryTrailer
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'تیزر مستند'
+              icon: assets
+              instructions: 'تیزر مستند را انتخاب کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: trailerPoster
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'پوستر تیزر مستند'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'اطلاعات پست تحلیلی کوتاه'
+        instructions: 'در این قسمت اطلاعات پست تحلیلی کوتاه درباره مستند'
+        fields:
+          -
+            handle: documnetaryAnalizeSummary
+            field:
+              buttons:
+                - h1
+                - h2
+                - h3
+                - h4
+                - h5
+                - h6
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - underline
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              container: lifecycle
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'خلاصه تحلیل مستند'
+              icon: bard
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: shortAnalizePoster
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'پوستر تیزر تحلیل کوتاه مستند'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: shortAnalizeTrailer
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'تیزر تحلیل کوتاه مستند'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'اطلاعات مربوط به دانلود مستند'
+        instructions: 'در این قسمت اطلاعات مربوط به دانلود مستند را بنویسید'
+        fields:
+          -
+            handle: documentaryDownload
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    docDownloadInfo:
+                      display: 'اطلاعات دانلود مستند'
+                      instructions: null
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          handle: quality
+                          field:
+                            input_type: text
+                            placeholder: 1080p
+                            character_limit: 6
+                            antlers: false
+                            type: text
+                            display: کیفیت
+                            icon: text
+                            instructions: 'کیفیت مستند'
+                            listable: hidden
+                            instructions_position: below
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: docLink
+                          field:
+                            max_files: 1
+                            mode: grid
+                            container: lifecycle
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'لینک مستند'
+                            icon: assets
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: downloadSize
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: 'حجم دانلودی'
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: DocInfo
+                          field:
+                            options:
+                              'به همراه زیرنویس': null
+                              'زبان اصلی': null
+                              'دوبله شده': null
+                            inline: false
+                            cast_booleans: true
+                            type: radio
+                            display: 'اطلاعات مستند'
+                            icon: radio
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'دانلود مستند'
+              icon: replicator
+              instructions: 'در این قسمت اطلاعات دانلود مستند را وارد کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'اطلاعات مربوط به دانلود زیرنویس‌ها'
+        fields:
+          -
+            handle: docSubtitleInfo
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    docDownloadInfo:
+                      display: 'اطلاعات دانلود مستند'
+                      instructions: null
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          handle: subtitleType
+                          field:
+                            options:
+                              انگلیسی: null
+                              فارسی: null
+                            inline: false
+                            cast_booleans: true
+                            type: radio
+                            display: 'انتخاب نوع زیرنویس'
+                            icon: radio
+                            listable: hidden
+                            instructions_position: below
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            instructions: 'نوع زیرنویس خود را وارد کنید'
+                        -
+                          handle: subtitleLink
+                          field:
+                            max_files: 1
+                            mode: grid
+                            container: lifecycle
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'لینک دانلود زیرنویس'
+                            icon: assets
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'دانلود زیرنویس مستند'
+              icon: replicator
+              instructions: 'در این قسمت اطلاعات دانلود زیرنویس مستند را وارد کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'اطلاعات پست تحلیلی مستند'
+        instructions: 'در این قسمت اطلاعات مربوط به کلیپ تحلیل مستند را قرار دهید'
+        fields:
+          -
+            handle: featuredImageDocAnalize
+            field:
+              max_files: 1
+              mode: grid
+              container: lifecycle
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'تصویر شاخص'
+              icon: assets
+              instructions: 'در این قسمت تصویر شاخص پست تحلیلی خود را وارد کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: postDescription
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - strikethrough
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: false
+              save_html: true
+              inline: false
+              toolbar_mode: fixed
+              reading_time: true
+              word_count: true
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: true
+              container: lifecycle
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: 'توضیحات پست'
+              icon: bard
+              instructions: 'توضیحاتی درباره پست تحلیلی'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: postLink
+            field:
+              max_items: 1
+              mode: select
+              create: true
+              type: entries
+              display: 'لینک پست تحلیلی'
+              icon: entries
+              instructions: 'در این قسمت پست تحلیلی خود را انتخاب کنید'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            import: meta_data
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+title: مستند‌ها

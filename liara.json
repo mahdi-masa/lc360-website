@@ -1,0 +1,25 @@
+{
+    "platform": "laravel",
+    "app": "lc360",
+    "laravel": {
+      "phpVersion": "8.2"
+    },"disks": [
+      {
+        "name": "content",
+        "mountTo": "content"
+      },
+      {
+        "name": "storage",
+        "mountTo": "storage"
+      },
+      {
+        "name": "users",
+        "mountTo": "users"
+      },
+      {
+        "name": "resources",
+        "mountTo": "resources"
+      }
+    ]
+
+}

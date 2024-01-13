@@ -1,0 +1,61 @@
+title: 'اطلاعات دررابطه با سئو'
+fields:
+  -
+    handle: pageAuthor
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: 'نویسنده صفحه'
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: authorEmail
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: 'ایمیل نویسنده این صفحه'
+      icon: text
+      instructions: 'ایمیل نویسنده این صفحه'
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: keyword
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: 'کلمات کلیدی'
+      icon: text
+      instructions: 'کلمات کلیدی این نوشته'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: socialIMage
+    field:
+      max_files: 1
+      mode: grid
+      container: lifecycle
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'تصویر برای انتشار در فضای مجازی'
+      icon: assets
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

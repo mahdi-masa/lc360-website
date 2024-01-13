@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+
+   
+    {{ vite src="resources/css/app.css" }}
+    {{ vite src="resources/css/fontiran.css" }}
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    {{ vite src="resources/css/sidebar.css" }}
+    {{ vite src="resources/js/sidebar.js" }}
+    {{ stack:styles }}
+    
+
+
+    
+    {{# seo_pro:meta #}}
+    <meta name='author' content='{{pageAuthor}}, {{authorEmail}}'>
+    <meta name='keywords' content='{{keyword}}'>
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+</head>
+<body class="scroll-smooth bg-[#dbe8df]">
+    {{ partial:layouts/header }}
+    {{ partial:layouts/sidebar}}
+    {{template_content}}
+    {{ partial:layouts/footer }}
+    {{ stack:scripts }}
+
+
+    {{ vite src='resources/js/sidebar.js'}}
+    {{ vite src='resources/js/search-bar.js'}}
+    {{ vite src='resources/js/app.js'}}
+
+</body>
+</html>

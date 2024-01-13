@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ vite src='resources/css/app.css'}}
+    {{ vite src='resources/css/fontiran.css'}}
+</head>
+<body>
+    <div class="absolute top-0 bottom-0 left-0 right-0 z-40 flex justify-center items-center bg-gray-600">
+        <div class="bg-gray-300 p-5 rounded-[8px]">
+            <div class="text-left mb-3 rotate-45 w-fit">
+                <button class="rotate-45">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+            <span class="iransans-bold text-center block w-full">لطفا دسته بندی مورد نظر خود را جستجو کنید</span>
+            <div class="my-5">
+                <form action="">
+                    <div class="flex justify-start items-center flex-col">
+                        <div>
+                            <label class="block w-full text-right iransans-normal mb-3" for="search">جستجو</label>
+                            <input class="block w-full rounded" type="text" id="search">
+                        </div>
+                        <div>
+                            <button class="text-center w-[50%] bg-[#76c04d] text-white">
+                                شروع جستجو
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
