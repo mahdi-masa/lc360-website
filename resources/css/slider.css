@@ -1,0 +1,75 @@
+.slider-title{
+    position: absolute;
+    border-right: solid 4px #FFD800;
+    top: -15px;
+    padding-right: 9px;
+}
+/* news slider css  */
+.arrows__newsslider{
+    position: relative;
+    top: -30px!important;
+}
+.next__newsslider{
+    position: absolute!important;
+    /*right: 25px!important;*/
+    left: 0!important;
+    background-color: #FFD800!important;
+    border-radius: 4px!important;
+    opacity: 1!important;
+    width: 35px!important;
+    height: 35px!important;
+}
+.prev__newsslider{
+    position: absolute!important;
+    left: 45px !important;
+    right: unset !important;
+    background-color:#FFD800!important;
+    border-radius: 4px!important;
+    opacity: 1!important;
+    width: 35px!important;
+    height: 35px!important;
+
+}
+
+/* daily report slider css  */
+.arrows__storyslider{
+    position: relative;
+    top: -330px!important;
+}
+
+.next__storyslider{
+    position: absolute!important;
+    right: unset!important;
+    left: 0px!important;
+    background-color: #FFD800!important;
+    border-radius: 4px!important;
+    opacity: 1!important;
+    width: 35px!important;
+    height: 35px!important;
+}
+.prev__storyslider{
+    position: absolute!important;
+    left: 45px !important;
+    right: unset!important;
+    background-color: #FFD800!important;
+    border-radius: 4px!important;
+    opacity: 1!important;
+    width: 35px!important;
+    height: 35px!important;
+}
+
+
+/* specific slider css */
+.next__specificslider{
+    background: transparent!important;
+}
+.prev__specificslider{
+    
+    background: transparent!important;
+
+}
+
+/* footer slider css */
+.footer__slider-pagination{
+    bottom: unset!important;
+}

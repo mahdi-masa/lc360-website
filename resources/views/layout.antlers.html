@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html class="scroll-smooth" lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
 
-
-   
+    {{# styles #}}
     {{ vite src="resources/css/app.css" }}
     {{ vite src="resources/css/fontiran.css" }}
-        
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     {{ vite src="resources/css/sidebar.css" }}
-    {{ vite src="resources/js/sidebar.js" }}
+    {{ vite src='resources/css/footer.css' }}
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/life-cycle.png" type="image/x-icon"> 
     {{ stack:styles }}
-    
-
-
-    
-    {{# seo_pro:meta #}}
+    {{# end of styles #}}
+    {{# javascript script #}}
+    {{ vite src="resources/js/sidebar.js" }}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    {{# end javascript script #}}
+    {{# start seo #}}
+    {{ seo_pro:meta }}
     <meta name='author' content='{{pageAuthor}}, {{authorEmail}}'>
     <meta name='keywords' content='{{keyword}}'>
     
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{# <base href="https://lc360.liara.run/" target="_blank"> #}}
+    {{# end seo #}}
     
 
 </head>
-<body class="scroll-smooth bg-[#dbe8df]">
+<body class="scroll-smooth bg-[#e8f6eb]">
     {{ partial:layouts/header }}
-    {{ partial:layouts/sidebar}}
-    {{template_content}}
+    {{ partial:layouts/sidebar }}
+    {{ template_content }}
     {{ partial:layouts/footer }}
+    
+    
+    {{ vite src='resources/js/sidebar.js' }}
+    {{ vite src='resources/js/search-bar.js' }}
+    {{ vite src='resources/js/app.js' }}
+    {{ vite src='resources/js/footer-slider.js'}}
     {{ stack:scripts }}
-
-
-    {{ vite src='resources/js/sidebar.js'}}
-    {{ vite src='resources/js/search-bar.js'}}
-    {{ vite src='resources/js/app.js'}}
+    
 
 </body>
 </html>

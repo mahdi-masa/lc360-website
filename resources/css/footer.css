@@ -1,0 +1,7 @@
+
+#footer{
+    background-image: url('../assets/layouts/footer/footerbackground.svg');
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: contain;
+}

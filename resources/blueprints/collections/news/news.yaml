@@ -196,14 +196,6 @@ tabs:
                 - topics
               display: Topics
               mode: select
-          -
-            handle: categories
-            field:
-              type: terms
-              taxonomies:
-                - categories
-              display: categories
-              mode: select
   SEO:
     display: SEO
     sections:

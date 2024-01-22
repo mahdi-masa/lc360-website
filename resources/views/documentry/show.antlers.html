@@ -1,7 +1,7 @@
 {{ push:styles }}
     <style>
         .headerBG{
-            background-image: url(https://lc360-ir.s3.ir-tbz-sh1.arvanstorage.ir/bg.jpg);
+            background-image: url('{{headerBG}}');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -33,11 +33,11 @@
             </div>
             <div class="bg-black opacity-60 mobile:h-[800px] tablet:h-[500px] pc:h-[500px] absolute top-0 left-0 bottom-0 right-0">
             </div>
-            <div class="mobile:w-[80%] mobile:left-[10%] mobile:top-[5%] pc:max-w-[1350px] pc:mx-auto absolute pc:top-[15%] flex mobile:flex-col tablet:flex-row justify-center items-center">
+            <div class="mobile:w-[80%] mobile:left-[10%] mobile:top-[5%] pc:max-w-[1350px] mx-auto pc:right-[20vw] absolute pc:top-[15%] flex mobile:flex-col tablet:flex-row justify-center items-center">
                 <div class="mobile:mb-5">
                     <img class="rounded-[8px] mobile:mx-auto" src="{{featuredImage}}" alt="{{featuredImage:alt}}">
                 </div>
-                <div class="flex flex-col justify-center items-center ms-5 max-w-[1350px]">
+                <div class="flex flex-col justify-center items-center ms-5 w-[60%]">
                     <div>
                         <h2 class="text-right iransans-bold text-white mb-2">
                             {{documentaryFarsiName}} | {{documentaryEnName}}
@@ -88,26 +88,26 @@
         <div class="flex flex-row justify-between items-center mx-auto max-w-[1140px] w-full">
             <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
-                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#docsummary">درباره مستند</a>
+                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#documentary-summary">درباره مستند</a>
                 </button>
             </div>
             <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
-                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#">دریافت مستند</a>
+                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#download">دریافت مستند</a>
                 </button>
             </div>
             <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
-                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#">مستند های پیشنهادی</a>
+                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#related">مستند های پیشنهادی</a>
                 </button>
             </div>
-            <div class="basis-1/4">
+            {{# <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
                     <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#">دیدگاه‌ها</a>
                 </button>
-            </div>
+            </div> #}}
         </div>
-        <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+        <div class="pc:w-[60%] mobile:w-[98%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]">
             درباره مستند
         </div>
     </div>
@@ -116,7 +116,7 @@
 
 
     <!-- doc summary -->
-    <div class="flex mobile:flex-col-reverse tablet:flex-row justify-center items center max-w-[1140px] mx-auto mobile:mt-5" id="docsummary">
+    <div class="flex mobile:flex-col-reverse tablet:flex-row justify-center items center max-w-[1140px] mx-auto mobile:mt-5" id="documentary-summary">
         <div class="basis-1/2 mx-5 mobile:my-5">
             <video class="rounded-[8px] w-full h-full" controls poster="{{trailerPoster}}">
                 <source src="{{documentaryTrailer}}" type="video/mp4">
@@ -139,7 +139,7 @@
     <!-- end doc summary -->
 
     <!-- download info for docs -->
-    <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+    <div class="pc:w-[60%] mobile:w-[95%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]" id="download">
         دانلود مستند {{documentaryFarsiName}}
     </div>
     <div class="flex tablet:flex-col mobile:flex-row justify-between items-center mobile:flex-wrap tablet:flex-nowrap">
@@ -162,7 +162,7 @@
         {{ /documentaryDownload }}
     </div>
     <!-- end download info for docs -->
-    <div class="pc:w-[60%] mobile:w-[80%] divider iransans-bold my-3">
+    <div class="pc:w-[60%] mobile:w-[95%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]">
         دانلود زیرنویس {{documentaryFarsiName}}
     </div>
 
@@ -183,5 +183,38 @@
        
         {{ /docSubtitleInfo }}
     </div>
+    <div class="pc:w-[60%] mobile:w-[98%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]" id="related">
+        مستند های پینشهادی
+    </div>
+    
+    <div class="max-w-[1350px] mx-auto" id="related">
+        <section class="splide" id="related-documentary">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {{ topics }}
+                    {{ collection from='documentry' taxonomy:topics="{{ slug }}"}}
+                    <li class="splide__slide h-fit w-fit">
+                        <div class="splide__slide__container">
+                            <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
+                        </div>
+                        <div class="iransans-500 text-[13px] mt-[7px]">
+                            {{ documentaryFarsiName}}
+                        </div>
+                    </li>
+                        
+                    {{ /collection }}
+                {{ /topics}}
+                
+                
+              </ul>
+            </div>
+        </section>
+    </div>
+        
+    
 
 </main>
+
+{{ push:scripts }}
+{{ vite src='resources/js/documentary-slider.js'}}
+{{ /push:scripts }}

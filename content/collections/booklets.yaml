@@ -3,7 +3,7 @@ template: booklets/show
 layout: layout
 taxonomies:
   - topics
-  - categories
+  - tags
 revisions: false
 route: '/blog/{slug}'
 date: true

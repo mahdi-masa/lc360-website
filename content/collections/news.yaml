@@ -3,7 +3,7 @@ template: news/show
 layout: layout
 taxonomies:
   - topics
-  - categories
+  - tags
 revisions: false
 route: 'news/{slug}'
 sort_dir: asc

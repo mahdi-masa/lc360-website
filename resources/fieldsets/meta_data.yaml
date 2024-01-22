@@ -1,7 +1,7 @@
 title: 'meta data'
 fields:
   -
-    handle: featuredImagePost
+    handle: featuredImagePostVertical
     field:
       max_files: 1
       mode: grid
@@ -11,7 +11,26 @@ fields:
       show_filename: true
       show_set_alt: true
       type: assets
-      display: 'تصویر شاخص پست'
+      display: 'تصویر شاخص پست عمودی'
+      icon: assets
+      instructions: 'لطفا تصویر شاخص مربوط مناسب به این پست را انتخاب کنید'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: featuredImagePostHorizental
+    field:
+      max_files: 1
+      mode: grid
+      container: lifecycle
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'تصویر شاخص افقی'
       icon: assets
       instructions: 'لطفا تصویر شاخص مربوط مناسب به این پست را انتخاب کنید'
       listable: hidden
@@ -23,7 +42,7 @@ fields:
     handle: postSummary
     field:
       placeholder: 'خلاصه پست...'
-      character_limit: '100'
+      character_limit: '400'
       antlers: false
       type: textarea
       display: 'خلاصه پست'

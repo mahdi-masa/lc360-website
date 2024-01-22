@@ -14,119 +14,49 @@
         </div>
         <div class="text-right">
             <ul class="text-right">
+                {{ nav:menu }}
                 <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-black">
                     
-                    <a class="block py-2 ms-2">
+                    <a class="block py-2 ms-2" href="{{ url }}">
                         <i class="bi bi-house-door-fill"></i>
-                        خانه
+                        {{ title }}
                     </a>
                 </li>
-                <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-gray-300">
                     
-                    <a class="block py-2 ms-2">
-                        <i class="bi bi-house-door-fill"></i>
-                        زیست محیط
-                    </a>
-                </li>
-                <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-gray-300">
-                    
-                    <a class="block py-2 ms-2">
-                        <i class="bi bi-house-door-fill"></i>
-                        کارزار
-                    </a>
-                </li>
-                <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-gray-300">
-                    
-                    <a class="block py-2 ms-2">
-                        <i class="bi bi-house-door-fill"></i>
-                        پویشها
-                    </a>
-                </li>
-                <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-gray-300">
-                    
-                    <a class="block py-2 ms-2">
-                        <i class="bi bi-house-door-fill"></i>
-                        کودک
-                    </a>
-                </li>
+                {{ /nav:menu  }}
+                
                 
                 
             </ul>
             <ul class="text-right">
-                <div class="accordion text-right">
-                    <li class="ms-2 mt-5 text-[#76c04d] iransans-bold text-right">
-                        <i class="bi bi-caret-left-fill text-black"></i>
-                        تغیرات اقلیمی
-                    </li>
-                </div>
-
-                <div class="panel bg-gray-100">
-                    <ul class="ms-10 mt-5">
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                آلودگی هوا
-                            </a>    
+                {{nav:topicsq }}
+                    <div class="accordion text-right">
+                        <li class="ms-2 mt-5 text-[#76c04d] iransans-bold text-right">
+                            <i class="bi bi-caret-left-fill text-black"></i>
+                            {{ title }}
                         </li>
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                پسماند
-                            </a>    
-                        </li>
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                کاشت درخت
-                            </a>    
-                        </li>
-                    </ul>
-                </div>
-                
-            </ul>
-            <ul class="text-right">
-                <div class="accordion">   
-                    <li class="ms-2 mt-5 text-[#76c04d] iransans-bold text-right">
-                        <i class="bi bi-caret-left-fill text-black"></i>
-                        تنوع زیستی
-                    </li>
-
-                </div>
-                <div class="panel bg-gray-100">
-                    <ul class="ms-10 mt-5">
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                پستانداران
-                            </a>    
-                        </li>
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                خزندگان
-                            </a>    
-                        </li>
-                        <li class="iransans-normal my-1">
-                            <i class="bi bi-circle text-[10px]"></i>
-                            <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="">
-                                <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                پرندگان
-                            </a>    
-                        </li>
-                    </ul>
-                </div>
-                
-                
-            </ul>
-            
-            
-            
-
+                    </div>
+                    {{ if children }}
+                    <div class="panel bg-gray-100">
+                        <ul class="ms-10 mt-5">
+                                <ul>
+                                    {{ children }}
+                                    <li class="iransans-normal my-1">
+                                        <i class="bi bi-circle text-[10px]"></i>
+                                        <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="{{ url }}">
+                                            <i class="bi bi-chevron-compact-left text-[10px]"></i>
+                                            {{ title }}
+                                        </a>    
+                                    </li>
+                                    {{ /children }}
+                                </ul>
+                                
+                            </ul>
+                        </div>
+                    {{ /if }}
+                    
+                {{ /nav:topicsq  }}
+                </ul>
         </div>
     </section>
 </div>

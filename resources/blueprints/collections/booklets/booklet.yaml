@@ -416,6 +416,14 @@ tabs:
                 - required
           -
             import: meta_data
+          -
+            handle: topics
+            field:
+              type: terms
+              taxonomies:
+                - topics
+              display: Topics
+              mode: select
   SEO:
     display: SEO
     sections:

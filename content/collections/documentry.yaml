@@ -3,7 +3,7 @@ template: documentry/show
 layout: layout
 taxonomies:
   - topics
-  - categories
+  - tags
 revisions: false
 route: 'documentary/{slug}'
 sort_dir: asc

@@ -191,12 +191,12 @@ tabs:
           -
             import: meta_data
           -
-            handle: categories
+            handle: topics
             field:
               type: terms
               taxonomies:
-                - categories
-              display: categories
+                - topics
+              display: Topics
               mode: select
   SEO:
     display: SEO

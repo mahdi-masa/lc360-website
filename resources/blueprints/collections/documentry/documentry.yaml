@@ -625,6 +625,14 @@ tabs:
               validate: 'max:200'
           -
             import: meta_data
+          -
+            handle: topics
+            field:
+              type: terms
+              taxonomies:
+                - topics
+              display: Topics
+              mode: select
   SEO:
     display: SEO
     sections:

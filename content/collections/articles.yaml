@@ -3,7 +3,7 @@ template: articles/show
 layout: layout
 taxonomies:
   - topics
-  - categories
+  - tags
 revisions: false
 route: 'article/{slug}'
 sort_dir: asc
