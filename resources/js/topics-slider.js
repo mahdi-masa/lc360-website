@@ -43,7 +43,7 @@ new Splide("#booklet-slider-pc",{
     width: '95%',
     fixedHeight: '340px',
     paginationDirection: 'rtl',
-    autoplay:true,
+    autoplay:false,
     snap   : true,
     arrows : false,
     trimSpace: true,
