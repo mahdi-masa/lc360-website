@@ -10,6 +10,7 @@ new Splide("#footer-slider",{
     autoplay:true,
     snap : true,
     trimSpace: true,
+    pagination: false,
     classes:{
       pagination: 'splide__pagination footer__slider-pagination',
     },

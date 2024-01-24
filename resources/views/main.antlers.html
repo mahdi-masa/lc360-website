@@ -31,7 +31,7 @@
                 </div>
                 <div class="splide__track">
                   <ul class="splide__list">
-                    {{ collection from="news|documentry|articles|booklets|dailyReport" order="date:desc" limit='4' }}
+                    {{ collection from="news|documentry|articles|booklets|dailyReport" order="date:desc" }}
                     {{ if starContent }}
                     <li class="splide__slide">
                         <a class="w-full h-full" href="{{ url }}">
@@ -49,7 +49,7 @@
             <!--information-->
             <div class="mx-[10px] pc:m-0 pc:mr-[30px] pc:flex pc:flex-col pc:justify-center items-start">
                 <!--information number 1-->
-                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] pc:w-[430px] h-[130px]">
+                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] pc:w-[430px] h-[130px] mt-[15px] ">
                     <div class="flex justify-start flex-row items-center mt-[4px]">
                         <img src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="point" class="mr-[10px] items-center">
                         <p class="text-[#1C4E00] iransans-bold text-[16px] m-0 mr-[4px]">منابع طبیعی</p>
@@ -84,7 +84,7 @@
                 <!--end information number 1-->
 
                 <!--information number 2-->
-                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] mt-[30px] pc:w-[430px] h-[130px]">
+                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] mt-[15px] pc:mt-[30px] pc:w-[430px] h-[130px]">
 
                     <div class="flex justify-start flex-row items-centermt-[4px] mt-[4px]">
                         <img src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="point" class="mr-[10px]">
@@ -120,7 +120,7 @@
                 <!--end information number 2-->
 
                 <!--information number 3-->
-                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] mt-[30px] pc:w-[430px] h-[130px]">
+                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] mt-[15px] pc:mt-[30px] pc:w-[430px] h-[130px]">
 
                     <div class="flex justify-start flex-row items-center mt-[4px]">
                         <img src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="point" class="mr-[10px]">
@@ -249,19 +249,19 @@
         <div class="mx-[10px] flex flex-col pc:mt-[30px] pc:mx-0">
             <div class="flex flex-col pc:flex pc:flex-row">
                 <!--post slider number 1-->
-                <div class="flex flex-col mx-auto mt-[15px] w-full items-center justify-between pc:basis-1/3 pc:flex">
+                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تغییرات اقلیمی</p>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات">
                         </div>
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 1-->
                             <div class="h-[180px]">
-                                {{ collection:articles taxonomy:topics='climate-change' sort="random" limit="5" }}
+                                {{ collection:articles taxonomy:topics='climate-change' sort="random" limit="4" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="" class="mr-[10px]">
@@ -280,14 +280,14 @@
                 <!--end post slider-->
 
                 <!--post slider number 2-->
-                <div class="flex flex-col mx-auto pc:mx-[15px] mt-[15px] w-full items-center justify-between pc:basis-1/3">
+                <div class="flex flex-col mx-auto pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست گاه</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات" class="m-0 w-full">
                         </div>
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 2-->
@@ -314,14 +314,14 @@
                 <!--end post slider number 2-->
 
                 <!--post slider number 3-->
-                <div class="flex flex-col mx-auto mt-[15px] w-full items-center justify-between pc:basis-1/3">
+                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تنوع زیستی</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات">
                         </div>
 
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
@@ -356,14 +356,14 @@
         <div class="mx-[10px] flex flex-col pc:mt-[30px] pc:mx-0">
             <div class="flex flex-col pc:flex pc:flex-row">
                 <!--post slider number 1-->
-                <div class="flex flex-col mx-auto mt-[15px] w-full items-center justify-between pc:basis-1/3 pc:flex">
+                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست انسانی</p>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="چرخه حیات">
                         </div>
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 1-->
@@ -387,14 +387,14 @@
                 <!--end post slider-->
 
                 <!--post slider number 2-->
-                <div class="pc:flex mobile:hidden flex-col mx-auto pc:mx-[15px] mt-[15px] w-full items-center justify-between pc:basis-1/3">
+                <div class="pc:flex mobile:hidden flex-col mx-auto pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">جانور</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/pollution.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/pollution.png'}}" alt="چرخه حیات">
                         </div>
 
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
@@ -422,14 +422,14 @@
                 <!--end post slider number 2-->
 
                 <!--post slider number 3-->
-                <div class="pc:flex mobile:hidden flex-col mx-auto mt-[15px] w-full items-center justify-between pc:basis-1/3 ">
+                <div class="pc:flex mobile:hidden flex-col mx-auto w-full items-center justify-center pc:basis-1/3 ">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">آلودگی هوا</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
                         <div class="rounded-[25px] h-[247px]">
-                            <img class="w-full h-full object-cover" src="{{ vite:asset src='resources/assets/pollution.png'}}" alt="چرخه حیات" class="m-0 w-full">
+                            <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ vite:asset src='resources/assets/pollution.png'}}" alt="چرخه حیات">
                         </div>
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 3-->

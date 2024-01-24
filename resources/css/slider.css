@@ -61,11 +61,20 @@
 
 /* specific slider css */
 .next__specificslider{
-    background: transparent!important;
+    position: absolute!important;
+    left: 0px !important;
+    right: unset !important;
+    background-color:transparent!important;
+    
+    
+     
 }
 .prev__specificslider{
-    
-    background: transparent!important;
+    position: absolute!important;
+    left: unset !important;
+    right: 0px !important;
+    background-color:transparent!important;
+    ;
 
 }
 
