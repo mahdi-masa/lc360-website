@@ -1,8 +1,6 @@
 .slider-title{
     position: absolute;
-    border-right: solid 4px #FFD800;
     top: -15px;
-    padding-right: 9px;
 }
 /* news slider css  */
 .arrows__newsslider{

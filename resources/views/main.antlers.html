@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/life-cycle.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"> 
-    <base href="https://lc360.liara.run/" target="_blank">
+    <base href="https://lc360.ir/" target="_blank">
 </head>
 <body class="bg-[#DCE8DF]">
     {{ partial:layouts/header }}
@@ -19,7 +19,7 @@
     <main class="min-h-screen w-screen max-w-[1350px] mx-auto">
         <div class="flex flex-col pc:flex pc:flex-row pc:mx-auto pc:justify-center mt-[15px]">
             <!--slider-->
-            <section class="splide pc:m-0 grow mx-auto mobile:mb-[16px]" id="specific-content">
+            <section class="splide pc:m-0 grow mx-auto" id="specific-content">
                 <div class="splide__arrows">
                     
                     <button class="splide__arrow splide__arrow--prev prev__specificslider">
@@ -49,7 +49,7 @@
             <!--information-->
             <div class="mx-[10px] pc:m-0 pc:mr-[30px] pc:flex pc:flex-col pc:justify-center items-start">
                 <!--information number 1-->
-                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] pc:w-[430px] h-[130px] mt-[15px] ">
+                <div class="flex justify-start flex-col items-start bg-[#BDD5C3] rounded-[5px] pc:w-[430px] h-[130px] mobile:mt-[15px] pc:mt-[0px]">
                     <div class="flex justify-start flex-row items-center mt-[4px]">
                         <img src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="point" class="mr-[10px] items-center">
                         <p class="text-[#1C4E00] iransans-bold text-[16px] m-0 mr-[4px]">منابع طبیعی</p>
@@ -160,7 +160,14 @@
         
         <section class="splide mobile:mb-[30px] mobile:mt-[80px] pc:my-[80px] mx-auto" id="news-slider">
             <div class="splide__arrows arrows__newsslider">
-                <div class="iransans-bold text-[16px] slider-title text-[#1C4E00]">اخبار روز</div>
+                <div class="flex flex-row items-center justify-center iransans-bold text-[16px] slider-title text-[#1C4E00]">
+                    <div>
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div>
+                        <span class="mr-[9px]">اخبار روز</span>
+                    </div>
+                </div>
                 <button class="splide__arrow splide__arrow--prev prev__newsslider">
                     <img src="{{vite:asset src='resources/assets/icon/right-arrow.svg'}}">
                 </button>
@@ -249,7 +256,7 @@
         <div class="mx-[10px] flex flex-col pc:mt-[30px] pc:mx-0">
             <div class="flex flex-col pc:flex pc:flex-row">
                 <!--post slider number 1-->
-                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3 pc:flex">
+                <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تغییرات اقلیمی</p>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
@@ -280,7 +287,7 @@
                 <!--end post slider-->
 
                 <!--post slider number 2-->
-                <div class="flex flex-col mx-auto pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
+                <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست گاه</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
@@ -314,7 +321,7 @@
                 <!--end post slider number 2-->
 
                 <!--post slider number 3-->
-                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3">
+                <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تنوع زیستی</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
@@ -356,7 +363,7 @@
         <div class="mx-[10px] flex flex-col pc:mt-[30px] pc:mx-0">
             <div class="flex flex-col pc:flex pc:flex-row">
                 <!--post slider number 1-->
-                <div class="flex flex-col mx-auto w-full items-center justify-center pc:basis-1/3 pc:flex">
+                <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست انسانی</p>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
@@ -387,7 +394,7 @@
                 <!--end post slider-->
 
                 <!--post slider number 2-->
-                <div class="pc:flex mobile:hidden flex-col mx-auto pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
+                <div class="pc:flex mobile:hidden flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">جانور</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
@@ -422,7 +429,7 @@
                 <!--end post slider number 2-->
 
                 <!--post slider number 3-->
-                <div class="pc:flex mobile:hidden flex-col mx-auto w-full items-center justify-center pc:basis-1/3 ">
+                <div class="pc:flex mobile:hidden flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 ">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
                         <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">آلودگی هوا</p>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
@@ -463,7 +470,14 @@
 
         <section class="splide mobile:mb-[30px] mobile:mt-[80px] pc:my-[80px] mx-auto" id="story-slider">
             <div class="splide__arrows arrows__newsslider">
-                <div class="iransans-bold text-[16px] slider-title text-[#1C4E00]">روایت شما</div>
+                <div class="flex flex-row items-center justify-center iransans-bold text-[16px] slider-title text-[#1C4E00]">
+                    <div class="flex flex-row">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div>
+                        <span class="mr-[9px]">روایت شما</span>
+                    </div>
+                </div>
                 <button class="splide__arrow splide__arrow--prev prev__newsslider">
                     <img src="{{vite:asset src='resources/assets/icon/right-arrow.svg'}}">
                 </button>
