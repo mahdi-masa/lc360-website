@@ -1,17 +1,31 @@
-
 window.sidebarWidth = function sidebarWidth(){
     let sidebarElement = document.getElementById('sidebar')
     let sidebarStyle = window.getComputedStyle(sidebarElement);
     let sidebarWidth = sidebarStyle.getPropertyValue('width')
     return sidebarWidth;
-    
+   
 }
 
 
 
-window.openSidebar = function openSidebar(){
+window.toggleSideBar = function toggleSideBar(){
+    let sidebarOverLay = document.getElementById('overlay')
     let sidebarElement = document.getElementById('sidebar');
-    sidebarElement.style.transform = `translate(0px, 0px)`
+    if( sidebarElement.className.includes('unactive')){
+        sidebarElement.style.transform = `translate(0px, 0px)`
+        sidebarOverLay.classList.remove('hidden')
+        sidebarOverLay.classList.add('fixed')
+        sidebarElement.classList.remove('unactive')
+        sidebarElement.classList.add('active')
+    }else if(sidebarElement.className.includes('active')){
+        sidebarElement.style.transform = `translate(${sidebarWidth()}, 0px)`
+        sidebarOverLay.classList.remove('fixed')
+        sidebarOverLay.classList.add('hidden')
+        sidebarElement.classList.remove('active')
+        sidebarElement.classList.add('unactive')
+
+    }
+    
 }
 
 
@@ -19,7 +33,8 @@ window.closeSidebar = function closeSidebar(){
     let sidebarElement = document.getElementById('sidebar');
     sidebarElement.style.transform = `translate(${sidebarWidth()}, 0px)`
 }
-closeSidebar()
+window.addEventListener('onload',closeSidebar())
+
     
 var acc = document.getElementsByClassName("accordion");
 var i;

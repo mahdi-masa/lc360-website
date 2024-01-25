@@ -83,5 +83,5 @@ window.elementList = [
 setInterval(function(){
 elementList.forEach(element => {
     entityValue(element.initialValue, element.delta, element.id);
-})},500);
+})},100);
   

@@ -1,66 +1,265 @@
 
-<div class="tablet:w-[320px] bg-gray-100 fixed right-0 bottom-0 top-0 min-h-screen overflow-hidden scroll-smooth overflow-y-auto mobile:w-full transition-all duration-200 ease-linear z-20" id="sidebar">
-    <section class="p-2 text-left">
-        <button class="w-fit border-0 padding-0" onclick="closeSidebar()">
-            <i class="bi bi-arrow-right-square-fill text-[35px] text-[#76c04d]"></i>
-        </button>
-    </section>
+{{ push:styles}}
+    <style>
+        /* botstrap icon */
+        .p-icon::before{
+            content: "\F309";
+            font-family:  bootstrap-icons!important;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 25px;
+            width: 30px;
+        }
+        /* end botstrap icon */
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+{{ /push:styles}}
+<!--side bar-->
+<div class="z-10 top-0 right-0 bottom-0 left-0 transition-all duration-1000 ease-linear hidden" id="overlay" onclick="toggleSideBar()">
+</div>
+<div class="fixed right-0 bottom-0 pc:top-0 mobile:top-[60px] bg-gray-100 w-full tablet:w-[223px] pc:w-[223px] overflow-hidden overflow-y-scroll example z-20 unactive transition-all duration-300 ease-linear"id="sidebar">
+   <!--up side bar-->
+    <div>
+        <!---->
+        <div class="flex-row">
+            <div class="flex mt-[8px]">
+                <!---->
+                <div class="flex flex-row justify-start items-center bg-gray-200 mr-[5px] rounded-br-[5px] rounded-tl-[5px] w-1/2 h-[45px] cursor-pointer hover:bg-yellow-400 transition-all duration-200 ease-linear">
+                    <div class="mr-[8px] flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            چرخه حیات
+                        </a>
+                    </div>
+                </div>
+                <!---->
 
-    <section>
-        <div class="text-right ms-2 mb-2">
-            <span class="text-[15px] iransans-bold text-[#76c04d]">
-                منوها
-            </span>
+                <!---->
+                <div class="flex flex-row justify-start items-center bg-gray-200 mr-[5px] ml-[5px] rounded-br-[5px] rounded-tl-[5px] w-1/2 h-[45px] cursor-pointer hover:bg-yellow-400 transition-all duration-200 ease-linear">
+                    <div class="mr-[8px] flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            زیست محیط
+                        </a>
+                    </div>
+                </div>
+                <!---->
+
+            </div>
         </div>
-        <div class="text-right">
-            <ul class="text-right">
-                {{ nav:menu }}
-                <li class="iransans-bold pc:hover:bg-lime-300 transition-all duration-200 ease-linear border-t-2 border-black">
-                    
-                    <a class="block py-2 ms-2" href="{{ url }}">
-                        <i class="bi bi-house-door-fill"></i>
-                        {{ title }}
-                    </a>
-                </li>
-                    
-                {{ /nav:menu  }}
-                
-                
-                
-            </ul>
-            <ul class="text-right">
-                {{nav:topicsq }}
-                    <div class="accordion text-right">
-                        <li class="ms-2 mt-5 text-[#76c04d] iransans-bold text-right">
-                            <i class="bi bi-caret-left-fill text-black"></i>
-                            {{ title }}
+        <!---->
+
+        <!---->
+        <div class="flex-row">
+            <div class="flex mt-[5px]">
+                <!---->
+                <div class="flex flex-row justify-start items-center bg-gray-200 mr-[5px] rounded-br-[5px] rounded-tl-[5px] w-1/2 h-[45px] cursor-pointer hover:bg-yellow-400 transition-all duration-200 ease-linear">
+                    <div class="mr-[8px] flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            کارزار
+                        </a>
+                    </div>
+                </div>
+                <!---->
+
+                <!---->
+                <div class="flex flex-row justify-start items-center bg-gray-200 mr-[5px] ml-[5px] rounded-br-[5px] rounded-tl-[5px] w-1/2 h-[45px] cursor-pointer hover:bg-yellow-400 transition-all duration-200 ease-linear">
+                    <div class="mr-[8px] flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            پویش ها
+                        </a>
+                    </div>
+                </div>
+                <!---->
+            </div>
+
+            <!---->
+            <div>
+                <div>
+                    <div class="flex flex-row justify-start items-center bg-gray-200 mt-[5px] mr-[5px] ml-[5px] rounded-br-[5px] rounded-tl-[5px] h-[45px] cursor-pointer hover:bg-yellow-400 transition-all duration-200 ease-linear">
+                        <div class="mr-[8px] flex justify-center items-center">
+                            <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                        </div>
+                        <div>
+                            <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                                کودک
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+    </div>
+    <!--end up side bar-->
+
+    <!---->
+    <div class="mt-[30px] mr-[8px]">
+        <!---->
+        <p class="iransans-normal text-[16px] hover:text-lime-500 transition-all duration-200 ease-linear">دسته بندی</p>
+        <!---->
+
+        <!---->
+        <div class="flex flex-row justify-start items-start hover:bg-yellow-300 transition-all duration-200 ease-linear">
+            <div class="flex justify-center items-center">
+                <img src="./asist/img/svg/homesvg.svg" alt="" class="w-[17px]">
+            </div>
+            <div>
+                <a href="#" class="flex flex-row no-underline iransans-normal m-0 mr-[6px] text-[13px] text-black">
+                    صفحه نخست
+                </a>
+            </div>
+        </div>
+        <!---->
+
+        <!---->
+        <div>
+            <div class="mt-[8px]">
+                <div class="flex flex-row justify-start items-center hover:bg-yellow-300 transition-all duration-200">
+                    <div class="flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            تغیرات اقلیمی
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-[3px] mr-[40px]">
+                    <div>
+                        <div>
+                            <!-- <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]"> -->
+                        </div>
+                        <div>
+                            <a href="#">
+                                <p></p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!---->
+
+            <!---->
+            <div>
+                <div class="flex flex-row justify-start items-center hover:bg-yellow-300 transition-all duration-200 ease-linear">
+                    <div class="flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            تنوع زیستی
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-[3px] mr-[40px]">
+                    <div class="flex flex-row justify-start items-center">
+                        <li class="list-none">
+                            <a href="#" class="flex flex-row no-underline w-full h-full m-0 iransans-normal text-[12px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                                جانور
+                            </a>
                         </li>
                     </div>
-                    {{ if children }}
-                    <div class="panel bg-gray-100">
-                        <ul class="ms-10 mt-5">
-                                <ul>
-                                    {{ children }}
-                                    <li class="iransans-normal my-1">
-                                        <i class="bi bi-circle text-[10px]"></i>
-                                        <a class="pc:hover:text-lime-300 transition-all duration-100 ease-linear" href="{{ url }}">
-                                            <i class="bi bi-chevron-compact-left text-[10px]"></i>
-                                            {{ title }}
-                                        </a>    
-                                    </li>
-                                    {{ /children }}
-                                </ul>
-                                
-                            </ul>
-                        </div>
-                    {{ /if }}
-                    
-                {{ /nav:topicsq  }}
-                </ul>
+
+                    <div class="flex flex-row justify-start items-center">
+                        <li class="list-none">
+                            <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[12px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                                گیاه جان
+                            </a>
+                        </li>
+                    </div>
+
+                </div>
+            </div>
+            <!---->
+
+            <!---->
+            <div>
+                <div class="flex flex-row justify-start items-center hover:bg-yellow-300 transition-all duration-200 ease-linear">
+                    <div class="flex justify-center items-center">
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="flex flex-row no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            زیست انسانی
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-[3px] mr-[40px]">
+                    <li class="flex flex-row justify-start items-center">
+                        <li class="list-none">
+                            <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[12px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                                آلودگی هوا
+                            </a>
+                        </li>
+                    </li>
+
+                    <li class="flex flex-row justify-start items-center">
+                        <li class="list-none">
+                            <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[12px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                                پسماند
+                            </a>
+                        </li>
+                    </li>
+
+                </div>
+            </div>
+            <!---->
+            
+            <!---->
+            <div>
+                <div class="flex flex-row justify-start items-center hover:bg-yellow-300 transition-all duration-200 ease-linear">
+                    <div>
+                        <img src="./asist/img/svg/flash.svg" alt="" class="w-[8px]">
+                    </div>
+                    <div>
+                        <a href="#" class="no-underline m-0 mr-[6px] iransans-normal text-[13px] text-black">
+                            زیست گاه
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-[3px] mr-[40px]">
+                    <li class="list-none">
+                        <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[13px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                            آب
+                        </a>
+                    </li>
+                    <li class="list-none">
+                        <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[13px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                            خاک
+                        </a>
+                    </li>
+                    <li class="list-none">
+                        <a href="#" class="flex flex-row no-underline m-0 iransans-normal text-[13px] p-icon items-center hover:text-yellow-400 transition-all duration-150 ease-linear text-black">
+                            هوا
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <!---->               
         </div>
-    </section>
+        <!---->
+    </div>
+    <!---->
 </div>
-
-
-   
-    
+<!--end side bar-->

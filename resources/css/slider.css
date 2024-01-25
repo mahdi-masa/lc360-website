@@ -1,5 +1,12 @@
 .slider-title{
     position: absolute;
+<<<<<<< Updated upstream
+=======
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+>>>>>>> Stashed changes
     top: -15px;
 }
 /* news slider css  */
