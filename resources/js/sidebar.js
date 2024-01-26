@@ -28,29 +28,56 @@ window.toggleSideBar = function toggleSideBar(){
     
 }
 
+window.changeSideBarPosition = function changeSideBarPosition() {
+  if (window.innerWidth > 1024) {
+    // Use window.scrollY or document.documentElement.scrollTop to check scroll position
+    if (window.scrollY > 94) {
+      // Declare sidebarElement using var, let, or const
+      let sidebarElement = document.getElementById('sidebar');
+      sidebarElement.classList.remove('pc:top-[94px]')
+      sidebarElement.classList.add('pc:top-0')
+    }else{
+      let sidebarElement = document.getElementById('sidebar');
+      sidebarElement.classList.remove('pc:top-0')
+      sidebarElement.classList.add('pc:top-[94px]')
+
+    }
+  }else if (window.innerWidth < 1024){
+    if (window.scrollY > 60) {
+      // Declare sidebarElement using var, let, or const
+      let sidebarElement = document.getElementById('sidebar');
+      sidebarElement.classList.remove('mobile:top-[60px]')
+      sidebarElement.classList.add('mobile:top-0')
+    }else{
+      let sidebarElement = document.getElementById('sidebar');
+      sidebarElement.classList.remove('mobile:top-0')
+      sidebarElement.classList.add('mobile:top-[60px]')
+
+    }
+  }
+};
+
 
 window.closeSidebar = function closeSidebar(){
     let sidebarElement = document.getElementById('sidebar');
     sidebarElement.style.transform = `translate(${sidebarWidth()}, 0px)`
 }
-window.addEventListener('onload',closeSidebar())
+window.addEventListener('load',closeSidebar)
+window.addEventListener('resize',closeSidebar)
+window.addEventListener('scroll', changeSideBarPosition)
 
     
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-        panel.style.display = "none";
-        } else {
-        panel.style.display = "block";
-        }
-    });
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
 }

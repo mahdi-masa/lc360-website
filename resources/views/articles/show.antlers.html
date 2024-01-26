@@ -6,13 +6,21 @@
     }
     #articleContent p {
         
-        line-height: 40px;
+        line-height: 40px!important;
+    }
+    #articleContent p:empty {
+        
+        height: 10px!important;
     }
 
     #articleContent img {
         margin: 15px auto;
         width: 65%;
         border-radius: 8px;
+    }
+    h1{
+        font-size: 40px;
+        font-weight: 700;
     }
 
     @media screen and (max-width: 767px) {
@@ -32,20 +40,22 @@
 
 
 <!-- title and sudo title section -->
-<div class="max-w-[1350px] mx-auto mt-[50px]">
+<div class="max-w-[1140px] mx-auto mt-[50px]">
     <div class="iransans-600 my-5 text-[20px] mobile:w-[95%] pc:w-full mx-auto">
-        {{mainTitle}}
+        <h1>
+            {{mainTitle}}
+        </h1>
     </div>
-    <div class="bg-[#b5b5b5] iransans-600 my-5 rounded-tl-[20px] rounded-br-[20px] mobile:w-[95%] pc:w-full mx-auto">
+    <div class="bg-[#b5b5b5] iransans-600 my-5 rounded-[8px] mobile:w-[95%] pc:w-full mx-auto">
         <div class="p-5 text-[#454545] text-[18px] text-justify">
             {{soduTitleArticle}}
         </div>
     </div>
 </div>
 
-<div class="max-w-[1350px] mx-auto">
+<div class="max-w-[1140px] mx-auto">
     {{ articleContext }}
-    <div>
+    <div class="flex flex-col justify-center items-center">
         {{ if articleCLip }}
         <div class="mx-auto my-5">
             <video class="w-[65%] mx-auto rounded-[8px]" controls>
@@ -55,7 +65,7 @@
             
         </div>
         {{ /if }}
-        <div class="text-justify iransans-500 text-[16px] leading-[20px]" id="articleContent">
+        <div class="text-justify iransans-500 text-[16px] leading-[20px] grow" id="articleContent">
 
             {{articleContent}}
         </div>

@@ -5,6 +5,7 @@ new Splide("#related-documentary",{
     fixedWidth: '250px',
     gap: '.5em',
     direction: 'rtl',
+    pagination: false,
     autoplay: true,
     paginationDirection: 'rtl',
     autoplay:true,

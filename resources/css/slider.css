@@ -1,12 +1,9 @@
 .slider-title{
     position: absolute;
-<<<<<<< Updated upstream
-=======
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
->>>>>>> Stashed changes
     top: -15px;
 }
 /* news slider css  */
@@ -86,4 +83,24 @@
 /* footer slider css */
 .footer__slider-pagination{
     bottom: unset!important;
+}
+
+
+/* css for slider in documentary page */
+.prev__documentaryslider{
+    position: absolute!important;
+    left: unset !important;
+    right: 0px !important;
+    background-color:transparent!important;
+    ;
+
+}
+.next__documentaryslider{
+    position: absolute!important;
+    left: 0px !important;
+    right: unset !important;
+    background-color:transparent!important;
+    
+    
+     
 }

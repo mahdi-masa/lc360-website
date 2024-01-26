@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>چرخه حیات | lc360.ir</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {{ vite src='resources/css/app.css'}}
     {{ vite src='resources/css/fontiran.css'}}
     {{ vite src='resources/css/slider.css'}}
     {{ vite src='resources/css/footer.css' }}
+    {{ vite src='resources/css/sidebar.css'}}
     <link rel="shortcut icon" href="/life-cycle.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"> 
-<<<<<<< Updated upstream
-    <base href="https://lc360.ir/" target="_blank">
-=======
-    <base href="https://lc360.liara.run/" target="_blank">
-    {{ stack:styles }}
->>>>>>> Stashed changes
+    
 </head>
 <body class="bg-[#DCE8DF]">
     {{ partial:layouts/header }}
@@ -37,14 +32,10 @@
                 </div>
                 <div class="splide__track">
                   <ul class="splide__list">
-<<<<<<< Updated upstream
                     {{ collection from="news|documentry|articles|booklets|dailyReport" order="date:desc" }}
-=======
-                    {{ collection from="news|documentry|articles|booklets|dailyReport" order="date:desc"}}
->>>>>>> Stashed changes
                     {{ if starContent }}
                     <li class="splide__slide">
-                        <a class="w-full h-full" href="{{ url }}">
+                        <a class="w-full h-full" href="https://lc360.ir{{ url }}">
                             <img class="w-full h-full object-cover rounded-[8px]" src="{{starPoster}}" alt="">
                         </a>
                     </li>
@@ -68,11 +59,7 @@
                         <div class="flex justify-center flex-row items-start w-full">
                             <div class="flex flex-col items-center w-full m-0 basis-1/3">
                                 <p class="w-fit m-0 h-fit iransans-500 pc:text-[15px] mobile:text-[13px] pc:mb-[2px]">انرژی مصرفی</p>
-                                <p class="text-white iransans-500 text-[15px]  w-fit m-0 text-center">
-                                    <a href="https://www.worldometers.info/"  id="energy">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px]  w-fit m-0 text-center" id="energy"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Mwh/Hour)</span>
 
@@ -80,22 +67,14 @@
 
                             <div class="flex flex-col items-center w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px] pc:mb-[2px]">بیابان زایی</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center">
-                                    <a href="https://www.worldometers.info/" id="desertification">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="desertification"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Hectares/Year)</span>
                             </div>
 
                             <div class="flex flex-col items-center justify-between w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px] pc:mb-[2px]">آب مصرفی</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 ">
-                                    <a href="https://www.worldometers.info/" id="usedwater">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 " id="usedwater"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(MillionLitr/Year)</span>
                             </div>
@@ -116,33 +95,21 @@
                         <div class="flex justify-center flex-row items-start w-full">
                             <div class="flex flex-col items-center w-full m-0 basis-1/3">
                                 <p class="w-fit m-0 h-fit iransans-500 pc:text-[15px] mobile:text-[13px]">تخریب جنگل</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center">
-                                    <a href="https://www.worldometers.info/" id="lostforest">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="lostforest"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(MillionLitr/Year)</span>
                             </div>
 
                             <div class="flex flex-col items-center w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px]">کربن‌دی‌اکسید</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="co2">
-                                    <a href="https://www.worldometers.info/" id="co2">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="co2"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Ton/Year)</span>
                             </div>
 
                             <div class="flex flex-col items-center justify-between w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px]">مواد سمی</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0" id="toxic">
-                                    <a href="https://www.worldometers.info/" id="toxic">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0" id="toxic"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Ton/Year)</span>
                             </div>
@@ -164,29 +131,21 @@
                         <div class="flex justify-center flex-row items-start w-full">
                             <div class="flex flex-col items-center w-full m-0 basis-1/3">
                                 <p class="w-fit m-0 h-fit iransans-500 pc:text-[15px] mobile:text-[13px]">مرگ به علت تغذیه</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="Undernourisheddie">
-                                    <a href="https://www.worldometers.info/" id="Undernourisheddie">
-
-                                    </a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="Undernourisheddie"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Human/Day)</span>
                             </div>
 
                             <div class="flex flex-col items-center w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px]">تولیدات خودرو</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="carnumber">
-                                    <a href="https://www.worldometers.info/" id="carnumber"></a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0 text-center" id="carnumber"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Number/Year)</span>
                             </div>
 
                             <div class="flex flex-col items-center justify-between w-full basis-1/3">
                                 <p class="w-fit m-0 iransans-500 pc:text-[15px] mobile:text-[13px]">انسان‌های بدون آب</p>
-                                <p class="text-white iransans-500 text-[15px] w-fit m-0" id="nowaterpeople">
-                                    <a href="https://www.worldometers.info/" id="nowaterpeople"></a>
-                                </p>
+                                <p class="text-white iransans-500 text-[15px] w-fit m-0" id="nowaterpeople"></p>
                                 <span class="block w-[60%] border-t-[2px] mx-auto border-white my-[5px]"></span>
                                 <span class="text-[12px] iransans-normal text-center block w-[80%] mx-auto">(Number Of People)</span>
                             </div>
@@ -202,21 +161,12 @@
         
         <section class="splide mobile:mb-[30px] mobile:mt-[80px] pc:my-[80px] mx-auto" id="news-slider">
             <div class="splide__arrows arrows__newsslider">
-<<<<<<< Updated upstream
                 <div class="flex flex-row items-center justify-center iransans-bold text-[16px] slider-title text-[#1C4E00]">
                     <div>
                         <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                     </div>
                     <div>
                         <span class="mr-[9px]">اخبار روز</span>
-=======
-                <div class="iransans-bold text-[16px] slider-title text-[#1C4E00]">
-                    <div>
-                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
-                    </div>
-                    <div class="ms-[5px]">
-                        اخبار روز
->>>>>>> Stashed changes
                     </div>
                 </div>
                 <button class="splide__arrow splide__arrow--prev prev__newsslider">
@@ -232,7 +182,7 @@
                 
                 <li class="splide__slide bg-white rounded-[5px]">
                     <div class="splide__slide__container">
-                        <a href="{{ url }}">
+                        <a href="https://lc360.ir{{ url }}">
 
                             <img class="rounded-t-[5px] h-full w-full object-cover" src="{{ featuredImagePostHorizental }}">
                         </a>
@@ -240,7 +190,7 @@
                     </div>
                     <div class="h-[110px] flex flex-col">
                         <div class="grow mt-[4px]">
-                            <a href="{{ url }}">
+                            <a href="https://lc360.ir{{ url }}">
                                 <span class="iransans-bold text-[15px] ps-[10px] block w-full pe-[10px] text-justify">{{title}}</span>
                             </a>
                         </div>
@@ -249,7 +199,7 @@
                             <div class="flex flex-row justify-center items-center mx-1 bg-gray-100 rounded-[4px] p-[5px]">
 
                                 <img class="pe-[3px]" src="{{vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
-                                <a class="iransans-normal text-[13px]" href="{{ url }}">
+                                <a class="iransans-normal text-[13px]" href="https://lc360.ir{{ url }}">
                                     {{ title }}
                                 </a>
                             </div>
@@ -268,37 +218,45 @@
             <div class="flex flex-row justify-evenly mx-auto mt-[30px]">
                 <!--number 1-->    
                 <div class="flex flex-col">
-                    <a href="/topics/climate-change">
+                    <a href="https://lc360.ir/topics/climate-change" target="__blank">
                         <img src="{{vite:asset src='resources/assets/icon/climate-change.svg'}}" alt="">
                     </a>
-                    <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">تغییرات اقلیمی</p>
+                    <a href="https://lc360.ir/topics/climate-change" target="__blank">
+                        <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">تغییرات اقلیمی</p>
+                    </a>
                 </div>
                 <!--end nuber 1-->
                 
                 <!-- number 2-->
                 <div>
-                    <a href="/topics/habitat">
+                    <a href="https://lc360.ir/topics/habitat" target="__blank">
                         <img src="{{vite:asset src='resources/assets/icon/ecosystem.svg'}}" alt="">
                     </a>
-                    <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">زیست گاه</p>
+                    <a href="https://lc360.ir/topics/habitat" target="__blank">
+                        <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">زیست گاه</p>
+                    </a>
                 </div>
                 <!--end number 2-->
 
                 <!--number 3-->
                 <div>
-                    <a href="/topics/biodiversity">
+                    <a href="https://lc360.ir/topics/biodiversity" target="__blank">
                         <img src="{{vite:asset src='resources/assets/icon/Biodiversity.svg'}}" alt="">
                     </a>
-                    <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">تنوع زیستی</p>
+                    <a href="https://lc360.ir/topics/biodiversity" target="__blank">
+                        <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">تنوع زیستی</p>
+                    </a>
                 </div>
                 <!--end number 3-->
 
                 <!--number 4-->
                 <div>
-                    <a href="/topics/human-life">
+                    <a href="https://lc360.ir/topics/human-life" target="__blank">
                         <img src="{{vite:asset src='resources/assets/icon/eco-human.svg'}}" alt="">
                     </a>
-                    <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">زیست انسانی</p>
+                    <a href="https://lc360.ir/topics/human-life" target="__blank">
+                        <p class="iransans-bold text-[16px] text-center m-0 mt-[4px]">زیست انسانی</p>
+                    </a>
                 </div>
                 <!--end number 4-->
             </div>
@@ -309,7 +267,9 @@
                 <!--post slider number 1-->
                 <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تغییرات اقلیمی</p>
+                        <a href="https://lc360.ir/topics/climate-change">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تغییرات اقلیمی</p>
+                        </a>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
@@ -323,7 +283,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="" class="mr-[10px]">
-                                        <a class="truncate" href="{{ url }}">
+                                        <a class="truncate" href="https://lc360.ir{{ url }}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
 
                                         </a>
@@ -340,7 +300,9 @@
                 <!--post slider number 2-->
                 <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست گاه</p>
+                        <a href="https://lc360.ir/topics/habitat">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست گاه</p>
+                        </a>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
@@ -356,7 +318,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" class="mr-[10px]">
-                                        <a class="truncate" href="{{url}}">
+                                        <a class="truncate" href="https://lc360.ir{{url}}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
                                         </a>
                                     </div>
@@ -374,7 +336,9 @@
                 <!--post slider number 3-->
                 <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تنوع زیستی</p>
+                        <a href="https://lc360.ir/topics/biodiversity">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">تنوع زیستی</p>
+                        </a>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
@@ -390,7 +354,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="چرخه حیات" class="mr-[10px]">
-                                        <a class="truncate" class="block" href="{{ url }}">
+                                        <a class="truncate" class="block" href="https://lc360.ir{{ url }}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
                                         </a>
                                     </div>
@@ -416,7 +380,9 @@
                 <!--post slider number 1-->
                 <div class="flex flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 pc:flex">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست انسانی</p>
+                        <a href="https://lc360.ir/topics/human-life">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">زیست انسانی</p>
+                        </a>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
@@ -430,7 +396,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="چرخه حیات" class="mr-[10px]">
-                                        <a class="truncate" href="{{ url }}">
+                                        <a class="truncate" href="https://lc360.ir{{ url }}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
 
                                         </a>
@@ -447,7 +413,9 @@
                 <!--post slider number 2-->
                 <div class="pc:flex mobile:hidden flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] pc:mx-[15px] w-full items-center justify-center pc:basis-1/3">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">جانور</p>
+                        <a href="https://lc360.ir/tags/animals">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">جانور</p>
+                        </a>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
@@ -464,7 +432,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" class="mr-[10px]">
-                                        <a class="truncate" href="{{url}}">
+                                        <a class="truncate" href="https://lc360.ir{{url}}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
                                         </a>
                                     </div>
@@ -482,7 +450,9 @@
                 <!--post slider number 3-->
                 <div class="pc:flex mobile:hidden flex-col mx-auto mobile:mt-[15px] pc:mt-[0px] w-full items-center justify-center pc:basis-1/3 ">
                     <div class="flex flex-row justify-between items-center mx-auto w-full">
-                        <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">آلودگی هوا</p>
+                        <a href="https://lc360.ir/tags/air-pollution">
+                            <p class="m-0 iransans-bold text-[16px] text-[#1C4E00]">آلودگی هوا</p>
+                        </a>
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
@@ -498,7 +468,7 @@
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" class="mr-[10px]">
-                                        <a class="truncate" class="block" href="{{ url }}">
+                                        <a class="truncate" class="block" href="https://lc360.ir{{ url }}">
                                             <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
                                         </a>
                                     </div>
@@ -521,21 +491,12 @@
 
         <section class="splide mobile:mb-[30px] mobile:mt-[80px] pc:mt-[80px] pc:mb-[40px] mx-auto" id="story-slider">
             <div class="splide__arrows arrows__newsslider">
-<<<<<<< Updated upstream
                 <div class="flex flex-row items-center justify-center iransans-bold text-[16px] slider-title text-[#1C4E00]">
                     <div class="flex flex-row">
                         <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                     </div>
                     <div>
                         <span class="mr-[9px]">روایت شما</span>
-=======
-                <div class="iransans-bold text-[16px] slider-title text-[#1C4E00]">
-                    <div>
-                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
-                    </div>
-                    <div class="ms-[5px]">
-                        روایت روز
->>>>>>> Stashed changes
                     </div>
                 </div>
                 <button class="splide__arrow splide__arrow--prev prev__newsslider">
@@ -551,14 +512,14 @@
                 
                 <li class="splide__slide bg-white rounded-[5px]">
                     <div class="splide__slide__container h-1/2">
-                        <a href="{{ url }}">
+                        <a href="https://lc360.ir{{ url }}">
                             <img class="rounded-t-[5px] h-full w-full object-cover" src="{{ featuredImagePostHorizental }}">
                         </a>
                         
                     </div>
                     <div class="h-[110px] flex flex-col">
                         <div class="ps-[10px] grow mt-[4px]">
-                            <a href="{{ url }}">
+                            <a href="https://lc360.ir{{ url }}">
                                 <span class="iransans-bold text-[15px] block pe-[10px] text-justify">{{title}}</span>
                             </a>
                         </div>
@@ -567,7 +528,7 @@
                             <div class="flex flex-row justify-center items-center mx-1 bg-gray-100 rounded-[4px] p-[5px] ms-[10px]">
 
                                 <img class="pe-[3px]" src="{{vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
-                                <a class="iransans-normal text-[13px]" href="{{ url }}">
+                                <a class="iransans-normal text-[13px]" href="https://lc360.ir{{ url }}">
                                     {{ title }}
                                 </a>
                             </div>

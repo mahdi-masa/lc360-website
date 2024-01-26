@@ -9,18 +9,35 @@
         .divider{
             display: flex;
             align-items:center;
+            color: rgb(68, 93, 72)!important;
         }
         .divider::after{
             content: "";
             flex: 1;
             padding: 1px;
-            background-color: black;
+            background-color: rgb(68, 93, 72);
             margin-right: 10px;
+            border-radius: 5px;
+            
+        }
+        .divider::before{
+            content: "";
+            flex: 1;
+            padding: 1px;
+            background-color: rgb(68, 93, 72);
+            margin-left: 10px;
             border-radius: 5px;
             
         }
         .docsummary a{
             color: #cc3265;
+        }
+        .docsummary p{
+            line-height: 22px!important;
+            margin-bottom: 10px;
+        }
+        .docsummary p:empty {
+            height: 10px!important;
         }
     </style>
 {{ /push:styles }}
@@ -29,52 +46,55 @@
     <div class="wrapper">
 
         <div class="relative flex flex-col justify-center">
-            <div class="headerBG pc:h-[500px] mobile:h-[800px] tablet:h-[500px] relative top-0 left-0">
+            <div class="headerBG pc:h-[530px] mobile:h-[660px] tablet:h-[530px] relative top-0 left-0">
             </div>
-            <div class="bg-black opacity-60 mobile:h-[800px] tablet:h-[500px] pc:h-[500px] absolute top-0 left-0 bottom-0 right-0">
+            <div class="bg-black opacity-60 mobile:h-[660px] tablet:h-[530px] pc:h-[530px] absolute top-0 left-0 bottom-0 right-0">
             </div>
-            <div class="mobile:w-[80%] mobile:left-[10%] mobile:top-[5%] pc:max-w-[1350px] mx-auto pc:right-[20vw] absolute pc:top-[15%] flex mobile:flex-col tablet:flex-row justify-center items-center">
-                <div class="mobile:mb-5">
-                    <img class="rounded-[8px] mobile:mx-auto" src="{{featuredImage}}" alt="{{featuredImage:alt}}">
-                </div>
-                <div class="flex flex-col justify-center items-center ms-5 w-[60%]">
-                    <div>
-                        <h2 class="text-right iransans-bold text-white mb-2">
-                            {{documentaryFarsiName}} | {{documentaryEnName}}
-                        </h2>
-                    </div>
-                    <hr class="text-left" height="5px" width="80%">
-                    <div class="w-full">
-                        <p class="text-right iransans-bold before:content-['نام_کارگردان:_'] text-white my-2">
-                            {{director}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['ژانر:_'] text-white my-2">
-                            {{genre}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['سال_انتشار:_'] text-white my-2">
-                            {{productinYear}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['زبان:_'] text-white my-2">
-                            {{language}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['مدت_زمان:_'] text-white my-2">
-                            {{documentaryTime}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['محصول:_'] text-white my-2">
-                            {{productionCountry}}
-                        </p>
-                        <p class="text-right iransans-bold before:content-['زیرنویس:_'] text-white my-2">
-                            {{ if sutitle}}
-                            دارد
-                            {{ else }}
-                            ندارد
-                            {{ /if }}
-                        </p>
-                        
-                    </div>
+            <div class="w-full mobile:top-[5%] mx-auto absolute tablet:top-[20%] pc:h-[320px]">
+                <div class="flex mobile:flex-col tablet:flex-row justify-center items-center max-w-[1140px] mx-auto tablet:w-[95%] pc:w-full">
 
-                    
+                    <div class="mobile:mb-5">
+                        <img class="rounded-[5px] mobile:mx-auto w-[200px] h-[300px]" src="{{featuredImage}}" alt="{{featuredImage:alt}}">
+                    </div>
+                    <div class="flex flex-col justify-center items-center ms-5 w-[60%] grow">
+                        <div>
+                            <h2 class="text-right iransans-bold text-white mb-2 text-[17px]">
+                                {{if documentaryFarsiName }} {{documentaryFarsiName}} | {{ /if }} {{documentaryEnName}}
+                            </h2>
+                        </div>
+                        <hr class="text-left w-[50%] mx-auto block" height="5px" width="80%">
+                        <div class="w-full">
+                            <p class="text-right iransans-normal before:content-['نام_کارگردان:_'] text-white my-2">
+                                {{director}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['ژانر:_'] text-white my-2">
+                                {{genre}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['سال_انتشار:_'] text-white my-2">
+                                {{productinYear}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['زبان:_'] text-white my-2">
+                                {{language}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['مدت_زمان:_'] text-white my-2">
+                                {{documentaryTime}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['محصول:_'] text-white my-2">
+                                {{productionCountry}}
+                            </p>
+                            <p class="text-right iransans-normal before:content-['زیرنویس:_'] text-white my-2">
+                                {{ if sutitle}}
+                                دارد
+                                {{ else }}
+                                ندارد
+                                {{ /if }}
+                            </p>
+                            
+                        </div>
     
+                        
+        
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,7 +104,7 @@
 
 
     <!-- anchors menu -->
-    <div class=" mobile:hidden tablet:block pc:flex flex-col justify-between items-center my-5">
+    <div class=" mobile:hidden tablet:block pc:flex flex-col justify-between items-center mt-[30px]">
         <div class="flex flex-row justify-between items-center mx-auto max-w-[1140px] w-full">
             <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
@@ -98,7 +118,7 @@
             </div>
             <div class="basis-1/4">
                 <button class="bg-[#e7b109] rounded-[20px] mx-auto block">
-                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#related">مستند های پیشنهادی</a>
+                    <a class="text-[#f7f1e5] iransans-bold w-full py-[5px] px-4 block" href="#related">مستندهای پیشنهادی</a>
                 </button>
             </div>
             {{# <div class="basis-1/4">
@@ -107,7 +127,7 @@
                 </button>
             </div> #}}
         </div>
-        <div class="pc:w-[60%] mobile:w-[98%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]">
+        <div class="pc:w-[90%] mobile:w-[98%] mobile:mx-auto divider iransans-600 my-3 max-w-[1140px]">
             درباره مستند
         </div>
     </div>
@@ -117,19 +137,19 @@
 
     <!-- doc summary -->
     <div class="flex mobile:flex-col-reverse tablet:flex-row justify-center items center max-w-[1140px] mx-auto mobile:mt-5" id="documentary-summary">
-        <div class="basis-1/2 mx-5 mobile:my-5">
-            <video class="rounded-[8px] w-full h-full" controls poster="{{trailerPoster}}">
+        <div class="basis-1/2 pc:ml-5 mobile:w-[95%] tablet:w-full mx-auto mobile:my-5">
+            <video class="rounded-[5px] w-full h-full" controls poster="{{trailerPoster}}">
                 <source src="{{documentaryTrailer}}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             
         </div>
-        <div class="basis-1/2 iransans-500 mx-5 flex flex-col justify-center items-center">
+        <div class="basis-1/2 iransans-500 pc:mr-5 mobile:m-3 tablet:ml-0 flex flex-col justify-center items-center">
             <div class="text-justify">
                 <div class="text-right">
-                    <h2 class="text-[22px]">داستان فیلم</h2>
+                    <h2 class="text-[22px] iransans-bold text-[#264b2c]">داستان فیلم:</h2>
                 </div>
-                <div class="docsummary">
+                <div class="docsummary text-[#335638]">
                     {{documentarySummary}}
                 </div>
             </div>
@@ -139,22 +159,36 @@
     <!-- end doc summary -->
 
     <!-- download info for docs -->
-    <div class="pc:w-[60%] mobile:w-[95%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]" id="download">
-        دانلود مستند {{documentaryFarsiName}}
+    <div class="pc:w-[90%] mobile:w-[95%] mobile:mx-auto divider iransans-600 my-3 max-w-[1140px]" id="download">
+        دریافت مستند {{documentaryFarsiName}}
     </div>
     <div class="flex tablet:flex-col mobile:flex-row justify-between items-center mobile:flex-wrap tablet:flex-nowrap">
         
         {{ documentaryDownload }}
-            <div class="flex tablet:flex-row mobile:flex-col justify-between items-center bg-[#053310] p-2 mobile:w-[90%] tablet:w-[95%] mobile:space-y-3 tablet:space-y-0 mx-auto max-w-[1140px] my-3 border-s-[10px] border-[#e7b109] rounded-[8px]">
-                <div class="before:content-['کیفیت:_'] text-[#f7f1e5] iransans-bold">{{quality}}</div>
-                <div class="before:content-['نسخه:_'] text-[#f7f1e5] iransans-bold">{{DocInfo}}</div>
-                <div class="before:content-['حجم_دانلود:_'] text-[#f7f1e5] iransans-bold">{{downloadSize}}</div>
-                <div>
-                    <button class="bg-[#e7b109] rounded-[20px] p-1">
-                        <a class="text-[#f7f1e5] iransans-bold px-5" href="{{docLink}}">
-                          دانلود
-                        </a>
-                    </button>
+            <div class="flex tablet:flex-row mobile:flex-col justify-between items-center bg-[#053310] p-2 mobile:w-[90%] tablet:w-[95%] mobile:space-y-3 tablet:space-y-0 mx-auto max-w-[1140px] my-3 border-s-[8px] border-[#e7b109] rounded-[8px] pc:h-[55px]">
+                <div class="text-[#f7f1e5] iransans-300 basis-1/4 flex justify-center items-center">
+                    <div class="before:content-['کیفیت:_'] w-fit">
+                        <p class="rtl inline">
+                           {{quality}}
+                        </p>
+                    </div>
+                </div>
+                <div class=" text-[#f7f1e5] iransans-300 basis-1/4 flex justify-center items-center flex-row">
+                    <div class="before:content-['نسخه:_'] w-fit">
+                        {{DocInfo}}
+                    </div>
+                </div>
+                <div class="text-[#f7f1e5] iransans-300 basis-1/4 flex flex-row justify-center items-center">
+                    <div class="before:content-['حجم_دانلود:_'] w-fit">
+                        {{downloadSize}}
+                    </div>
+                </div>
+                <div class="basis-1/4 text-left flex flex-row justify-end items-center">
+                    <div class="flex flex-row justify-center items-center w-fit me-[30px]">
+                        <a class="text-[#f7f1e5] iransans-300 px-3 bg-[#e7b109] rounded-[22px] py-[5px] inline-block" href="{{docLink}}">
+                            دانلود
+                        </a>    
+                    </div>
                     
                 </div>
             </div>
@@ -162,43 +196,61 @@
         {{ /documentaryDownload }}
     </div>
     <!-- end download info for docs -->
-    <div class="pc:w-[60%] mobile:w-[95%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]">
-        دانلود زیرنویس {{documentaryFarsiName}}
+    {{ if docSubtitleInfo}}
+    <div class="pc:w-[90%] mobile:w-[95%] mobile:mx-auto divider iransans-600 my-3 max-w-[1140px]">
+        دریافت زیرنویس {{documentaryFarsiName}}
     </div>
 
-    <div class="flex tablet:flex-row mobile:flex-col justify-between items-center max-w-[1140px] mx-auto space-x-2 ">
+    <div class="flex tablet:flex-row mobile:flex-col justify-between items-center max-w-[1140px] mx-auto mobile:w-[90%] tablet:w-[95%]">
         
         {{ docSubtitleInfo }}
-            <div class="flex flex-row justify-between items-center bg-[#053310] p-3 mobile:w-[95%] my-3 border-s-[10px] border-[#e7b109] rounded-[8px]">
-                <div class="before:content-['نوع_زیرنویس:_'] text-[#f7f1e5] iransans-bold">{{subtitleType}}</div>
-                <div>
-                    <button class="bg-[#e7b109] rounded-[20px] p-1">
-                        <a class="text-[#f7f1e5] iransans-bold px-5" href="{{subtitleLink}}">
-                          دانلود
-                        </a>
-                    </button>
+            
+            <div class="flex flex-row justify-between items-center bg-[#053310] p-3 mobile:w-[95%] my-3 border-s-[8px] border-[#e7b109] rounded-[8px] pc:h-[55px] {{if first }} me-[20px] {{ /if }}">
+                <div class="text-[#f7f1e5] iransans-300">زیرنویس {{subtitleType}} مستند</div>
+                <div class="me-[28px]">
+                    
+                    <a class="text-[#f7f1e5] iransans-300 px-3 bg-[#e7b109] rounded-[22px] py-[5px] inline-block" href="{{subtitleLink}}">
+                        دانلود
+                    </a>
+    
                     
                 </div>
             </div>
        
         {{ /docSubtitleInfo }}
     </div>
-    <div class="pc:w-[60%] mobile:w-[98%] mobile:mx-auto divider iransans-bold my-3 max-w-[1350px]" id="related">
-        مستند های پینشهادی
+    {{ /if }}
+    <div class="pc:w-[90%] mobile:w-[98%] mobile:mx-auto divider iransans-600 my-3 max-w-[1140px]" id="related">
+        مستندهای پیشنهادی
     </div>
+    {{ current= {{slug}}}}
     
-    <div class="max-w-[1350px] mx-auto" id="related">
+    
+    <div class="max-w-[1140px] mx-auto" id="related">
         <section class="splide" id="related-documentary">
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev prev__documentaryslider">
+                    <img src="{{vite:asset src='resources/assets/icon/thin-right-arrow.svg'}}">
+                </button>
+                <button class="splide__arrow splide__arrow--next next__documentaryslider">
+                    <img src="{{vite:asset src='resources/assets/icon/thin-left-arrow.svg'}}">
+                </button>
+            </div>
             <div class="splide__track">
               <ul class="splide__list">
+                
                 {{ topics }}
-                    {{ collection from='documentry' taxonomy:topics="{{ slug }}"}}
+                    {{ collection from='documentry' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
                     <li class="splide__slide h-fit w-fit">
                         <div class="splide__slide__container">
-                            <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
+                            <a href="{{ url }}">
+                                <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
+                            </a>
                         </div>
-                        <div class="iransans-500 text-[13px] mt-[7px]">
-                            {{ documentaryFarsiName}}
+                        <div class="iransans-500 text-[16px] mt-[7px] text-center text-[#264b2c]">
+                            <a href="{{ url }}">
+                                {{ documentaryFarsiName}}
+                            </a>
                         </div>
                     </li>
                         

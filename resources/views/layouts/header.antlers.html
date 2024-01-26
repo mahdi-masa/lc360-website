@@ -5,9 +5,10 @@
         <div class="flex flex-row justify-end m-0 items-center mt-[4px] max-w-[1350px] mx-auto">
             {{ nav:menu }}
                         
-            <a href="{{ url }}" class="iransans-bold text-[16px] text-white no-underline mx-1">{{ title }}</a>
+            <a href="{{ url }}" class="iransans-normal text-[16px] text-white no-underline mx-1">{{ title }}</a>
+            {{ if !last}}
             <span class="text-white h-full inline-block mx-[1px]">|</span>
-                        
+            {{ /if }}
             {{ /nav:menu }}
             
             
@@ -20,15 +21,15 @@
 
         <div class="flex justify-between flex-row items-center max-w-[1350px] w-full">
             <div>
-                <a href="https://lc360.liara.run/" class="cursor-pointer" target="_self">
+                <a href="https://lc360.ir/" class="cursor-pointer" target="_self">
                     <img src="{{ vite:asset src='resources/assets/icon/iconsvg.svg'}}" alt="چرخه حیات" class="mobile:ms-[10px] pc:m-[0px]">
                 </a>
             </div>
             <!--desktop nav number 2-->
             <div class="hidden pc:block">
                 <div class="flex items-center justify-center">
-                    <a href="https://lc360.liara.run/" target="_self">
-                        <img src="{{ vite:asset src='resources/assets/icon/homesvg.svg'}}" alt="">
+                    <a href="https://lc360.ir/" target="_self">
+                        <img src="{{ vite:asset src='resources/assets/icon/homesvg.svg'}}">
                     </a>
                     {{ nav:topicsq }}
                         
@@ -42,18 +43,13 @@
             <div class="flex justify-center flex-row items-center">
                 <div class="w-[30px] h-[30.02px] mt-[14.6px] mb-[15.3px] ml-[15px]"> 
                     <button class="cursor-pointer bg-white border-none" onclick="toggleSearchElement()">
-                        <img src="{{ vite:asset src='resources/assets/icon/searchsvg.svg'}}" alt="search">
+                        <img src="{{ vite:asset src='resources/assets/icon/searchsvg.svg'}}">
                     </button>
                 </div>
     
-<<<<<<< Updated upstream
                 <div class="h-[21.22px] mt-[19px] mb-[19.7px] m-0">
-                    <button class="cursor-pointer bg-white border-none mobile:me-[10px] pc:m-[0px]" onclick="openSidebar()">
-=======
-                <div class="h-[21.22px] mt-[19px] mb-[19.7px]">
-                    <button class="cursor-pointer bg-white border-none mobile:me-[10px]" onclick="toggleSideBar()">
->>>>>>> Stashed changes
-                        <img src="{{ vite:asset src='resources/assets/icon/menusvg.svg'}}" alt="menu">
+                    <button class="cursor-pointer bg-white border-none mobile:me-[10px] pc:m-[0px]" onclick="toggleSideBar()">
+                        <img src="{{ vite:asset src='resources/assets/icon/menusvg.svg'}}">
                     </button>
                 </div>
                 
@@ -67,7 +63,7 @@
         <div class=" max-w-[1350px] flex flex-row justify-center items-center w-full mx-auto">
             <div class="flex items-center justify-center flex-col" onclick="toggleSearchElement()">
                 <button class="transition-all duration-300 ease-linear hover:scale-125">
-                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}" alt="">
+                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}">
                 </button>
             </div>
             <div class="pc:w-[60%] mobile:w-[60%] ms-5">
@@ -75,7 +71,7 @@
             </div>
             <div class="flex items-center justify-center flex-col ms-3">
                 <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
-                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}" alt="">
+                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}">
                 </button>
             </div>
         </div>
