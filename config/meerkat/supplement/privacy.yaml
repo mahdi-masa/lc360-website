@@ -1,0 +1,3 @@
+store_user_agent: true
+store_user_ip: true
+store_referrer: true

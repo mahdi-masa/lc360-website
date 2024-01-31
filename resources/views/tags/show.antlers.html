@@ -72,7 +72,7 @@
                                         
                                     </div>
                                     <div class="text-center mt-[10px]">
-                                        <span class="iransans-bold text-[15px]">{{ documentaryFarsiName }}</span>
+                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold text-[15px]">{{ documentaryFarsiName }}</a>
                                     </div>
                                 </li>
                                 {{/collection}}
@@ -186,7 +186,7 @@
                                     <div class="flex flex-row justify-center items-center mx-1 bg-gray-100 rounded-[3px] p-[5px] ms-[10px]">
 
                                         <img class="pe-[3px]" src="{{vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
-                                        <a class="iransans-normal text-[13px]" href="https://lc360.ir{{ url }}">
+                                        <a class="iransans-normal text-[13px]" href="https://lc360.ir/topics/{{ slug }}">
                                             {{ title }}
                                         </a>
                                     </div>
@@ -250,7 +250,7 @@
                                 </div>
                                 <div>
                                         <span class="bg-gray-100 p-[4px] rounded-[8px] mx-1 text-[10px]">
-                                            <a class="iransans-normal" href="https://lc360.ir{{ url }}">
+                                            <a class="iransans-normal" href="https://lc360.ir/topics/{{ url }}">
                                                 {{ title }}
                                             </a>
                                         </span>
@@ -305,12 +305,14 @@
                                 {{ collection:documentry taxonomy:tags='{{slug}}'}}
                                 <li class="splide__slide bg-[#BDD5C3] rounded-[8px]">
                                     <div class="splide__slide__container">
-                                        <img class="w-[90%] h-full mx-auto obejct-cover mt-[10px] rounded-[8px]" src="{{ featuredImagePostVertical }}">
+                                        <a href="https://lc360.ir{{ url }}">
+                                            <img class="w-[90%] h-full mx-auto obejct-cover mt-[10px] rounded-[8px]" src="{{ featuredImagePostVertical }}">
+                                        </a>
                                     </div>
                                     <div class="text-center mt-[10px] mb-[15px]">
-                                        <span class="iransans-bold text-[16px]">
+                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold text-[16px]">
                                             {{ documentaryFarsiName }}
-                                        </span>
+                                        </a>
                                     </div>
                                 </li>
 
@@ -387,11 +389,13 @@
                     <li class="splide__slide bg-[#BDD5C3] rounded-[8px]">
                         <div class="splide__slide__container flex flex-row w-full">
                             <div class="w-[200px] pt-[10px] ps-[10px]">
-                                <img class="w-full rounded-[5px]" src="{{ featuredImagePostVertical }}">
+                                <a href="https://lc360.ir{{ url }}">
+                                    <img class="w-full rounded-[5px]" src="{{ featuredImagePostVertical }}">
+                                </a>
                             </div>
                             <div class="w-[150px] grow mx-[10px] my-[10px]">
                                 <div class="text-center">
-                                    <span class="iransans-bold whitespace-nowrap text-[16px]">{{ bookletName }}</span>
+                                    <a href="https://lc360.ir{{ url }}" class="iransans-bold whitespace-nowrap text-[16px]">{{ bookletName }}</a>
                                 </div>
                                 <div class="text-center">
                                     <span class="iransans-bold whitespace-nowrap text-[12px] before:content-['نویسنده:_']">{{ bookletAuthor }}</span>

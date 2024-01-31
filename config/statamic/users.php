@@ -131,7 +131,9 @@ return [
     'tables' => [
         'users' => 'users',
         'role_user' => 'role_user',
+        'roles' => false,
         'group_user' => 'group_user',
+        'groups' => false,
     ],
 
     /*
@@ -146,8 +148,8 @@ return [
     */
 
     'guards' => [
-        'cp' => 'statamic', // the guard when using the cp
-        'web' => 'statamic', // the guard when using Statamic frontend routes
+        'cp' => 'web',
+        'web' => 'web',
     ],
 
     /*

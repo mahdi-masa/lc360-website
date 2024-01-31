@@ -1,0 +1,7 @@
+id: d864f2fa-17c8-4f11-a842-5a6592b4c403
+code: T01-001
+status: 0
+created_on: 1706532545
+name: 'Stillat\Meerkat\Core\Guard\SpamChecker::check'
+args:
+  filter: pending

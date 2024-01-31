@@ -1,0 +1,3 @@
+send_mail: false
+check_with_spam_guard: true
+addresses: {  }

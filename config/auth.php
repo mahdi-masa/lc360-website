@@ -40,10 +40,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'statamic' => [
-            'driver' => 'session',
-            'provider' => 'statamic',
-        ],
     ],
 
     /*
@@ -65,13 +61,16 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
-            'model' => \App\User::class,
-        ],
-        'statamic' => [
             'driver' => 'statamic',
+            
         ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
+
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
