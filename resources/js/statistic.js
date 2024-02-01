@@ -1,4 +1,4 @@
-function calculateTimeIntervalInSeconds(startTime) {
+function thisYearSecondPassed(startTime) {
     // Convert the start time to a Date object
     const startDate = new Date(startTime);
   
@@ -12,15 +12,49 @@ function calculateTimeIntervalInSeconds(startTime) {
     const seconds = timeDifference / (1000);
   
     return seconds;
-  }
+}
+function todaySecondsPassed() {
+    const currentDate = new Date();
+
+    // Extract the current hour, minute, and second
+    const currentHour = currentDate.getHours();
+    const currentMinute = currentDate.getMinutes();
+    const currentSecond = currentDate.getSeconds();
+
+    // Calculate the total number of seconds passed in the day
+    const totalSecondsPassed = (currentHour * 3600) + (currentMinute * 60) + currentSecond;
+
+    return totalSecondsPassed;
+}
   
 // Example usage:
-const startTime = "2024-01-10T00:00:00Z"; // Replace with your start time
+const startTimeForYearlyContor = new Date().getFullYear()+"-01-01T00:00:00Z"; // Replace with your start time
+console.log(startTimeForYearlyContor);
 
 
-function entityValue(initial, delta, id){
-    const intervalInSeconds = calculateTimeIntervalInSeconds(startTime);
+function yearlyValueCalc(initial, delta, id){
+    const intervalInSeconds = thisYearSecondPassed(startTimeForYearlyContor);
     let finalValue = Math.trunc((intervalInSeconds * (delta/3600))+ initial)
+    finalValue = finalValue.toLocaleString()
+    let element = document.getElementById(id)
+    if( element ){
+        element.innerHTML = finalValue
+    }
+}
+
+function dailyValueCalc(initial, delta, id){
+    const intervalInSeconds = todaySecondsPassed();
+    let finalValue = Math.trunc((intervalInSeconds * (delta/3600))+ initial)
+    finalValue = finalValue.toLocaleString()
+    let element = document.getElementById(id)
+    if( element ){
+        element.innerHTML = finalValue
+    }
+}
+
+function generalValueCalc(initial, delta, id){
+    
+    let finalValue = Math.trunc((initial * (delta/3600))+ initial)
     finalValue = finalValue.toLocaleString()
     let element = document.getElementById(id)
     if( element ){
@@ -32,48 +66,58 @@ function entityValue(initial, delta, id){
 window.elementList = [
     {
         id: 'usedwater',
-        initialValue: 156859800,
-        delta : 531582
+        initialValue: 0,
+        delta : 529582,
+        yearly:true
     },
     {
         id: 'desertification',
-        initialValue: 407928,
-        delta : 1381
+        initialValue: 0,
+        delta : 1376,
+        yearly:true,
     },
     {
         id: 'energy',
-        initialValue: 190782000,
-        delta : 19645885
+        initialValue: 0,
+        delta : 19453885,
+        yearly:false,
     },
     {
         id: 'lostforest',
-        initialValue: 176768,
-        delta : 598
+        initialValue: 0,
+        delta : 596.30,
+        yearly: true,
     },
     {
         id: 'co2',
-        initialValue: 1244165000,
-        delta : 4213901
+        initialValue: 0,
+        delta : 4196901,
+        yearly:true,
     },
     {
         id: 'toxic',
-        initialValue: 332861,
-        delta : 1127
+        initialValue: 0,
+        delta : 1122.90,
+        yearly: true,
     },
     {
         id: 'Undernourisheddie',
-        initialValue: 156859800,
-        delta : 1287
+        initialValue: 0,
+        delta : 1277,
+        yearly: false,
     },
     {
         id: 'carnumber',
-        initialValue: 2934790,
-        delta : 9964
+        initialValue: 0,
+        delta : 9914,
+        yearly:true,
     },
     {
         id: 'nowaterpeople',
-        initialValue: 156859800,
-        delta : 1051
+        initialValue: 766424000,
+        delta : 1051,
+        general: true,
+        
     }
     
     
@@ -82,6 +126,12 @@ window.elementList = [
 
 setInterval(function(){
 elementList.forEach(element => {
-    entityValue(element.initialValue, element.delta, element.id);
+    if( element.yearly ){
+        yearlyValueCalc(element.initialValue, element.delta, element.id);
+    }else if ( !element.yearly){
+        dailyValueCalc(element.initialValue, element.delta, element.id)
+    }else if( element.general ){
+
+    }
 })},100);
   
