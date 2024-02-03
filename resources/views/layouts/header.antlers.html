@@ -44,7 +44,7 @@
             <!--end desktop nav number 2-->
             <div class="flex justify-center flex-row items-center">
                 <div class="w-[30px] h-[30.02px] mt-[14.6px] mb-[15.3px] ml-[15px]"> 
-                    <button class="cursor-pointer bg-white border-none" onclick="toggleSearchElement()">
+                    <button class="cursor-pointer bg-white border-none accordion" id="search-button">
                         <img src="{{ vite:asset src='resources/assets/icon/searchsvg.svg'}}">
                     </button>
                 </div>
@@ -61,21 +61,20 @@
 
     </div>
     <!--end always nav-->
-    <div class="w-full hidden bg-[#206136] p-4" id="searchelement">
-        <div class=" max-w-[1350px] flex flex-row justify-center items-center w-full mx-auto">
-            <div class="flex items-center justify-center flex-col" onclick="toggleSearchElement()">
-                <button class="transition-all duration-300 ease-linear hover:scale-125">
-                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}">
-                </button>
-            </div>
-            <div class="pc:w-[60%] mobile:w-[60%] ms-5">
-                <input class="iransans-500 border-0 rounded-[5px] h-[30px] w-full indent-[10px] text-[13px]" type="text" placeholder="جستجو برای ...">
-            </div>
-            <div class="flex items-center justify-center flex-col ms-3">
-                <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
-                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}">
-                </button>
-            </div>
+    
+    <div class="panel flex flex-row justify-center items-center py-3 h-[65px] bg-[#206136]" id="search-panel">
+        <div class="flex items-center justify-center flex-col">
+            <button class="transition-all duration-300 ease-linear hover:scale-125">
+                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}">
+            </button>
+        </div>
+        <div class="pc:w-[60%] mobile:w-[60%] ms-5">
+            <input class="iransans-500 border-0 rounded-[5px] h-[30px] w-full indent-[10px] text-[13px]" type="text" placeholder="جستجو برای ...">
+        </div>
+        <div class="flex items-center justify-center flex-col ms-3">
+            <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
+                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}">
+            </button>
         </div>
     </div>
 </nav>

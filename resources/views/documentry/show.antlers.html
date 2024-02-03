@@ -167,10 +167,11 @@
         {{ documentaryDownload }}
             <div class="flex tablet:flex-row mobile:flex-col justify-between items-center bg-[#053310] p-2 mobile:w-[90%] tablet:w-[95%] mobile:space-y-3 tablet:space-y-0 mx-auto max-w-[1140px] mb-[15px] border-s-[8px] border-[#e7b109] rounded-[8px] pc:h-[55px]">
                 <div class="text-[#f7f1e5] iransans-300 basis-1/4 flex justify-center items-center">
-                    <div class="before:content-['کیفیت:_'] w-fit">
-                        <p class="rtl inline">
-                           {{quality}}
-                        </p>
+                    <div class="before:content-['کیفیت:_'] w-fit flex flex-row justify-start items-center">
+                        <span>px</span>
+                        <span>
+                            {{quality}}
+                        </span>
                     </div>
                 </div>
                 <div class=" text-[#f7f1e5] iransans-300 basis-1/4 flex justify-center items-center flex-row">
@@ -179,8 +180,11 @@
                     </div>
                 </div>
                 <div class="text-[#f7f1e5] iransans-300 basis-1/4 flex flex-row justify-center items-center">
-                    <div class="before:content-['حجم_دانلود:_'] w-fit">
-                        {{downloadSize}}
+                    <div class="before:content-['حجم_دانلود:_'] w-fit flex flex-row justify-start items-center">
+                        <span class="mx-1">MB</span>
+                        <span>
+                            {{downloadSize}}
+                        </span>
                     </div>
                 </div>
                 <div class="basis-1/4 text-left flex flex-row justify-end items-center">
