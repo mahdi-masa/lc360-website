@@ -6,7 +6,7 @@ newsTitle: 'اولین خبر سایت چرخه حیاتlksjfl;sfj;ljfal;fal;fja
 sudoNewsTitle: '<p>این یک سوتیتر برای اولین خبر سایت چرخه حیات هست. این سوتیتر نباید به صورت یک متن طولانی باشد و تنها باید خبر را درچند خط توضیح دهد</p>'
 starContent: true
 updated_by: c1ede7bd-11c2-4af0-9224-2178b8f71939
-updated_at: 1705611474
+updated_at: 1706962372
 seo:
   description: 'این یک متن توضیحی برای خبر هست'
   priority: '1'
@@ -22,20 +22,7 @@ newsContent:
     newsVideo: Video/a-p-s-e11.mp4
     type: new_set
     enabled: true
-featuredImagePostVertical: 6.1.jpg
-featuredImagePostHorizental: a-p-s-2.jpg
 postSummary: 'این بک متن خلاصه می باشد که می تواند برای خلاصه کردن خبر استفاده شود.نباید بیشتر از ۱۰۰ کراکتر باشد'
-tags:
-  - air-pollution
-  - water
-  - animals
-  - residue
-  - air
-  - soil
-  - plants
 topics:
   - climate-change
-  - biodiversity
-  - habitat
-  - human-life
 ---

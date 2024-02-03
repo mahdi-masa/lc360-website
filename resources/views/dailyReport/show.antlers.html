@@ -10,9 +10,7 @@
         width: 65%;
         border-radius: 8px;
     }
-    #sudoTitle{
-        
-    }
+
     @media screen and (max-width: 767px) {
         #newsContent img {
             width: 95%;
@@ -63,4 +61,25 @@
     </div>    
 
     {{ /storycontent }}
+</div>
+
+{{ current= {{slug}}}}
+<div class="max-w-[1140px] mx-auto">
+    <div>
+        <span class="iransans-bold">روایت های مشابه</span>
+    </div>
+    <ul class="list-disc">
+        {{ topics }}
+                {{ collection from='dailyReport' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
+                <li class="h-fit w-fit list-disc list-inside">
+                    <a class="text-[#264b2c] iransans-300" href="{{ url }}">
+                        {{ storyTitle }}
+                    </a>
+                </li>
+                <span class="iransans-300 mt-4 block">
+                    {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
+                </span>
+                {{ /collection }}        
+        {{ /topics}}
+    </ul>
 </div>

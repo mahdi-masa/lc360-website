@@ -4,11 +4,7 @@ blueprint: news
 title: 'دومین خبر سایت'
 starContent: false
 updated_by: c1ede7bd-11c2-4af0-9224-2178b8f71939
-updated_at: 1705406061
-featuredImagePostHorizental: arid-land-with-dry-cracked-ground.jpg
-tags:
-  - residue
-  - air
+updated_at: 1706962386
 topics:
   - climate-change
 newsTitle: 'دومین خبر سایت'

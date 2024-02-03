@@ -31,7 +31,7 @@ window.toggleSideBar = function toggleSideBar(){
 window.changeSideBarPosition = function changeSideBarPosition() {
   if (window.innerWidth > 1024) {
     // Use window.scrollY or document.documentElement.scrollTop to check scroll position
-    if (window.scrollY > 94) {
+    if (window.scrollY > 70) {
       // Declare sidebarElement using var, let, or const
       let sidebarElement = document.getElementById('sidebar');
       sidebarElement.classList.remove('pc:top-[94px]')
@@ -43,7 +43,7 @@ window.changeSideBarPosition = function changeSideBarPosition() {
 
     }
   }else if (window.innerWidth < 1024){
-    if (window.scrollY > 60) {
+    if (window.scrollY > 50) {
       // Declare sidebarElement using var, let, or const
       let sidebarElement = document.getElementById('sidebar');
       sidebarElement.classList.remove('mobile:top-[60px]')

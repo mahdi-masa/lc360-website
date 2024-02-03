@@ -10,6 +10,8 @@ preferences:
       after_save: continue_editing
     news:
       after_save: continue_editing
+    articles:
+      after_save: continue_editing
   assets:
     lifecycle:
       mode: grid
