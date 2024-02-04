@@ -18,11 +18,11 @@
                     <div class="bg-green-800 flex flex-row justify-between items-center mb-[10px] rounded-[5px] h-[35px]">
         
                         <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
-                            <div>
+                            <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
-                                <span class="mr-[9px]">روایت شما:</span>
+                                <span class="mr-[6px]">مطالب برگزیده:</span>
                             </div>
                         </div>
                         <div>
@@ -52,11 +52,11 @@
                     <div class="bg-green-800 flex flex-row justify-between items-center mb-[10px] rounded-[5px] h-[35px]">
     
                         <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
-                            <div>
+                            <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
-                                <span class="mr-[9px]">مستند های پینشهادی:</span>
+                                <span class="mr-[6px]">مستندهای پیشنهادی:</span>
                             </div>
                         </div>
                         <div>
@@ -94,11 +94,11 @@
                 <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
         
                     <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
-                        <div>
+                        <div class="mr-[2px]">
                             <img src="{{vite:asset src='resources/assets/icon/spill-border.svg' }}" alt="">
                         </div>
                         <div>
-                            <span class="mr-[9px]">آخرین کتابچه ها:</span>
+                            <span class="mr-[6px]">کتابچه‌ها:</span>
                         </div>
                     </div>
                     <div>
@@ -114,24 +114,24 @@
                             {{ collection from="booklets" taxonomy:topics="{{ slug }}" order="date:desc" }}
                             
                             <li class="splide__slide flex flex-row items-center justify-center">
-                                <div class="splide__slide__container h-fit mt-[2.5%] w-[227px]">
+                                <div class="splide__slide__container h-fit mt-[2.5%] mr-[10px] w-[227px]">
                                     <a class="" href="{{ url }}">
                                         <img class="object-cover mx-auto w-full h-[95%] rounded-[5px]" src="{{featuredImagePostVertical}}" alt="">
                                     </a>
                                     
                                 </div>
                                 <div class="text-center w-[168px] h-full">
-                                    <div class="mt-[7px]">
-                                        <span class="iransans-bold sansnum-bold text-[16px] truncate">
+                                    <div class="mt-[10px]">
+                                        <span class="iransans-600 text-[16px] text-[#1C4E00] truncate">
                                             <a href="{{ url }}">
                                                 {{ bookletName }}
                                             </a>
                                         </span>
                                     </div>
-                                    <div class="flex flex-col justify-center items-center mt-[7px]">
-                                        <span class="iransans-normal text-[12px] before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
+                                    <div class="flex flex-col justify-center items-center mr-[10px] mt-[5px]">
+                                        <span class="iransans-500 text-[12px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
                                     </div>
-                                    <div class="mt-[7px] iransans-500 sansnum-500 text-justify mx-1 overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
+                                    <div class="mx-[10px] mt-[5px] iransans-300 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
                                         {{ postSummary }}
                                     </div>
                                 </div>
@@ -154,11 +154,11 @@
                     <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
             
                         <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
-                            <div>
+                            <div class="mr-[2px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
-                                <span class="mr-[5px]">محتوای چند رسانه‌ای:</span>
+                                <span class="mr-[6px]">محتوای چند رسانه‌ای:</span>
                             </div>
                         </div>
                         <div>
@@ -179,7 +179,7 @@
                         </div>
                         <div class="flex flex-col justify-between items-stretch w-[577px]">
                             <div class="w-full h-[160px] ">
-                                <span class="text-black text-[16px] iransans-500 sansnum-500 mx-[10px]">
+                                <span class="text-black text-[16px] iransans-500 block text-justify mx-[10px] mt-[10px]">
                                     <a href="{{url}}">
                                         {{mainTitle}}
                                     </a>
@@ -196,9 +196,9 @@
                             <div class="flex flex-row justify-between items-center w-full h-[30px] mb-[10px]">
                             
             
-                                <div class="flex justify-center items-center flex-row ms-[10px]">
+                                <div class="flex justify-center items-center flex-row mr-[10px]">
                                     {{ topics }}
-                                    <div class="flex flex-row justify-center items-center mx-1 bg-gray-100 rounded-[3px] p-[5px] ms-[10px]">
+                                    <div class="flex flex-row justify-center items-center bg-gray-100 rounded-[3px] p-[5px]">
 
                                         <img class="pe-[3px]" src="{{vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
                                         <a class="iransans-normal sansnum-normal text-[13px]" href="https://lc360.ir/topics/{{ slug }}">
@@ -208,7 +208,7 @@
                                     {{ /topics }}
                                 </div>
                                 <div class="flex flex-col justify-center items-center">
-                                    <span class="mx-3 iransans-bold sansnum-bold text-[13px]">
+                                    <span class="ml-[10px] iransans-bold text-[13px]">
                                         {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
                                     </span>
                                 </div>
@@ -229,11 +229,11 @@
                     <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
             
                         <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
-                            <div>
+                            <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
-                                <span class="mr-[9px]">اخبار جدید:</span>
+                                <span class="mr-[6px]">اخبار جدید:</span>
                             </div>
                         </div>
                         <div>
@@ -304,7 +304,7 @@
                     <div class="bg-green-800 flex flex-row justify-between items-center mb-[10px] rounded-[5px] h-[35px]">
     
                         <div class="flex flex-row justify-center items-center">
-                            <div class="ps-[5px]">
+                            <div class="ps-[5px] mr-[2px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
@@ -358,7 +358,7 @@
                             <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                         </div>
                         <div class="flex flex-row justify-center items-center">
-                            <div>
+                            <div class="mr-[2px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
                             <div>
@@ -396,8 +396,8 @@
         <div class="flex flex-col mx-auto mt-[15px] w-full items-center justify-between pc:hidden">
             <div class="flex flex-row justify-between items-center mx-auto w-full bg-[#166434] mobile:w-[95%] rounded-[5px]">
                 <div class="flex flex-row justify-center items-center">
-                    <div class="ps-[5px]">
-                        <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    <div class="ps-[5px] mr-[2px]">
+                        <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="" class="2px">
                     </div>
                     <div>
                         <p class="m-0 mr-[5px] iransans-bold text-[16px] text-white">کتابچه</p>

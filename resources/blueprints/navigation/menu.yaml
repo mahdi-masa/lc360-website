@@ -1,0 +1,17 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: activeMenu
+            field:
+              default: false
+              type: toggle
+              display: 'فعال کردن منو'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

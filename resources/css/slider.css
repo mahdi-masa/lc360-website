@@ -64,7 +64,7 @@
 /* specific slider css */
 .next__specificslider{
     position: absolute!important;
-    left: 0px !important;
+    left: 5px !important;
     right: unset !important;
     background-color:transparent!important;
     
@@ -74,7 +74,7 @@
 .prev__specificslider{
     position: absolute!important;
     left: unset !important;
-    right: 0px !important;
+    right: 5px !important;
     background-color:transparent!important;
     ;
 
