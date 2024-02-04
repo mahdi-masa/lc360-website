@@ -131,7 +131,7 @@ elementList.forEach(element => {
     }else if ( !element.yearly){
         dailyValueCalc(element.initialValue, element.delta, element.id)
     }else if( element.general ){
-
+        generalValueCalc(element.initialValue, element.delta, element.id)
     }
 })},100);
   

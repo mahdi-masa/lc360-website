@@ -29,12 +29,12 @@
 
 <!-- title and sudo title section -->
 <div class="max-w-[1140px] mx-auto mt-[20px]">
-    <div class="iransans-600 my-5 text-[20px] p-[10px]">
+    <div class="iransans-600 sansnum-600 my-5 text-[20px] p-[10px]">
         <h2>
             {{newsTitle}}
         </h2>
     </div>
-    <div class="bg-[#b5b5b5] iransans-600 my-5 rounded-tl-[8px] rounded-br-[8px] mx-auto mobile:w-[95%] pc:w-full">
+    <div class="bg-[#b5b5b5] iransans-600 sansnum-600 my-5 rounded-tl-[8px] rounded-br-[8px] mx-auto mobile:w-[95%] pc:w-full">
         <div class="p-5 text-[#454545] text-[18px] text-justify mobile:w-[95%] pc:w-full mobile:mx-auto" id="sudoTitle">
             {{sudoNewsTitle}}
         </div>
@@ -45,8 +45,7 @@
     {{ newsContent }}
     <div>
         
-        <div class="text-justify iransans-500 text-[16px] leading-[20px]" id="newsContent">
-
+        <div class="text-justify iransans-500 sansnum-500 text-[16px] leading-[20px]" id="newsContent">
             {{newsText}}
         </div>
         {{ if newsVideo }}
@@ -73,11 +72,11 @@
         {{ topics }}
                 {{ collection from='news' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
                 <li class="h-fit w-fit list-disc list-inside">
-                    <a class="text-[#264b2c] iransans-300" href="{{ url }}">
+                    <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
                         {{ newsTitle }}
                     </a>
                 </li>
-                <span class="iransans-300 mt-4 block">
+                <span class="iransans-300 sansnum-300 mt-4 block">
                     {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
                 </span>
                 {{ /collection }}        
