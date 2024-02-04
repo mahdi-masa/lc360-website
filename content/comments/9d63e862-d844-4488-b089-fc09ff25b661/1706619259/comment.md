@@ -7,5 +7,8 @@ user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 
 referer: 'http://localhost/article/this-is-a-test-articles'
 page_url: 'http://localhost/article/this-is-a-test-articles'
 published: false
+internal_author_has_name: true
+internal_author_has_email: true
+spam: false
 ---
 this is a test comment

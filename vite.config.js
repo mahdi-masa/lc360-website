@@ -19,6 +19,7 @@ export default defineConfig({
              'resources/js/topics-slider.js',
              'resources/js/documentary-slider.js',
              'resources/css/article.css',
+             'resources/css/fontirannum.css',
              
             ],
             refresh: true,
