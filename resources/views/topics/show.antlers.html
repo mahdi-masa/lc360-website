@@ -21,8 +21,8 @@
                             <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
-                            <div>
-                                <span class="mr-[6px]">مطالب برگزیده:</span>
+                            <div class="mr-[6px]">
+                                <span>مطالب برگزیده:</span>
                             </div>
                         </div>
                         <div>
@@ -55,8 +55,8 @@
                             <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
-                            <div>
-                                <span class="mr-[6px]">مستندهای پیشنهادی:</span>
+                            <div class="mr-[6px]">
+                                <span>مستندهای پیشنهادی:</span>
                             </div>
                         </div>
                         <div>
@@ -78,7 +78,7 @@
                                         
                                     </div>
                                     <div class="text-center mt-[10px]">
-                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold sansnum-bold text-[15px]">{{ documentaryFarsiName }}</a>
+                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold sansnum-bold text-[15px] text-[#1C4E00]">{{ documentaryFarsiName }}</a>
                                     </div>
                                 </li>
                                 {{/collection}}
@@ -97,8 +97,8 @@
                         <div class="mr-[2px]">
                             <img src="{{vite:asset src='resources/assets/icon/spill-border.svg' }}" alt="">
                         </div>
-                        <div>
-                            <span class="mr-[6px]">کتابچه‌ها:</span>
+                        <div class="mr-[6px]">
+                            <span>کتابچه‌ها:</span>
                         </div>
                     </div>
                     <div>
@@ -131,7 +131,7 @@
                                     <div class="flex flex-col justify-center items-center mr-[10px] mt-[5px]">
                                         <span class="iransans-500 text-[12px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
                                     </div>
-                                    <div class="mx-[10px] mt-[5px] iransans-300 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
+                                    <div class="mx-[10px] mt-[5px] iransans-300 sansnum-300 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
                                         {{ postSummary }}
                                     </div>
                                 </div>
@@ -157,8 +157,8 @@
                             <div class="mr-[2px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
-                            <div>
-                                <span class="mr-[6px]">محتوای چند رسانه‌ای:</span>
+                            <div class="mr-[6px]">
+                                <span>محتوای چند رسانه‌ای:</span>
                             </div>
                         </div>
                         <div>
@@ -178,8 +178,8 @@
                             </a>
                         </div>
                         <div class="flex flex-col justify-between items-stretch w-[577px]">
-                            <div class="w-full h-[160px] ">
-                                <span class="text-black text-[16px] iransans-500 block text-justify mx-[10px] mt-[10px]">
+                            <div class="w-full h-[160px] mx-[10px] mt-[10px]">
+                                <span class="text-black text-[16px] iransans-500 sansnum-500 block text-justify">
                                     <a href="{{url}}">
                                         {{mainTitle}}
                                     </a>
@@ -207,8 +207,8 @@
                                     </div>
                                     {{ /topics }}
                                 </div>
-                                <div class="flex flex-col justify-center items-center">
-                                    <span class="ml-[10px] iransans-bold text-[13px]">
+                                <div class="flex flex-col justify-center items-center ml-[10px]">
+                                    <span class="iransans-bold sansnum-bold text-[13px]">
                                         {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
                                     </span>
                                 </div>
@@ -232,8 +232,8 @@
                             <div class="mr-[2px]">
                                 <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
-                            <div>
-                                <span class="mr-[6px]">اخبار جدید:</span>
+                            <div class="mr-[6px]">
+                                <span>اخبار جدید:</span>
                             </div>
                         </div>
                         <div>
@@ -307,8 +307,8 @@
                             <div class="ps-[5px] mr-[2px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
                             </div>
-                            <div>
-                                <span class="iransans-bold text-white ps-2">مستند های پینشهادی:</span>
+                            <div class="ps-2">
+                                <span class="iransans-bold text-white">مستند های پینشهادی:</span>
                             </div>
                         </div>
                         <div>
@@ -381,7 +381,7 @@
                             <div class="flex items-center flex-row justify-start h-[45px]">
                                 <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="چرخه حیات" class="mr-[10px]">
                                 <a class="truncate" class="block" href="{{ url }}">
-                                    <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
+                                    <p class="m-0 mr-[3px] iransans-normal sansnum-normal text-[15px] truncate me-[10px]">{{ title }}</p>
                                 </a>
                             </div>
                             <hr class="m-0 w-[99%]">
@@ -424,7 +424,7 @@
                                 <div class="text-center">
                                     <span class="iransans-bold whitespace-nowrap text-[12px] before:content-['نویسنده:_']">{{ bookletAuthor }}</span>
                                 </div>
-                                <div class="h-full iransans-normal text-[10px] text-justify mt-[10px]">
+                                <div class="h-full iransans-normal sansnum-normal text-[10px] text-justify mt-[10px]">
                                     {{ postSummary }}
                                 </div>
 
