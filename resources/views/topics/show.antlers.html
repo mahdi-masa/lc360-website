@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    {{ vite src='resources/css/slider.css' }}
     <base href="{{? env('APP_URL') ?}}" target="_blank">
 </head>
 <body class="bg-[#DCE8DF]">
@@ -30,6 +31,15 @@
                         </div>
                     </div>
                     <section class="splide mobile:my-5 pc:m-0 grow mx-auto" id="specific-content">
+                        <div class="splide__arrows">
+                    
+                            <button class="splide__arrow splide__arrow--prev prev__specificslider">
+                                <img src="{{vite:asset src='resources/assets/icon/thin-right-arrow.svg'}}">
+                            </button>
+                            <button class="splide__arrow splide__arrow--next next__specificslider">
+                                <img src="{{vite:asset src='resources/assets/icon/thin-left-arrow.svg'}}">
+                            </button>
+                        </div>
                         <div class="splide__track">
                           <ul class="splide__list">
                             {{ collection from="news|documentry|articles|booklets" limit="10" order="date:desc" }}
