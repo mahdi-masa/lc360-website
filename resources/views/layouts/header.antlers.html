@@ -63,18 +63,21 @@
     <!--end always nav-->
     
     <div class="panel flex flex-row justify-center items-center py-3 h-[65px] bg-[#206136]" id="search-panel">
-        <div class="flex items-center justify-center flex-col">
-            <button class="transition-all duration-300 ease-linear hover:scale-125" id="close-button">
-                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}">
-            </button>
-        </div>
-        <div class="pc:w-[60%] mobile:w-[60%] ms-5">
-            <input class="iransans-500 border-0 rounded-[5px] h-[30px] w-full indent-[10px] text-[13px]" type="text" placeholder="جستجو برای ...">
-        </div>
-        <div class="flex items-center justify-center flex-col ms-3">
-            <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
-                <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}">
-            </button>
+        <div class="flex justify-center items-center flex-row w-full max-w-[1140px]">
+            <div class="flex items-center justify-center flex-col">
+                <button class="transition-all duration-300 ease-linear hover:scale-125" id="close-button">
+                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/closebutton.svg'}}">
+                </button>
+            </div>
+            <div class="pc:w-[60%] mobile:w-[60%] ms-5 grow">
+                <input class="iransans-500 border-0 rounded-[5px] h-[30px] w-full indent-[10px] text-[13px] max-w-[1140px]" type="text" placeholder="جستجو برای ...">
+            </div>
+            <div class="flex items-center justify-center flex-col ms-3">
+                <button class="hover:scale-125 transition-all duration-300 ease-linear" id="closesearch">
+                    <img class="w-[25px]" src="{{vite:asset src='resources/assets/icon/search.svg'}}">
+                </button>
+            </div>
+
         </div>
     </div>
 </nav>
