@@ -9,7 +9,7 @@
     {{ vite src='resources/css/slider.css' }}
     <base href="{{? env('APP_URL') ?}}" target="_blank">
 </head>
-<body class="bg-[#DCE8DF]">
+<body class="bg-[#e8f6eb]">
     <main class="max-w-[1350px] mx-auto">
 
         <section class="flex pc:flex-row mt-[20px] justify-center w-full">   
@@ -139,9 +139,9 @@
                                         </span>
                                     </div>
                                     <div class="flex flex-col justify-center items-center mr-[10px] mt-[5px]">
-                                        <span class="iransans-500 text-[12px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
+                                        <span class="iransans-500 text-[13px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
                                     </div>
-                                    <div class="mx-[10px] mt-[5px] iransans-500 sansnum-500 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
+                                    <div class="mx-[10px] mt-[5px] mb-[10px] iransans-500 sansnum-500 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[13px] rtl">
                                         {{ postSummary }}
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
                                     </a>
                                 </span>
                                 <div>
-                                    <div class="iransans-normal sansnum-normal text-justify w-[95%] mx-[10px] h-[70px] text-[13px]">
+                                    <div class="iransans-normal sansnum-normal text-justify w-[95%] pc:w-fit h-[70px] text-[13px]">
                                         <a href="{{url}}">
                                             {{postSummary}}
                                         </a>
