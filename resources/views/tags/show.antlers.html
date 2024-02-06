@@ -6,7 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    
+    {{ vite src='resources/css/slider.css' }}
 </head>
 <body class="bg-[#DCE8DF]">
     <main class="max-w-[1350px] mx-auto">
@@ -17,17 +17,30 @@
                 <div class="pc:w-[675px] mobile:mx-auto pc:me-[15px] mobile:w-[95%] mx-atuo">
                     <div class="bg-green-800 flex flex-row justify-between items-center mb-[10px] rounded-[5px] h-[35px]">
         
-                        <div class="ms-[3px] flex flex-row justify-center items-center">
-                            <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}">
-                            <span class="iransans-bold text-white ps-2">
-                                مطالب برگزیده:
-                            </span>
+                        <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
+                            <div class="mr-[2px]">
+                                <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}">
+                            </div>
+                            <div class="mr-[6px]">
+                                <span>
+                                    مطالب برگزیده:
+                                </span>
+                            </div>
                         </div>
                         <div>
                             <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                         </div>
                     </div>
                     <section class="splide mobile:my-5 pc:m-0 grow mx-auto" id="specific-content">
+                        <div class="splide__arrows">
+                    
+                            <button class="splide__arrow splide__arrow--prev prev__specificslider">
+                                <img src="{{vite:asset src='resources/assets/icon/thin-right-arrow.svg'}}">
+                            </button>
+                            <button class="splide__arrow splide__arrow--next next__specificslider">
+                                <img src="{{vite:asset src='resources/assets/icon/thin-left-arrow.svg'}}">
+                            </button>
+                        </div>
                         <div class="splide__track">
                           <ul class="splide__list">
                             {{ collection from="news|documentry|articles|booklets" limit="10" order="date:desc" }}
@@ -49,9 +62,13 @@
                     
                     <div class="bg-green-800 flex flex-row justify-between items-center mb-[10px] rounded-[5px] h-[35px]">
     
-                        <div class="ms-[3px] flex flex-row justify-center items-center">
-                            <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
-                            <span class="iransans-bold text-white ps-2">مستند های پینشهادی:</span>
+                        <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                            <div class="mr-[2px]">
+                                <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                            </div>
+                            <div class="mr-[6px]">
+                                <span>مستندهای پیشنهادی:</span>
+                            </div>
                         </div>
                         <div>
                             <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
@@ -72,7 +89,7 @@
                                         
                                     </div>
                                     <div class="text-center mt-[10px]">
-                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold sansnum-bold text-[15px]">{{ documentaryFarsiName }}</a>
+                                        <a href="https://lc360.ir{{ url }}" class="iransans-bold sansnum-bold text-[15px] text-[#1C4E00]">{{ documentaryFarsiName }}</a>
                                     </div>
                                 </li>
                                 {{/collection}}
@@ -87,9 +104,13 @@
                
                 <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
         
-                    <div class="ms-[3px] flex flex-row justify-center items-center">
-                        <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
-                        <span class="iransans-bold text-white ps-2">آخرین کتابچه‌ها:</span>
+                    <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
+                        <div class="mr-[2px]">
+                            <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                        </div>
+                        <div class="mr-[6px]">
+                            <span>کتابچه‌ها:</span>
+                        </div>
                     </div>
                     <div>
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
@@ -98,30 +119,30 @@
             
 
                 <div class="bg-[#BDD5C3] mt-[10px] h-[342px] rounded-[8px]">
-                    <section class="splide mx-auto" id="booklet-slider-pc">
+                    <section class="splide w-fit" id="booklet-slider-pc">
                         <div class="splide__track">
                           <ul class="splide__list">
                             {{ collection from="booklets" taxonomy:tags="{{ slug }}" order="date:desc" }}
                             
                             <li class="splide__slide flex flex-row items-center justify-center">
-                                <div class="splide__slide__container h-fit mt-[2.5%] w-[227px]">
+                                <div class="splide__slide__container h-fit mt-[2.5%] mr-[10px] w-[57%]">
                                     <a class="" href="https://lc360.ir{{ url }}">
                                         <img class="object-cover mx-auto w-full h-[95%] rounded-[5px]" src="{{featuredImagePostVertical}}" alt="">
                                     </a>
                                     
                                 </div>
-                                <div class="text-center w-[168px] h-full">
-                                    <div class="mt-[7px]">
-                                        <span class="iransans-bold sansnum-bold text-[16px] truncate">
+                                <div class="text-center w-[43%] h-full">
+                                    <div class="mt-[10px]">
+                                        <span class="iransans-600 sansnum-600 text-[16px] text-[#1C4E00] truncate">
                                             <a href="https://lc360.ir{{ url }}">
                                                 {{ bookletName }}
                                             </a>
                                         </span>
                                     </div>
-                                    <div class="flex flex-col justify-center items-center mt-[7px]">
-                                        <span class="iransans-normal sansnum-normal text-[12px] before:content-['نویسنده:_']">{{bookletAuthor}}</span>
+                                    <div class="flex flex-col justify-center items-center mr-[10px] mt-[5px]">
+                                        <span class="iransans-500 sansnum-500 text-[12px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
                                     </div>
-                                    <div class="mt-[7px] iransans-500 sansnum-500 text-justify mx-1 overflow-hidden overscroll-y-scroll-contain h-[270px] text-[10px]">
+                                    <div class="mt-[5px] mx-[10px] iransans-500 sansnum-500 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
                                         {{ postSummary }}
                                     </div>
                                 </div>
@@ -136,18 +157,23 @@
         </section>
             
         <section class="flex flex-row justify-center items-start pc:my-[30px] w-full">
-            <div class="w-[70%] mobile:hidden pc:block me-[15px]">
+            <div class="pc:w-[70%] mobile:hidden pc:block me-[15px]">
                 
                 
                 
-                <div class="w-[933px] mobile:hidden pc:block h-[35px]">
-                    <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px]">
+                <div class="w-[933px] mobile:hidden pc:block">
+                    <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
             
-                        <div class="ms-[3px]">
-                            <span class="iransans-bold text-white border-r-4 border-amber-400 ps-2">محتوای چند رسانه‌ای:</span>
+                        <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
+                            <div class="mr-[2px]">
+                                <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                            </div>
+                            <div class="mr-[6px]">
+                                <span>محتوای چند رسانه‌ای:</span>
+                            </div>
                         </div>
                         <div>
-                            <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                            <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -163,8 +189,8 @@
                             </a>
                         </div>
                         <div class="flex flex-col justify-between items-stretch w-[577px]">
-                            <div class="w-full h-[160px] ">
-                                <span class="text-black text-[16px] iransans-500 sansnum-500 mx-[10px]">
+                            <div class="w-full h-[160px] mx-[10px] mt-[10px] max-w-fit">
+                                <span class="text-black text-[16px] iransans-500 sansnum-500 block text-justify">
                                     <a href="https://lc360.ir{{url}}">
                                         {{mainTitle}}
                                     </a>
@@ -178,12 +204,12 @@
                                     
                                 </div>
                             </div>
-                            <div class="flex flex-row justify-between items-center w-full h-[30px] mb-[10px]">
+                            <div class="flex flex-row items-end justify-between w-full h-[30px] mb-[10px]">
                             
             
-                                <div class="flex justify-center items-center flex-row ms-[10px]">
+                                <div class="flex justify-center items-center flex-row mr-[10px]">
                                     {{ topics }}
-                                    <div class="flex flex-row justify-center items-center mx-1 bg-gray-100 rounded-[3px] p-[5px] ms-[10px]">
+                                    <div class="flex flex-row justify-center items-center bg-gray-100 rounded-[3px] p-[5px]">
 
                                         <img class="pe-[3px]" src="{{vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
                                         <a class="iransans-normal sansnum-normal text-[13px]" href="https://lc360.ir/topics/{{ slug }}">
@@ -192,8 +218,8 @@
                                     </div>
                                     {{ /topics }}
                                 </div>
-                                <div class="flex flex-col justify-center items-center">
-                                    <span class="mx-3 iransans-bold text-[13px]">
+                                <div class="flex flex-col justify-center items-end ml-[10px]">
+                                    <span class="iransans-bold sansnum-bold text-[13px] mb-[-7px]">
                                         {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
                                     </span>
                                 </div>
@@ -210,15 +236,19 @@
             </div>
             <div class="pc:w-[30%] mobile:w-[95%] mobile:mx-auto pc:ms-[15px]">
                 
-                <div class="pc:w-full mobile:w-full pc:block h-[35px]">
-                    <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px]">
+                <div class="pc:w-[405px] mobile:w-full pc:block">
+                    <div class="bg-green-800 flex flex-row justify-between items-center rounded-[5px] h-[35px]">
             
-                        <div class="ms-[3px] flex flex-row justify-center items-center">
-                            <img src="{{ vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
-                            <span class="iransans-bold text-white ps-2">اخبار جدید:</span>
+                        <div class="ms-[3px] flex flex-row items-center justify-center iransans-bold text-[16px] text-white">
+                            <div class="mr-[2px]">
+                                <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                            </div>
+                            <div class="mr-[6px]">
+                                <span>اخبار جدید:</span>
+                            </div>
                         </div>
                         <div>
-                            <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                            <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -398,7 +428,7 @@
                                     <a href="https://lc360.ir{{ url }}" class="iransans-bold sansnum-bold whitespace-nowrap text-[16px]">{{ bookletName }}</a>
                                 </div>
                                 <div class="text-center">
-                                    <span class="iransans-bold whitespace-nowrap text-[12px] before:content-['نویسنده:_']">{{ bookletAuthor }}</span>
+                                    <span class="iransans-bold whitespace-nowrap text-[12px] text-white before:content-['نویسنده:_']">{{ bookletAuthor }}</span>
                                 </div>
                                 <div class="h-full iransans-normal sansnum-normal text-[10px] text-justify mt-[10px]">
                                     {{ postSummary }}

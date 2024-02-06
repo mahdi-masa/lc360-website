@@ -118,19 +118,19 @@
             
 
                 <div class="bg-[#BDD5C3] mt-[10px] h-[342px] rounded-[8px]">
-                    <section class="splide mx-auto" id="booklet-slider-pc">
+                    <section class="splide w-fit" id="booklet-slider-pc">
                         <div class="splide__track">
                           <ul class="splide__list">
                             {{ collection from="booklets" taxonomy:topics="{{ slug }}" order="date:desc" }}
                             
                             <li class="splide__slide flex flex-row items-center justify-center">
-                                <div class="splide__slide__container h-fit mt-[2.5%] mr-[10px] w-[227px]">
+                                <div class="splide__slide__container h-fit mt-[2.5%] mr-[10px] w-[57%]">
                                     <a class="" href="{{ url }}">
                                         <img class="object-cover mx-auto w-full h-[95%] rounded-[5px]" src="{{featuredImagePostVertical}}" alt="">
                                     </a>
                                     
                                 </div>
-                                <div class="text-center w-[168px] h-full">
+                                <div class="text-center w-[43%] h-full">
                                     <div class="mt-[10px]">
                                         <span class="iransans-600 text-[16px] text-[#1C4E00] truncate">
                                             <a href="{{ url }}">
@@ -141,7 +141,7 @@
                                     <div class="flex flex-col justify-center items-center mr-[10px] mt-[5px]">
                                         <span class="iransans-500 text-[12px] text-white before:content-['نویسنده:_'] w-full text-right">{{bookletAuthor}}</span>
                                     </div>
-                                    <div class="mx-[10px] mt-[5px] iransans-300 sansnum-300 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
+                                    <div class="mx-[10px] mt-[5px] iransans-500 sansnum-500 text-justify overflow-hidden overscroll-y-scroll-contain h-[270px] text-[12px] rtl">
                                         {{ postSummary }}
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@
                             </a>
                         </div>
                         <div class="flex flex-col justify-between items-stretch w-[577px]">
-                            <div class="w-full h-[160px] mx-[10px] mt-[10px]">
+                            <div class="w-full h-[160px] mx-[10px] mt-[10px] max-w-fit">
                                 <span class="text-black text-[16px] iransans-500 sansnum-500 block text-justify">
                                     <a href="{{url}}">
                                         {{mainTitle}}
@@ -203,7 +203,7 @@
                                     
                                 </div>
                             </div>
-                            <div class="flex flex-row justify-between items-center w-full h-[30px] mb-[10px]">
+                            <div class="flex flex-row items-end justify-between w-full h-[30px] mb-[10px]">
                             
             
                                 <div class="flex justify-center items-center flex-row mr-[10px]">
@@ -217,8 +217,8 @@
                                     </div>
                                     {{ /topics }}
                                 </div>
-                                <div class="flex flex-col justify-center items-center ml-[10px]">
-                                    <span class="iransans-bold sansnum-bold text-[13px]">
+                                <div class="flex flex-col justify-center items-end ml-[10px]">
+                                    <span class="iransans-bold sansnum-bold text-[13px] mb-[-7px]">
                                         {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
                                     </span>
                                 </div>
