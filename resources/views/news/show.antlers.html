@@ -70,7 +70,7 @@
     </div>
     <ul class="list-disc">
         {{ topics }}
-                {{ collection from='news' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
+                {{ collection from='news' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="4"}}
                 <li class="h-fit w-fit list-disc list-inside">
                     <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
                         {{ newsTitle }}
