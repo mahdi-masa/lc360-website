@@ -108,7 +108,7 @@
                 <i class="bi bi-chat-left-text-fill text-2xl p-[10px] border-black border-2 rounded-[50%]"></i>
             </div>
             <div class="p-2 iransans-500 text-justify h-52 overflow-y-scroll sansnum-500">
-                {{summaryPart1}}
+                {{summaryPart2}}
             </div>
         </div>
     
@@ -117,7 +117,7 @@
                 <i class="bi bi-chat-left-text-fill text-2xl p-[10px] border-black border-2 rounded-[50%]"></i>
             </div>
             <div class="p-2 iransans-500 text-justify h-52 overflow-y-scroll sansnum-500">
-                {{summaryPart1}}
+                {{summaryPart3}}
             </div>
         </div>
     
@@ -137,12 +137,14 @@
             {{bookletIntro}}
         </div>
     </div>
+    {{ if bookletAnalize }}
     <div>
         <h2 class="my-5 iransans-bold px-3 text-2xl text-[#7a7a7a]">تحلیل کتاب</h2>
         <div class="iransans-300 p-3 text-[16px] text-justify sansnum-300" id="bookletAnalize">
             {{bookletAnalize}}
         </div>
     </div>
+    {{ /if }}
 </div>
 
 {{ current= {{slug}}}}
