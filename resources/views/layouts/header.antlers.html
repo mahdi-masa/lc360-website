@@ -6,10 +6,8 @@
             {{ nav:menu }}
             {{ if activeMenu }}
                         
-            <a href="{{ url }}" class="iransans-normal text-[16px] text-white no-underline mx-1">{{ title }}</a>
-            {{ if !last}}
-            <span class="text-white h-full inline-block mx-[1px]">|</span>
-            {{ /if }}
+            <a href="{{ url }}" class="iransans-normal text-[16px] text-white no-underline mx-[3px]">{{ " | " + title }}</a>
+            
             {{ /if }}
             {{ /nav:menu }}
             
