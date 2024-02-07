@@ -1,0 +1,48 @@
+tree:
+  -
+    id: d2e0dfbf-6806-4a25-b6d0-6772cc0f096b
+    title: 'تغییرات اقلیمی'
+    url: 'http://localhost/topics/climate-change'
+  -
+    id: 8c03f99e-550c-4181-b74e-f7a52bd8ec72
+    title: 'تنوع زیستی'
+    url: 'http://localhost/topics/biodiversity'
+    children:
+      -
+        id: 1acc78a7-76c1-47d0-a27a-758a18820121
+        title: جانور
+        url: 'http://localhost/tags/animals'
+      -
+        id: 56e89894-f3a5-48ed-8a72-74786b7e930d
+        title: 'گیاه جان'
+        url: 'http://localhost/tags/plants'
+  -
+    id: 056d640b-23bd-423e-9b0f-c26ec7fa22e8
+    title: 'زیست انسانی'
+    url: 'http://localhost/topics/human-life'
+    children:
+      -
+        id: b5b3843d-97a1-4664-ac7c-34bf81f51073
+        title: 'آلودگی هوا'
+        url: 'http://localhost/topics/air-pollution'
+      -
+        id: 722e7fe2-10b5-4cd8-b2c9-813d23e65730
+        title: پسماند
+        url: 'http://localhost/tags/residue'
+  -
+    id: fc98ed6e-d8e6-4468-8d07-a34cacc1940d
+    title: 'زیست گاه'
+    url: 'http://localhost/topics/habitat'
+    children:
+      -
+        id: 83191750-65ae-4d3c-ad90-1a02883d6a5a
+        title: آب
+        url: 'http://localhost/tags/water'
+      -
+        id: 3b26c6fb-428d-4ef5-9e85-2db6da7f9300
+        title: خاک
+        url: 'http://localhost/tags/soil'
+      -
+        id: f880ad65-eab9-4b00-95ca-69cd7dee06dc
+        title: هوا
+        url: 'http://localhost/tags/air'

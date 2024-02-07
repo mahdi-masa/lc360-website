@@ -1,0 +1,17 @@
+title: اخبار
+template: news/show
+layout: layout
+taxonomies:
+  - topics
+  - tags
+revisions: false
+route: 'news/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
