@@ -34,6 +34,7 @@
                 <div class="splide__track">
                   <ul class="splide__list">
                     {{ collection from="news|documentry|articles|booklets|dailyReport" sort="updated_at:desc" }}
+                    {{ date }}
                     {{ if starContent }}
                     <li class="splide__slide">
                         <a class="w-full h-full" href="https://lc360.ir{{ url }}">

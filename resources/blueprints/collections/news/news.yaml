@@ -23,7 +23,6 @@ tabs:
               antlers: false
               type: text
               display: 'عنوان خبر'
-              icon: text
               instructions: 'در این قسمت عنوان خبر را بنویسید'
               listable: hidden
               instructions_position: below
@@ -75,7 +74,6 @@ tabs:
               previews: true
               type: bard
               display: 'سوتیتر خبر'
-              icon: bard
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -169,7 +167,6 @@ tabs:
                             hide_display: false
               type: replicator
               display: 'محتوای خبر'
-              icon: replicator
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -196,6 +193,32 @@ tabs:
                 - topics
               display: Topics
               mode: select
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: tags
+              mode: select
+          -
+            handle: created_at
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              earliest_date: '2024-02-17'
+              type: date
+              display: 'Date Field'
+              listable: hidden
+              instructions_position: above
+              visibility: read_only
+              replicator_preview: true
+              hide_display: false
   SEO:
     display: SEO
     sections:

@@ -2,16 +2,15 @@
 <nav class="flex flex-col justify-center">
     <!--desktop nav-->
     <div class="bg-[#1F6136] h-[34px] text-end my-auto hidden pc:block">
-        <div class="flex flex-row justify-end m-0 items-center mt-[4px] max-w-[1350px] mx-auto">
+        <div class="flex flex-row justify-end m-0 items-center mt-[4px] max-w-[1350px] mx-auto">  
             {{ nav:menu }}
-            {{ if activeMenu }}
-                        
-            <a href="{{ url }}" class="iransans-normal text-[16px] text-white no-underline mx-[3px]">{{ " | " + title }}</a>
-            
-            {{ /if }}
-            {{ /nav:menu }}
-            
-            
+                {{ if activeMenu }}
+                    {{if !(index == 0)}}
+                    <span class="mx-1 text-white">|</span>
+                    {{/if}}
+                    <a class="iransans-normal text-white" href="{{ url }}">{{ title }}</a>
+                {{ /if }}
+            {{ /nav:menu }} 
         </div>
     </div>
     <!--end desktop nav-->

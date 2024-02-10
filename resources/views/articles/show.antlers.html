@@ -54,9 +54,6 @@
                         {{ mainTitle }}
                     </a>
                 </li>
-                <span class="iransans-300 mt-4 block">
-                    {{? echo \Morilog\Jalali\CalendarUtils::convertNumbers(\Morilog\Jalali\Jalalian::fromCarbon($page->updated_at)->format('%Y-%m-%d')) ?}}
-                </span>
                 {{ /collection }}        
         {{ /topics}}
     </ul>
