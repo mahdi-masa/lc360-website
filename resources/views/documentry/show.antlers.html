@@ -249,22 +249,27 @@
             </div>
             <div class="splide__track">
               <ul class="splide__list">
-                
-                  {{ topics }}
+                {{? $array=[] ?}}
+                {{ topics }}
+                    
                     {{ collection from='documentry' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
-                    <li class="splide__slide h-fit w-fit">
-                        <div class="splide__slide__container">
-                            <a href="{{ url }}">
-                                <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
-                            </a>
-                        </div>
-                        <div class="iransans-500 sansnum-500 text-[16px] mt-[7px] text-center text-[#264b2c]">
-                            <a href="{{ url }}">
-                                {{ documentaryFarsiName}}
-                            </a>
-                        </div>
-                    </li>
+                        {{ if !($array | in_array(documentaryFarsiName)) }}
                         
+                            <li class="splide__slide h-fit w-fit">
+                                <div class="splide__slide__container">
+                                    <a href="{{ url }}">
+                                        <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="iransans-500 sansnum-500 text-[16px] mt-[7px] text-center text-[#264b2c]">
+                                    <a href="{{ url }}">
+                                        {{ documentaryFarsiName}}
+                                    </a>
+                                </div>
+                            </li>
+                        {{ /if }}
+                        
+                        {{? array_push($array, $documentaryFarsiName) ?}}
                     {{ /collection }}
                 {{ /topics}}
                 

@@ -24,7 +24,6 @@ tabs:
               antlers: false
               type: text
               display: تیتر
-              icon: text
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -76,7 +75,6 @@ tabs:
               previews: true
               type: bard
               display: 'سوتیتر مقاله'
-              icon: bard
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -171,7 +169,6 @@ tabs:
                             hide_display: false
               type: replicator
               display: 'محتوای مقاله'
-              icon: replicator
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -197,6 +194,14 @@ tabs:
               taxonomies:
                 - topics
               display: Topics
+              mode: select
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: tags
               mode: select
   SEO:
     display: SEO

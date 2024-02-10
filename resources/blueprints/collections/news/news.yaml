@@ -201,24 +201,6 @@ tabs:
                 - tags
               display: tags
               mode: select
-          -
-            handle: created_at
-            field:
-              mode: single
-              inline: false
-              full_width: false
-              columns: 1
-              rows: 1
-              time_enabled: false
-              time_seconds_enabled: false
-              earliest_date: '2024-02-17'
-              type: date
-              display: 'Date Field'
-              listable: hidden
-              instructions_position: above
-              visibility: read_only
-              replicator_preview: true
-              hide_display: false
   SEO:
     display: SEO
     sections:
