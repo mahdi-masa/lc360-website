@@ -1,0 +1,28 @@
+{{ meerkat:create }}
+ 
+  {{ fields }}
+  <div class="form-group">
+      <label>{{ display }}</label>
+ 
+      {{ field }}
+  </div>
+  {{ /fields }}
+ 
+<input type="submit" value="Submit your comment!">
+{{ /meerkat:create }}
+
+{{ meerkat:responses }}
+ 
+<ul>
+  {{ comments }}
+  <li>
+    <p>{{ author.name }} says: {{ content }}</p>
+ 
+    {{ if comments }}
+      <ul>{{ *recursive comments* }}</ul>
+    {{ /if }}
+  </li>
+  {{ /comments }}
+</ul>
+ 
+{{ /meerkat:responses }}
