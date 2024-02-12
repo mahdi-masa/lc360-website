@@ -12,7 +12,6 @@ fields:
       show_set_alt: true
       type: assets
       display: 'تصویر شاخص پست عمودی'
-      icon: assets
       instructions: 'لطفا تصویر شاخص مربوط مناسب به این پست را انتخاب کنید'
       listable: hidden
       instructions_position: above
@@ -31,7 +30,6 @@ fields:
       show_set_alt: true
       type: assets
       display: 'تصویر شاخص افقی'
-      icon: assets
       instructions: 'لطفا تصویر شاخص مربوط مناسب به این پست را انتخاب کنید'
       listable: hidden
       instructions_position: above
@@ -46,7 +44,6 @@ fields:
       antlers: false
       type: textarea
       display: 'خلاصه پست'
-      icon: textarea
       instructions: 'در این قسمت خلاصه ای از پست خود را قرار دهید'
       listable: hidden
       instructions_position: below
@@ -59,10 +56,27 @@ fields:
       default: false
       type: toggle
       display: 'پست ویژه'
-      icon: toggle
       instructions: 'اگر پست شما یک پست ویژه هست دکمه را روشن کنید'
       listable: hidden
       instructions_position: above
       visibility: visible
       replicator_preview: true
+      hide_display: false
+  -
+    handle: createdAt
+    field:
+      mode: single
+      inline: false
+      full_width: false
+      columns: 1
+      rows: 1
+      time_enabled: true
+      time_seconds_enabled: true
+      type: date
+      display: 'ساخته شده در تاریخ'
+      listable: hidden
+      instructions_position: above
+      visibility: hidden
+      replicator_preview: false
+      duplicate: false
       hide_display: false

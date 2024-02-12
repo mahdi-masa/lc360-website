@@ -27,7 +27,6 @@ tabs:
               antlers: false
               type: text
               display: 'نویسنده کتاب'
-              icon: text
               instructions: 'در این قسمت نام نویسنده کتابچه را قرار دهید'
               listable: hidden
               instructions_position: below
@@ -43,7 +42,6 @@ tabs:
               antlers: false
               type: text
               display: 'نام کتابچه'
-              icon: text
               instructions: 'در این قسمت نام کتابچه مورد نظر خود را قرار دهید'
               listable: hidden
               instructions_position: below
@@ -59,7 +57,6 @@ tabs:
               antlers: false
               type: text
               display: 'تعداد صفحات کتابچه'
-              icon: text
               instructions: 'در این قسمت تعداد صفحات کتابچه خود را قرار دهید'
               listable: hidden
               instructions_position: below
@@ -75,7 +72,6 @@ tabs:
               antlers: false
               type: text
               display: 'سال انتشار کتابچه'
-              icon: text
               instructions: 'در این قسمت سال انتشار کتابچه را قرار دهید'
               listable: hidden
               instructions_position: below
@@ -95,7 +91,6 @@ tabs:
               show_set_alt: true
               type: assets
               display: 'عکس کتابچه'
-              icon: assets
               instructions: 'از این قسمت عکسی مناسب برای کتابچه خود انتخاب کنید'
               listable: hidden
               instructions_position: below
@@ -114,7 +109,6 @@ tabs:
               show_set_alt: true
               type: assets
               display: 'لینک دانلود کتابچه'
-              icon: assets
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -168,7 +162,6 @@ tabs:
               previews: true
               type: bard
               display: 'اولین بریده برگزیده کتابچه'
-              icon: bard
               instructions: 'در این قسمت اولین بریده برگزیده کتابچه را بنویسید'
               listable: hidden
               instructions_position: below
@@ -224,7 +217,6 @@ tabs:
               previews: true
               type: bard
               display: 'دومین بریده برگزیده کتابچه'
-              icon: bard
               instructions: 'در این قسمت دومین بریده برگزیده کتابچه را بنویسید'
               listable: hidden
               instructions_position: below
@@ -279,7 +271,6 @@ tabs:
               previews: true
               type: bard
               display: 'سومین بریده برگزیده کتابچه'
-              icon: bard
               instructions: 'در این قسمت سومین بریده برگزیده کتابچه را بنویسید'
               listable: hidden
               instructions_position: below
@@ -334,7 +325,6 @@ tabs:
               previews: true
               type: bard
               display: 'معرفی کتاب'
-              icon: bard
               instructions: 'در این قسمت کتابچه خود را معرفی کنید'
               listable: hidden
               instructions_position: below
@@ -387,7 +377,6 @@ tabs:
               previews: true
               type: bard
               display: 'تحلیل کتاب'
-              icon: bard
               instructions: 'در این قسمت تحلیل کتابچه خود را قرار دهید'
               listable: hidden
               instructions_position: below
@@ -407,14 +396,6 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: date
-            field:
-              type: date
-              required: true
-              default: now
-              validate:
-                - required
-          -
             import: meta_data
           -
             handle: topics
@@ -424,6 +405,20 @@ tabs:
                 - topics
               display: Topics
               mode: select
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: tags
+              mode: select
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
   SEO:
     display: SEO
     sections:

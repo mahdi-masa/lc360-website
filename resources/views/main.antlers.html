@@ -33,7 +33,7 @@
                 </div>
                 <div class="splide__track">
                   <ul class="splide__list">
-                    {{ collection from="news|documentry|articles|booklets|dailyReport" sort="updated_at:desc" }}
+                    {{ collection from="news|documentry|articles|booklets|dailyReport" sort="createdAt:desc" }}
                     {{ if starContent }}
                     <li class="splide__slide">
                         <a class="w-full h-full" href="https://lc360.ir{{ url }}">
@@ -292,7 +292,7 @@
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:topics='climate-change' limit="1" sort="updated_at:desc" }}      
+                        {{ collection:articles taxonomy:topics='climate-change' limit="1" sort="createdAt:desc" }}      
                         <div class="rounded-[25px] h-[247px]">
                             <a href="{{ url }}">
                                 <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
@@ -302,12 +302,12 @@
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 1-->
                             <div class="h-[180px]">
-                                {{ collection:articles taxonomy:topics='climate-change' limit="4" sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:topics='climate-change' limit='4' sort="createdAt:desc" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="" class="mr-[10px]">
                                         <a class="truncate" href="https://lc360.ir{{ url }}">
-                                            <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }} {{ has_timestamp }}</p>
+                                            <p class="m-0 mr-[3px] iransans-normal text-[15px] truncate me-[10px]">{{ title }}</p>
 
                                         </a>
                                     </div>
@@ -329,7 +329,7 @@
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:topics='habitat' limit="1" sort="updated_at:desc" }}
+                        {{ collection:articles taxonomy:topics='habitat' limit="1" sort="createdAt:desc" }}
                             <div class="rounded-[25px] h-[247px]">
                                 <a href="{{ url }}">
                                     <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizentala:alt }}" class="m-0 w-full">
@@ -341,7 +341,7 @@
                             <div class="h-[180px]">
 
                                 
-                                {{ collection:articles taxonomy:topics='habitat' limit="4" sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:topics='habitat' limit="4" sort="createdAt:desc" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" class="mr-[10px]">
@@ -369,7 +369,7 @@
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:topics='biodiversity' limit="1" sort="updated_at:desc" }}
+                        {{ collection:articles taxonomy:topics='biodiversity' limit="1" sort="createdAt:desc" }}
                             <div class="rounded-[25px] h-[247px]">
                                 <a href="{{ url }}">
                                     <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
@@ -382,7 +382,7 @@
                             <!--overflow post slider number 3-->
                             <div class="h-[180px]">
 
-                                {{ collection:articles taxonomy:topics='biodiversity' limit="4" sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:topics='biodiversity' limit="4" sort="createdAt:desc" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="چرخه حیات" class="mr-[10px]">
@@ -418,7 +418,7 @@
                         <img src="{{vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:topics='human-life' limit="1" sort="updated_at:desc" }}
+                        {{ collection:articles taxonomy:topics='human-life' limit="1" sort="createdAt:desc" }}
                                     
                         <div class="rounded-[25px] h-[247px]">
                             <a href="{{ url }}">
@@ -430,7 +430,7 @@
                         <div class="mx-auto m-0 flex flex-col justify-start bg-white w-full pc:w-full rounded-b-[8px]">
                             <!--overflow post slider number 1-->
                             <div class="h-[180px]">
-                                {{ collection:articles taxonomy:topics='human-life' limit="4"  sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:topics='human-life' limit="4"  sort="createdAt:desc" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" alt="چرخه حیات" class="mr-[10px]">
@@ -457,7 +457,7 @@
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:tags='animals' limit="1" sort="updated_at:desc" }}    
+                        {{ collection:articles taxonomy:tags='animals' limit="1" sort="createdAt:desc" }}    
                         <div class="rounded-[25px] h-[247px]">
                             <a href="{{ url }}">
                                 <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
@@ -470,7 +470,7 @@
                             <div class="h-[180px]">
 
                             
-                                {{ collection:articles taxonomy:tags='animals' limit="4" sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:tags='animals' limit="4" sort="createdAt:desc" }}
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
                                         <img src="{{ vite:asset src='resources/assets/icon/rectangle.svg'}}" class="mr-[10px]">
@@ -498,7 +498,7 @@
                         <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
                     </div>
                     <div class="flex flex-col justify-center w-full mt-[10px] rounded-s-[50px] pc:max-w-[440px]">
-                        {{ collection:articles taxonomy:tags='air-pollution' limit="1" sort="updated_at:desc" }}
+                        {{ collection:articles taxonomy:tags='air-pollution' limit="1" sort="createdAt:desc" }}
                             <div class="rounded-[25px] h-[247px]">
                                 <a href="{{ url }}">
                                     <img class="w-full h-full object-cover rounded-t-[5px]" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
@@ -509,7 +509,7 @@
                             <!--overflow post slider number 3-->
                             <div class="h-[180px]">
 
-                                {{ collection:articles taxonomy:tags='air-pollution' limit="4" sort="updated_at:desc" }}
+                                {{ collection:articles taxonomy:tags='air-pollution' limit="4" sort="createdAt:desc" }}
                                 
                                     
                                     <div class="flex items-center flex-row justify-start h-[45px]">
@@ -554,7 +554,7 @@
             </div>
             <div class="splide__track">
               <ul class="splide__list">
-                {{collection:dailyReport limit="8" sort="updated_at:desc"}}
+                {{collection:dailyReport limit="8" sort="createdAt:desc"}}
                 
                 <li class="splide__slide bg-white rounded-[5px]">
                     <div class="splide__slide__container h-1/2">
