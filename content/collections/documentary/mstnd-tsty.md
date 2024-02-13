@@ -1,6 +1,6 @@
 ---
 id: 0f32eb12-f054-4b72-af43-4483a84ee479
-blueprint: documentry
+blueprint: documentary
 title: 'مستند تستی'
 documentaryFarsiName: '2040'
 productinYear: '1350'
@@ -19,7 +19,7 @@ documentaryDownload:
     enabled: true
 starContent: false
 updated_by: c1ede7bd-11c2-4af0-9224-2178b8f71939
-updated_at: 1707123981
+updated_at: 1707725446
 featuredImagePostVertical: cover.jpg
 topics:
   - climate-change

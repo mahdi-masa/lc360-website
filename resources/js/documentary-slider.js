@@ -1,5 +1,5 @@
 new Splide("#related-documentary",{
-    type: "loop",
+    type: "slide",
     perPage: 4,
     fixedHeight: '350px',
     fixedWidth: '250px',

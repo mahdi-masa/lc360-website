@@ -23,7 +23,7 @@ class AddValueCreatedAtField
     public function handle(EntryCreating $event): void
     {   
         $entry = $event->entry;
-        $current = Carbon::now();
+        $current = Carbon::now()->timestamp;
         $entry->set('createdAt', $current);
         
     }

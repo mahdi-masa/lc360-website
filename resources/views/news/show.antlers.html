@@ -64,22 +64,26 @@
     {{ /newsContent }}
 </div>
 {{ current= {{slug}}}}
+{{? $array=[] ?}}
 <div class="max-w-[1140px] mx-auto">
     <div>
         <span class="iransans-bold">اخبار مرتبط</span>
     </div>
     <ul class="list-disc">
         {{ topics }}
-                {{ collection from='news' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="4"}}
-                <li class="h-fit w-fit list-disc list-inside">
-                    <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
-                        {{ newsTitle }}
-                    </a>
-                </li>
+                {{ collection from='news' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="5" sort="createdAt:desc"}}
+                    {{ if !($array | in_array(slug)) }}
+                        <li class="h-fit w-fit list-disc list-inside">
+                            <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
+                                {{ newsTitle }}
+                            </a>
+                        </li>
+                        {{? array_push($array, $slug) ?}}
+                    {{ /if }}
                 {{ /collection }}        
         {{ /topics}}
     </ul>
 </div>
 
 
-{{partial:layouts/comments }}
+{{# {{partial:layouts/comments }} #}}

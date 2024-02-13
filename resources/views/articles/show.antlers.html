@@ -42,18 +42,22 @@
 </div>
 
 {{ current= {{slug}}}}
+{{? $array=[] ?}}
 <div class="max-w-[1140px] mx-auto">
     <div>
         <span class="iransans-bold">مقالات مرتبط</span>
     </div>
     <ul class="list-disc">
         {{ topics }}
-                {{ collection from='articles' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="4"}}
-                <li class="h-fit w-fit list-disc list-inside">
-                    <a class="text-[#264b2c] iransans-300" href="{{ url }}">
-                        {{ mainTitle }}
-                    </a>
-                </li>
+                {{ collection from='articles' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="4" sort="createdAt:desc"}}
+                    {{ if !($array | in_array(slug)) }}
+                        <li class="h-fit w-fit list-disc list-inside">
+                            <a class="text-[#264b2c] iransans-300" href="{{ url }}">
+                                {{ mainTitle }}
+                            </a>
+                        </li>
+                        {{? array_push($array, $slug) ?}}
+                    {{ /if }}
                 {{ /collection }}        
         {{ /topics}}
     </ul>

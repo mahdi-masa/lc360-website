@@ -220,7 +220,7 @@
                 <div class="text-[#f7f1e5] iransans-300">زیرنویس {{subtitleType}} مستند</div>
                 <div class="me-[28px]">
                     
-                    <a class="text-[#f7f1e5] iransans-300 px-3 bg-[#e7b109] rounded-[22px] py-[5px] inline-block" href="{{subtitleLink}}">
+                    <a class="text-[#f7f1e5] iransans-300 px-3 bg-[#e7b109] rounded-[22px] py-[5px] inline-block" href="{{subtitleLink}}" download>
                         دانلود
                     </a>
     
@@ -234,7 +234,8 @@
     <div class="pc:w-[90%] mobile:w-[98%] mobile:mx-auto divider iransans-600 my-3 max-w-[1140px]" id="related">
         مستندهای پیشنهادی
     </div>
-    {{ current= {{slug}}}}
+    
+    
     
     
     <div class="max-w-[1140px] mx-auto" id="related">
@@ -248,34 +249,40 @@
                 </button>
             </div>
             <div class="splide__track">
-              <ul class="splide__list">
+                <ul class="splide__list">
+                {{ current = {{ slug }} }}
                 {{? $array=[] ?}}
                 {{ topics }}
-                    
-                    {{ collection from='documentry' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}"}}
-                        {{ if !($array | in_array(documentaryFarsiName)) }}
+                   
+                    {{ if {{ collection:count in="documentary" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
                         
-                            <li class="splide__slide h-fit w-fit">
-                                <div class="splide__slide__container">
-                                    <a href="{{ url }}">
-                                        <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="iransans-500 sansnum-500 text-[16px] mt-[7px] text-center text-[#264b2c]">
-                                    <a href="{{ url }}">
-                                        {{ documentaryFarsiName}}
-                                    </a>
-                                </div>
-                            </li>
-                        {{ /if }}
-                        
-                        {{? array_push($array, $documentaryFarsiName) ?}}
-                    {{ /collection }}
-                {{ /topics}}
+                        {{ collection from="documentary" taxonomy:topics="{{ slug }}" limit="10" slug:isnt="{{ current }}" sort="createdAt:desc"}}
+                            
+                            
+                            {{ if !($array | in_array(slug)) }}
+                            {{? array_push($array, (string)$slug) ?}}
+                                <li class="splide__slide h-fit w-fit">
+                                    <div class="splide__slide__container">
+                                        <a href="{{ url }}">
+                                            <img class="rounded-[5px] h-full w-full" src="{{ featuredImagePostVertical }}" alt="{{ featuredImagePostVertical:alt}}">
+                                        </a>
+                                    </div>
+                                    <div class="iransans-500 sansnum-500 text-[16px] mt-[7px] text-center text-[#264b2c]">
+                                        <a href="{{ url }}">
+                                            {{ documentaryFarsiName}}
+                                        </a>
+                                    </div>
+                                </li>
+                                
+                            {{ /if }}
+                            
+                        {{ /collection }}
+                    {{ /if }}
+                {{ /topics }}
                 
-                
-              </ul>
-            </div>
+            </ul>
+        </div>
+        
         </section>
     </div>
         
@@ -292,4 +299,4 @@
 {{ /push:styles }}
 
 
-{{ partial:layouts/comments }}
+{{# {{ partial:layouts/comments }} #}}
