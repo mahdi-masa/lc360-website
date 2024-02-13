@@ -82,7 +82,8 @@
     </div>
     <ul class="list-disc">
         {{ topics }}
-                {{ collection from='dailyReport' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="4" sort="createdAt:desc"}}
+            {{ if {{ collection:count in="documentary" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
+                {{ collection from='dailyReport' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="2" sort="createdAt:desc"}}
                     {{ if !($array | in_array(slug)) }}
                         <li class="h-fit w-fit list-disc list-inside">
                             <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
@@ -92,10 +93,11 @@
                         {{? array_push($array, $slug) ?}}
                     {{ /if }}
                 
-                {{ /collection }}        
+                {{ /collection }}   
+            {{ /if }}     
         {{ /topics}}
     </ul>
 </div>
 
 
-{{ partial:layouts/comments }}
+{{# {{ partial:layouts/comments }} #}}
