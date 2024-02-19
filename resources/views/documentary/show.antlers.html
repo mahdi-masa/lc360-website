@@ -41,7 +41,7 @@
         }
     </style>
 {{ /push:styles }}
-<main class="bg-[#e8f6eb] min-h-screen">
+<main class="bg-[#92d4a1] min-h-screen">
     <!-- start header section -->
     <div class="wrapper">
 
@@ -138,7 +138,7 @@
     <!-- doc summary -->
     <div class="flex mobile:flex-col-reverse tablet:flex-row justify-center items center max-w-[1140px] mx-auto mobile:mt-5" id="documentary-summary">
         <div class="basis-1/2 pc:ml-5 mobile:w-[95%] tablet:w-full mx-auto mobile:my-5">
-            <video class="rounded-[5px] w-full h-full" controls poster="{{trailerPoster}}">
+            <video class="rounded-[5px] w-full" controls poster="{{trailerPoster}}">
                 <source src="{{documentaryTrailer}}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -216,8 +216,8 @@
         
         {{ docSubtitleInfo }}
             
-            <div class="flex flex-row justify-between items-center bg-[#053310] p-3 mobile:w-[95%] mb-3 border-s-[8px] border-[#e7b109] rounded-[8px] pc:h-[55px] {{if first }} me-[20px] {{ /if }}">
-                <div class="text-[#f7f1e5] iransans-300">زیرنویس {{subtitleType}} مستند</div>
+            <div class="flex flex-row justify-between items-center basis-1/2 bg-[#053310] p-3 mobile:w-[95%] pc:w-full mb-3 border-s-[8px] border-[#e7b109] rounded-[8px] pc:h-[55px] {{if first }} me-[20px] {{ /if }}">
+                <div class="text-[#f7f1e5] basis-1/2 iransans-300 flex flex-row justify-center">زیرنویس {{subtitleType}} مستند</div>
                 <div class="me-[28px]">
                     
                     <a class="text-[#f7f1e5] iransans-300 px-3 bg-[#e7b109] rounded-[22px] py-[5px] inline-block" href="{{subtitleLink}}" download>

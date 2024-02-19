@@ -1,28 +1,102 @@
-{{ meerkat:create }}
- 
-  {{ fields }}
-  <div class="form-group">
-      <label>{{ display }}</label>
- 
-      {{ field }}
-  </div>
-  {{ /fields }}
- 
-<input type="submit" value="Submit your comment!">
-{{ /meerkat:create }}
+<div class="bg-white w-full h-full mt-[20px] pb-[20px] rounded-[5px]">
+    <div class="flex flex-col justify-center items-center w-[97%] mx-auto">
+      <div class="flex flex-row justify-between items-center p-[20px] w-full">
+        <div class="">
+            <p class="iransans-normal sansnum-normal">ایرانی</p>
+        </div>
+        <div>
+            <p class="iransans-normal sansnum-normal">شنبه 21بهمن 1402 15:37</p>
+        </div>
+      </div>
+      <div>
+          <p class="iransans-normal sansnum-normal text-justify w-full p-[5px]">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+          </p>
+      </div> 
+      <div class="flex flex-row justify-between items-center p-[20px] mt-[20px] w-full">
+        <div>
+          <div>
+            <img src="" alt="">
+          </div>
+          <div>
+            <p class="iransans-bold sansnum-bold text-red-600">پاسخ</p>
+          </div>
+        </div>
+        <div>
+          <p class="iransans-normal sansnum-normal">7</p>
+        </div>
+      </div>
+    </div>
 
-{{ meerkat:responses }}
- 
-<ul>
-  {{ comments }}
-  <li>
-    <p>{{ author.name }} says: {{ content }}</p>
- 
-    {{ if comments }}
-      <ul>{{ *recursive comments* }}</ul>
-    {{ /if }}
-  </li>
-  {{ /comments }}
-</ul>
- 
-{{ /meerkat:responses }}
+    <div class="flex flex-col justify-center items-center w-[97%] mx-auto border-t-2">
+      <div class="flex flex-row justify-between items-center p-[20px] w-full">
+        <div class="">
+            <p class="iransans-normal sansnum-normal">ایرانی</p>
+        </div>
+        <div>
+            <p class="iransans-normal sansnum-normal">شنبه 21بهمن 1402 15:37</p>
+        </div>
+      </div>
+      <div>
+          <p class="iransans-normal sansnum-normal text-justify w-full p-[5px]">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+          </p>
+      </div> 
+      <div class="flex flex-row justify-between items-center p-[20px] mt-[20px] w-full">
+        <div>
+          <p class="iransans-bold sansnum-bold text-red-600">پاسخ</p>
+        </div>
+        <div>
+          <p class="iransans-normal sansnum-normal">7</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center w-[97%] rounded-[4px] mx-auto mt-[20px] bg-gray-200">
+      <div class="flex flex-row justify-between items-center p-[20px] w-full">
+        <div class="">
+            <p class="iransans-normal sansnum-normal">ایرانی</p>
+        </div>
+        <div>
+            <p class="iransans-normal sansnum-normal">شنبه 21بهمن 1402 15:37</p>
+        </div>
+      </div>
+      <div>
+          <p class="iransans-normal sansnum-normal text-justify w-full p-[5px]">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+          </p>
+      </div> 
+      <div class="flex flex-row justify-between items-center p-[20px] mt-[20px] w-full">
+        <div>
+          <p class="iransans-bold sansnum-bold text-red-600">پاسخ</p>
+        </div>
+        <div>
+          <p class="iransans-normal sansnum-normal">7</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center w-[97%] rounded-[4px] mx-auto mt-[40px] bg-gray-200">
+      <div class="flex flex-row justify-between items-center p-[20px] w-full">
+        <div class="">
+            <p class="iransans-normal sansnum-normal">ایرانی</p>
+        </div>
+        <div>
+            <p class="iransans-normal sansnum-normal">شنبه 21بهمن 1402 15:37</p>
+        </div>
+      </div>
+      <div>
+          <p class="iransans-normal sansnum-normal text-justify w-full p-[5px]">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+          </p>
+      </div> 
+      <div class="flex flex-row justify-between items-center p-[20px] mt-[20px] w-full">
+        <div>
+          <p class="iransans-bold sansnum-bold text-red-600">پاسخ</p>
+        </div>
+        <div>
+          <p class="iransans-normal sansnum-normal">7</p>
+        </div>
+      </div>
+    </div>
+</div>

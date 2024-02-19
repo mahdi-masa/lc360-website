@@ -14,13 +14,32 @@ documentaryDownload:
     quality: ۱۰۸۰
     docLink: cover.jpg
     downloadSize: ۵۰۰
-    DocInfo: 'زبان اصلی'
+    DocInfo: 'دوبله شده'
     type: docDownloadInfo
     enabled: true
 starContent: false
 updated_by: c1ede7bd-11c2-4af0-9224-2178b8f71939
-updated_at: 1707725446
+updated_at: 1707975846
 featuredImagePostVertical: cover.jpg
 topics:
   - climate-change
+  - human-life
+  - biodiversity
+  - habitat
+docSubtitleInfo:
+  -
+    id: lskkthk9
+    subtitleType: فارسی
+    subtitleLink: 2040-eng.srt
+    type: docDownloadInfo
+    enabled: true
+  -
+    id: lslyuvfv
+    subtitleType: انگلیسی
+    subtitleLink: 2040-eng.srt
+    type: docDownloadInfo
+    enabled: true
+pageAuthor: اصغر
+director: یسسیبسیببیب
+genre: سیبیسیب
 ---
