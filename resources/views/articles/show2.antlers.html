@@ -15,14 +15,14 @@
     {{ partial:layouts/header }}
     {{ partial:layouts/sidebar }}
  
-    <main class="flex flex-row justify-center items-start w-full mobile:max-w-full pc:max-w-[1350px] mx-auto mt-[40px] px-[10px]">
+    <main class="flex flex-row justify-center items-start w-full mobile:max-w-full pc:max-w-[1350px] mx-auto mt-[40px] mobie:px-[10px]">
         <div class="mobile:w-[90%] pc:max-w-[69%]">
             <div class=" w-full">
                 <h1 class="iransans-bold sansnum-bold text-[21px] text-[#1F6136] w-full">۸۶ گونه جانوری در خطر انقراض/مافیای خرید و فروش حیات وحش </h1>
             </div>
     
             <div class="w-full mt-[20px] bg-[#8FC7A3] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
-                <p class="iransans-bold sansnum-bold text-[18px] text-[#DCFAE6] p-[20px] text-justify">معاون سازمان حفاظت محـــیط زیست با اشاره به اینکه تعداد گونه‌های جانوری در خطر انقراض ۸۶ گونه خشکی زی است، گفت: ایران یکی از ۲۰ کشور غنی دنیا از نظر تنوع زیستی محسوب می‌شود.</p>
+                <p class="iransans-bold sansnum-bold text-[17px] text-[#DCFAE6] p-[20px] text-justify">معاون سازمان حفاظت محـــیط زیست با اشاره به اینکه تعداد گونه‌های جانوری در خطر انقراض ۸۶ گونه خشکی زی است، گفت: ایران یکی از ۲۰ کشور غنی دنیا از نظر تنوع زیستی محسوب می‌شود.</p>
             </div>
 
             <div>
@@ -64,15 +64,15 @@
                     <p class="iransans-bold text-[20px] mr-[28px] text-white">اخبار مرتبط</p>
                 </div>
                 <div class="flex flex-row justify-start items-center mt-[10px]">
-                    <img class="shadow-md" src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
+                    <img class="drop-shadow" src="{{ vite:asset src='resources/assets/icon/Square.svg'}}" alt="">
                     <p class="iransans-normal text-[15px] text-[#303030] mr-[3px]">صدف؛ قهرمان گمنام در اعماق آب‌ها</p>
                 </div>
                 <div class="flex flex-row justify-start items-center mt-[10px]">
-                    <img class="shadow-md" src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
+                    <img class="drop-shadow" src="{{ vite:asset src='resources/assets/icon/Square.svg'}}" alt="">
                     <p class="iransans-normal text-[15px] text-[#303030] mr-[3px]">صدف؛ قهرمان گمنام در اعماق آب‌ها</p>
                 </div>
                 <div class="flex flex-row justify-start items-center mt-[10px]">
-                    <img class="shadow-md" src="{{ vite:asset src='resources/assets/icon/dot.svg'}}" alt="">
+                    <img class="drop-shadow" src="{{ vite:asset src='resources/assets/icon/Square.svg'}}" alt="">
                     <p class="iransans-normal text-[15px] text-[#303030] mr-[3px]">صدف؛ قهرمان گمنام در اعماق آب‌ها</p>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <p class="iransans-bold text-[20px] mr-[65px] text-white">نظرات</p>
                 </div>
                 <div class="mt-[10px]">
-                    <p class="iransans-normal text-[16px] text-[#1E472C]">دیدگاه‌های ارسال شده توسط شما، پس از تایید در وب سایت منتشر خواهد‌شد</p>
+                    <p class="iransans-normal text-[16px] text-[#1E472C]">دیدگاه‌های ارسال شده توسط شما، پس از تایید در وب سایت منتشر خواهد‌شد.</p>
                 </div>
                 <div class="flex flex-col w-full justify-center items-center mt-[10px]">
                     <div class="w-full h-[120px] bg-[#B7D6C2] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
@@ -132,7 +132,7 @@
                             <img class="w-full h-full rounded-r-[5px] object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="">
                         </a>
                     </div>
-                    <div class="flex flex-col justify-center items-center grow max-w-[60%]">
+                    <div class="flex flex-col justify-center items-center grow">
                         <div class="w-full rounded-[5px]">
                             <span class="w-full w-block">
                                 <a class="w-full block truncate ps-[10px] iransans-bold sansnum-bold text-[16px] pe-[10px]" href="{{url}}">
@@ -163,7 +163,7 @@
 
                 <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
                     <div class="w-[228px] rounded-[5px] m-[10px]">
-                        <img class="h-full w-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="">
+                        <img class="h-full w-full object-cover rounded-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="">
                     </div>
 
                     <div class="my-[10px] ml-[10px] max-w-[129px]">
@@ -171,10 +171,10 @@
                             <p class="iransans-bold text-[16px] text-[#1E1E1E]">زمین را ببوس</p>
                         </div>
                         <div class="mt-[5px]">
-                            <p class="iransans-normal text-[12px] text-white">کارگردان: جان کوستر</p>
+                            <p class="iransans-normal text-[13px] text-white">کارگردان: جان کوستر</p>
                         </div>
-                        <div class="mt-[5px]">
-                            <p class="iransans-normal text-[10px] text-[#1E1E1E] text-justify">
+                        <div class="mt-[5px] h-[270px]">
+                            <p class="iransans-normal text-[13px] block text-[#1E1E1E] text-justify h-full overflow-hidden">
                                 خلاصه: معـــــاون بانکـــی و اعتباری صندوق توسعه ملی با بیان اینکه ایـــن صندوق  100 میلیارد دلار از دولــــــــــت طلب دارد، گفت: برای وصول ایــــــــــن مطالبات از طریق سرمایه‌گذاری در میادین مشترک نفت و گاز اقدام می‌کنیم.
                                 معاون بانکی و اعتباری صــــندوق توسعه ملی با بیان اینـــــــــکه این صندوق 100 میلیارد دلار از دولت طلب دارد، گفت: برای وصـول این
                                 معاون بانکی و اعتباری صــــندوق توسعه ملی با بیان اینکـــــــــه این صندوق 100 میلیارد دلار ازت: برای وصـول این مطالبات از طریق سرمایه‌گذاری در میادین مشترک نفت و گــاز اقدامی‌کنیم
@@ -202,7 +202,6 @@
                 </div>
 
                 <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
-
                     <div class="w-[228px] rounded-[5px] m-[10px]">
                         <img class="h-full w-full object-cover rounded-[5px]" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="">
                     </div>
@@ -212,10 +211,10 @@
                             <p class="iransans-bold text-[16px] text-[#1E1E1E]">یک بشقاب خالی...</p>
                         </div>
                         <div class="mt-[5px]">
-                            <p class="iransans-normal text-[12px] text-white">نویسنده: ایمان ذکاوتمند</p>
+                            <p class="iransans-normal text-[13px] text-white">نویسنده: ایمان ذکاوتمند</p>
                         </div>
-                        <div class="mt-[5px]">
-                            <p class="iransans-normal text-[10px] text-[#1E1E1E] text-justify">
+                        <div class="mt-[5px] h-[270px]">
+                            <p class="iransans-normal text-[13px] block text-[#1E1E1E] text-justify h-full overflow-hidden">
                                 شرح: معـــــاون بانکـــی و اعتباری صندوق توسعه ملی با بیان اینکه ایـــن صندوق  100 میلیارد دلار از دولــــــــــت طلب دارد، گفت: برای وصول ایــــــــــن مطالبات از طریق سرمایه‌گذاری در میادین مشترک نفت و گاز اقدام می‌کنیم.
                                 معاون بانکی و اعتباری صــــندوق توسعه ملی با بیان اینـــــــــکه این صندوق 100 میلیارد دلار از دولت طلب دارد، گفت: برای وصـول این
                                 معاون بانکی و اعتباری صــــندوق توسعه ملی با بیان اینکـــــــــه این صندوق 100 میلیارد دلار از دولت طلب دارد، گفت: برای وصـول این مطالبات از طریق سرمایه‌گذاری در میادین مشترک نفت و گــاز اقدام می‌کنیم
