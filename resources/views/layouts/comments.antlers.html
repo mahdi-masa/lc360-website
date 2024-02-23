@@ -1,3 +1,72 @@
+{{ meerkat:create class="w-full" data-attribute="test" }}
+ 
+<div class="-mx-3 md:flex mb-6 flex-wrap">
+  <div class="w-full text-sm flex flex-col px-3">
+      
+      <textarea id="comment-content" name="comment"
+                class="appearance-none block w-full bg-grey-lighter text-grey-darker border {{ if error.comment }} border-red {{ else }} border-grey-lighter {{ /if }} rounded py-3 px-4"
+                placeholder="نظرتان را بیان کنید...">{{ old.comment }}
+      </textarea>
+      {{ if (error.comment) }}
+      <p class="text-red text-xs italic">{{ error.comment }}</p>
+      {{ /if }}
+  </div>
+  <div class="flex justify-center items-center flex-row">
+    <div class="md:w-1/2 px-3 md:mb-0">
+        
+        <input
+            class="iransans-normal appearance-none block w-full bg-grey-lighter text-grey-darker border {{ if error.name }} border-red {{ else }} border-grey-lighter {{ /if }} rounded py-3 px-4"
+            id="comment-name" type="text" placeholder="نام و نام خانوادگی" name="name" value="{{ old.name }}">
+        {{ if (error.name) }}
+        <p class="text-red text-xs italic">{{ error.name }}</p>
+        {{ /if }}
+    </div>
+
+    <div class="md:w-1/2 px-3">
+        
+        <input
+            class="iransans-normal appearance-none block w-full bg-grey-lighter text-grey-darker border {{ if error.email }} border-red {{ else }} border-grey-lighter {{ /if }} rounded py-3 px-4 bg-[#B7D6C2]"
+            id="comment-email" name="email" type="email" placeholder="آدرس ایمیل" value="{{ old.email }}">
+        {{ if (error.email) }}
+        <p class="text-red text-xs italic">{{ error.email }}</p>
+        {{ /if }}
+    </div>
+    <div class="w-full">
+        <input type="submit"
+                class="bg-teal text-white font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1 hover:bg-gray-100 hover:text-teal cursor-pointer"
+                value="ارسال">
+    </div>
+  </div>
+</div>
+ 
+{{ /meerkat:create }}
+
+<!-- Comments -->
+<div class="mt-[25px] mb-[30px]">
+  <div class="bg-[#FFC02E] w-[124px] h-[32px] rounded-[3px] shadow-md">
+      <p class="iransans-bold text-[20px] mr-[65px] text-white">نظرات</p>
+  </div>
+  <div class="mt-[10px]">
+      <p class="iransans-normal text-[16px] text-[#1E472C]">دیدگاه‌های ارسال شده توسط شما، پس از تایید در وب سایت منتشر خواهد‌شد.</p>
+  </div>
+  <div class="flex flex-col w-full justify-center items-center mt-[10px]">
+      <div class="w-full h-[120px] bg-[#B7D6C2] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
+          <p class="iransans-normal text-[18px] text-white mt-[16px] mr-[20px]">نظرتان را بیان کنید...</p>
+      </div>
+      <div class="flex flex-row w-full justify-center items-center mt-[10px]">
+          <div class="w-full h-[40px] bg-[#B7D6C2] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
+              <p class="iransans-normal text-[18px] text-white mt-[5px] mr-[20px]">نام و نام خانوادگی</p>
+          </div>
+          <div class="w-full h-[40px] bg-[#B7D6C2] mx-[10px] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
+              <p class="iransans-normal text-[18px] text-white mt-[5px] mr-[20px]">آدرس ایمیل</p>
+          </div>
+          <div class="w-full max-w-[113px] h-[40px] bg-[#1F6136] shadow-md rounded-tr-[10px] rounded-bl-[10px]">
+              <button class="iransans-bold text-[18px] text-white mt-[5px] mr-[38px]">ارسال</button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end Comments -->
 <div class="bg-white w-full h-full mt-[20px] pb-[20px] rounded-[5px]">
     <div class="flex flex-col justify-center items-center w-[97%] mx-auto">
       <div class="flex flex-row justify-between items-center p-[20px] w-full">
