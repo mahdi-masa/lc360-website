@@ -1,68 +1,244 @@
 {{ push:styles }}
-{{ vite src='resources/css/article.css'}}
+
+    <style>
+        div.content img{
+            height: 446px!important;
+            width: 100%;
+            object-fit: cover;
+            margin: 10px 0 10px 0;
+            border-radius: 5px!important;
+        }
+        h1{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h2{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        p:empty {
+    
+            height: 50px!important;
+        }
+    </style>
 {{ /push:styles }}
 
-
-
-<!-- title and sudo title section -->
-<div class="max-w-[1140px] mx-auto mt-[50px]">
-    <div class="iransans-600 my-5 text-[20px] mobile:w-[95%] pc:w-full mx-auto">
-        <h1>
-            {{mainTitle}}
-        </h1>
-    </div>
-    <div class="bg-[#f3f3f3] my-5 rounded-[8px] mobile:w-[95%] pc:w-full mx-auto">
-        <div class="p-5 sansnum-100 text-[#454545] text-[17px] text-justify iransans-normal">
-            {{soduTitleArticle}}
+<main class="flex flex-row justify-center items-start w-full mobile:max-w-full pc:max-w-[1350px] mx-auto mt-[40px] mobie:px-[10px]">
+    <div class="mobile:w-[90%] pc:max-w-[69%]">
+        <div class=" w-full">
+            <h1 class="iransans-bold sansnum-bold text-[21px] text-[#1F6136] w-full">{{ mainTitle }}</h1>
         </div>
-    </div>
-</div>
 
-<div class="max-w-[1140px] mx-auto">
-    {{ articleContext }}
-    <div class="flex flex-col justify-center items-center">
-        {{ if articleCLip }}
-        <div class="mx-auto my-5">
-            <video class="w-[90%] mx-auto rounded-[8px]" controls>
-                <source src="{{articleCLip}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="w-full mt-[20px] bg-[#8FC7A3] shadow-md rounded-tr-[10px] rounded-bl-[10px] iransans-bold sansnum-bold text-[17px] text-[#DCFAE6] p-[20px] text-justify">
+            {{ soduTitleArticle }}
+        </div>
+        {{ articleContext }}
+            <div class="iransans-normal text-[16px] mt-[20px] text-[#1E472C] text-justify content">
+                {{ if articleContent }}
+                    {{ articleContent }}
+                {{ /if }}
+                {{ if articleCLip}}
+                    <video class="mt-5 rounded-[5px]" controls>
+                        <source src="{{articleCLip}}" type="video/mp4">
+                    </video>
+                {{ /if }}
+            </div>
+        {{ /articleContext }}
+
+        {{# <div>
+            <p class="iransans-normal text-[16px] mt-[20px] text-[#1E472C]">به گزارش خبرنگار مهر، حسن اکبری، معاون سازمان حفاظت محیط زیست در اولین نشست هم‌اندیشی مدیریت و پیشگیری قاچاق</p>
+        </div>
+
+        <div class="mt-[22px] h-[446px]">
+            <img class="pc:w-[85%] mobile:w-full rounded-[5px] mx-auto h-full object-cover" src="{{ vite:asset src='resources/assets/jangal.png'}}" alt="">
+        </div>
+
+        <div class="mt-[20px]">
+            <p class="iransans-normal sansnum-normal text-[16px] text-justify text-[#1E472C]">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+            </p>
+        </div>
+
+        <div class="mt-[20px]">
+            <p class="iransans-bold sansnum-normal text-[20px] text-[#1A3D26]">
+                بیشترین قاچاق حیات وحش در ایران مربوط به ۴ پرنده
+            </p>
+        </div>
+
+        <div class="mt-[20px]">
+            <p class="iransans-normal sansnum-normal text-[16px] text-justify text-[#1E472C]">
+                گونه‌های حیات وحش اظهار داشت: ایران یکی از ۲۰ کشور غنی دنیا از نظر تنوع زیستی است و تاکنون ۸۶۶۰ گونه گیاهی در ایران شناسایی شدند که حدود یک سوم آنها آندمیک هستند.
+                معاون سازمان حفاظت محیط زیست گفت: تعداد گونه‌های جانوری در خطر انقراض ۸۶ گونه خشکی زی است و ۱۶۵ گونه خشکی‌زی حمایت و حفاظت شده است.
+                وی افزود: یک و نیم میلیون هکتار تالاب و ۱۳ و نیم میلیون هکتار مناطق شکار ممنوع داریم.
+                اکبری بیان داشت: دلایل کاهش جمعیت حیات وحش شکار غیر مجاز، تصادفات جاده‌ای، ورود گونه‌های مهاجم، بیماری‌های حیات وحش و قاچاق حیات وحش است. همچنین تغییر کاربری اراضی، جزیره‌ای شدن، چرای بی‌رویه، تغییر اقلیم و سایر اشکال تخریب گیاهی از دیگر دلایل کاهش جمعیت حیات وحش است.
+                وی بیان داشت: طبق تعریف دفتر مقابله با مواد مخدر و جرم سازمان ملل متحد برداشت، خرید فروش، واردات صادرات، پردازش، نگهداری و به دست آوردن و مصرف کردن گونه‌های گیاهی و جانوری وحشی بر خلاف قوانین ملی و بین المللی است و قاچاق حیات وحش شامل جمع آوری، حمل و نقل، پخش غیرقانونی جانوران و فرآورده‌های آنها است.
+            </p>
+        </div>
+        
+        <div class="mt-[20px]">
+            <p class="iransans-bold text-[20px] text-[#1A3D26]">/پایان خبر</p>
+        </div> #}}
+        <!-- Related news -->
+
+        {{ current= {{slug}}}}
+        {{? $array=[] ?}}
+        <div class="mt-[23px]">
+            <div class="bg-[#FFC02E] w-[124px] h-[32px] rounded-[3px] shadow-md">
+                <p class="iransans-bold text-[20px] mr-[28px] text-white">اخبار مرتبط</p>
+            </div>
+            {{ topics }}
+                {{ if {{ collection:count in="articles" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
+                    {{ collection from='articles' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="2" sort="createdAt:desc"}}
+                        {{ if !($array | in_array(slug)) }}
+                            
+                            <div class="flex flex-row justify-start items-center mt-[10px]">
+                                <img class="drop-shadow" src="{{ vite:asset src='resources/assets/icon/Square.svg'}}" alt="">
+                                <a href="{{ url }}">
+                                    <p class="iransans-normal text-[15px] text-[#303030] mr-[3px]">{{ mainTitle }}</p>
+                                </a>
+                            </div>
+                            {{? array_push($array, $slug) ?}}
+                        {{ /if }}
+                    {{ /collection }} 
+                {{ /if }}       
+            {{ /topics}}
+            
             
         </div>
-        {{ /if }}
-        <div class="text-justify iransans-500 text-[16px] sansnum-500 leading-[20px] grow" id="articleContent">
+        <!-- end Related news -->
 
-            {{articleContent}}
-        </div>
+        {{ partial:layouts/comments}}
         
-        
-    </div>    
-
-    {{ /articleContext }}
-</div>
-
-{{ current= {{slug}}}}
-{{? $array=[] ?}}
-<div class="max-w-[1140px] mx-auto">
-    <div>
-        <span class="iransans-bold">مقالات مرتبط</span>
     </div>
-    <ul class="list-disc">
-        {{ topics }}
-            {{ if {{ collection:count in="articles" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
-                {{ collection from='articles' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="2" sort="createdAt:desc"}}
-                    {{ if !($array | in_array(slug)) }}
-                        <li class="h-fit w-fit list-disc list-inside">
-                            <a class="text-[#264b2c] iransans-300" href="{{ url }}">
-                                {{ mainTitle }}
-                            </a>
-                        </li>
-                        {{? array_push($array, $slug) ?}}
-                    {{ /if }}
-                {{ /collection }} 
-            {{ /if }}       
-        {{ /topics}}
-    </ul>
-</div>
+    <!--    -->
+    <div class="flex flex-col justify-center items-start max-w-[31%] mr-[30px] mobile:hidden tablet:hidden pc:block">
+        <!-- hayat news -->
+        <div>
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>اخبار حیات:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:news limit="5" sort="createdAt:desc" }}
+                <div class="flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] mt-[10px] h-[57px] mx-auto bg-white shadow-md">
+                    <div class="w-[26%] h-[57px] min-w-[110px] rounded-[5px]">
+                        <a class="min-w-full w-full h-full block" href="{{url}}">
+                            <img class="w-full h-full rounded-r-[5px] object-cover" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
+                        </a>
+                    </div>
+                    <div class="flex flex-col justify-center items-center grow">
+                        <div class="w-full rounded-[5px]">
+                            <span class="w-full w-block">
+                                <a class="w-full block truncate ps-[10px] iransans-bold sansnum-bold text-[16px] pe-[10px]" href="{{url}}">
+                                    {{ newsTitle }}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:news}}
+            
+        </div>
+        <!-- end hayat news -->
 
-{{# {{ partial:layouts/comments }} #}}
+        <!-- Suggested document -->
+        <div class="mt-[20px]">
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>مستند پیشنهادی:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:documentary limit='1' sort="createdAt:desc" }}
+                <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
+                    <div class="w-[228px] rounded-[5px] m-[10px]">
+                        <a href="{{ url }}">
+                            <img class="h-full w-full object-cover rounded-[5px]" src="{{ featuredImagePostVertical }}" alt="{{ featuredImagePostVertical:alt }}">
+                        </a>
+                    </div>
+
+                    <div class="my-[10px] ml-[10px] max-w-[129px]">
+                        <div>                            
+                            <p class="iransans-bold text-[16px] text-[#1E1E1E] truncate">{{ documentaryFarsiName }}</p>
+                        </div>
+                        <div class="mt-[5px]">
+                            <p class="iransans-normal text-[13px] text-white before:content-['کارگردان:_']">{{ director }}</p>
+                        </div>
+                        <div class="mt-[5px] h-[270px] iransans-normal text-[13px] text-[#1E1E1E] text-justify overflow-hidden">
+                            {{ documentarySummary }}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:documentary }}
+            
+        </div>
+        <!-- end Suggested document -->
+
+        <!-- Suggested booklet -->
+        <div class="mt-[20px]">
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>کتابچه پیشنهادی:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:booklets limit='1' sort="createdAt:desc" }}
+                <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
+                    <div class="w-[228px] rounded-[5px] m-[10px]">
+                        <img class="h-full w-full object-cover rounded-[5px]" src="{{ featuredImagePostVertical }}" alt="{{ featuredImagePostVertica:alt }}">
+                    </div>
+
+                    <div class="my-[10px] ml-[10px] max-w-[129px]">
+                        <div>                            
+                            <p class="iransans-bold text-[16px] text-[#1E1E1E] truncate">{{ bookletName }}</p>
+                        </div>
+                        <div class="mt-[5px]">
+                            <p class="iransans-normal text-[13px] text-white before:content-['نویسنده:_'] truncate">{{ bookletAuthor }}</p>
+                        </div>
+                        <div class="mt-[5px] h-[270px] iransans-normal text-[13px] text-[#1E1E1E] text-justify overflow-hidden">
+                            {{ summaryPart1}}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:booklets }}
+        </div>
+        <!-- end Suggested booklet -->
+    </div>
+</main>
+    <!--    -->
+    {{ vite src='resources/js/sidebar.js' }}
+    {{ vite src='resources/js/footer-slider.js' }}
+    {{ vite src='resources/js/search-bar.js' }}
+    
+    
+
+    
+
+</body>
+</html>
