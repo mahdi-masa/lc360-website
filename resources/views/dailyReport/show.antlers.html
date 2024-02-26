@@ -1,103 +1,211 @@
 {{ push:styles }}
-<style>
-    #newsContent p {
-        padding: 0 10px 0 10px;
-        line-height: 40px;
-    }
 
-    #newsContent img {
-        margin: 15px auto;
-        width: 65%;
-        border-radius: 8px;
-    }
-
-    @media screen and (max-width: 767px) {
-        #newsContent img {
-            width: 95%;
+    <style>
+        div.content img{
+            height: 446px!important;
+            width: 100%;
+            object-fit: cover;
+            margin: 10px 0 10px 0;
+            border-radius: 5px!important;
         }
-        video{
-            width: 95%!important;
+        h1{
+            font-size: 20px;
+            font-weight: bold;
         }
-
-    }
-
-</style>
+        h2{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        p:empty {
     
+            height: 50px!important;
+        }
+    </style>
 {{ /push:styles }}
 
-
-
-<!-- title and sudo title section -->
-<div class="max-w-[1140px] mx-auto mt-[50px]">
-    <div class="iransans-600 sansnum-600 my-5 text-[20px] p-[10px]">
-        {{storyTitle}}
-    </div>
-    <div class="bg-[#b5b5b5] my-5 rounded-tl-[8px] rounded-br-[8px] mx-auto mobile:w-[95%] pc:w-full">
-        <div class="p-5 text-[#454545] iransans-600 sansnum-600 text-[18px] text-justify mobile:w-[95%] pc:w-full mobile:mx-auto" id="sudoTitle">
-            {{sudoStoryTitle}}
+<main class="flex flex-row justify-center items-start w-full mobile:max-w-full pc:max-w-[1350px] mx-auto mt-[40px] mobie:px-[10px]">
+    <div class="mobile:w-[90%] pc:max-w-[69%]">
+        <div class=" w-full">
+            <h1 class="iransans-bold sansnum-bold text-[21px] text-[#1F6136] w-full">{{ storyTitle }}</h1>
         </div>
-    </div>
-</div>
 
-<div class="max-w-[1140px] mx-auto">
-    {{ storycontent }}
-    <div>
+        <div class="w-full mt-[20px] bg-[#8FC7A3] shadow-md rounded-tr-[10px] rounded-bl-[10px] iransans-bold sansnum-bold text-[17px] text-[#DCFAE6] p-[20px] text-justify">
+            {{ sudoStoryTitle }}
+        </div>
+        {{ storycontent }}
+            <div class="iransans-normal text-[16px] mt-[20px] text-[#1E472C] text-justify content">
+                {{ if storyContext }}
+                    {{ storyContext }}
+                {{ /if }}
+                {{ if storyClip}}
+                    <video class="mt-5 rounded-[5px]" controls>
+                        <source src="{{storyClip}}" type="video/mp4">
+                    </video>
+                {{ /if }}
+            </div>
+        {{ /storycontent }}
+
         
-        <div class="text-justify iransans-500 sansnum-500 text-[16px] leading-[20px]" id="newsContent">
-            {{storyContext}}
-        </div>
-        {{ if storyClip }}
-        <div class="mx-auto my-5">
-            <video class="w-[65%] mx-auto rounded-[8px]" controls>
-                <source src="{{storyClip}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+
+        {{ current= {{slug}}}}
+        {{? $array=[] ?}}
+        <div class="mt-[23px]">
+            <div class="bg-[#FFC02E] w-[124px] h-[32px] rounded-[3px] shadow-md">
+                <p class="iransans-bold text-[20px] mr-[28px] text-white">اخبار مرتبط</p>
+            </div>
+            {{ topics }}
+                {{ if {{ collection:count in="dailyReport" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
+                    {{ collection from='dailyReport' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="2" sort="createdAt:desc"}}
+                        {{ if !($array | in_array(slug)) }}
+                            
+                            <div class="flex flex-row justify-start items-center mt-[10px]">
+                                <img class="drop-shadow" src="{{ vite:asset src='resources/assets/icon/Square.svg'}}" alt="">
+                                <a href="{{ url }}">
+                                    <p class="iransans-normal text-[15px] text-[#303030] mr-[3px]">{{ storyTitle }}</p>
+                                </a>
+                            </div>
+                            {{? array_push($array, $slug) ?}}
+                        {{ /if }}
+                    {{ /collection }} 
+                {{ /if }}       
+            {{ /topics}}
+            
             
         </div>
-        {{ /if }}
+        <!-- end Related news -->
 
-        {{ if storyAudio }}
-        <div class="mx-auto my-5">
-            <audio class="w-[65%] mx-auto rounded-[8px]" controls>
-                <source src="{{ storyAudio }}" type="audio/mp3">
-                
-                Your browser does not support the audio tag.
-            </audio>
-            
+        {{ partial:layouts/comments}}
+        
+    </div>
+    <!--    -->
+    <div class="flex flex-col justify-center items-start max-w-[31%] mr-[30px] mobile:hidden tablet:hidden pc:block">
+        <!-- hayat news -->
+        <div>
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>اخبار حیات:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:news limit="5" sort="createdAt:desc" }}
+                <div class="flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] mt-[10px] h-[57px] mx-auto bg-white shadow-md">
+                    <div class="w-[26%] h-[57px] min-w-[110px] rounded-[5px]">
+                        <a class="min-w-full w-full h-full block" href="{{url}}">
+                            <img class="w-full h-full rounded-r-[5px] object-cover" src="{{ featuredImagePostHorizental }}" alt="{{ featuredImagePostHorizental:alt }}">
+                        </a>
+                    </div>
+                    <div class="flex flex-col justify-center items-center grow truncate">
+                        <div class="w-full rounded-[5px]">
+                            <span class="w-full w-block">
+                                <a class="w-full block truncate ps-[10px] iransans-bold sansnum-bold text-[16px] pe-[10px]" href="{{url}}">
+                                    {{ newsTitle }}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:news}}
             
         </div>
-        {{ /if }}
-        
-        
-    </div>    
+        <!-- end hayat news -->
 
-    {{ /storycontent }}
-</div>
+        <!-- Suggested document -->
+        <div class="mt-[20px]">
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>مستند پیشنهادی:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:documentary limit='1' sort="createdAt:desc" }}
+                <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
+                    <div class="w-[228px] rounded-[5px] m-[10px]">
+                        <a href="{{ url }}">
+                            <img class="h-full w-full object-cover rounded-[5px]" src="{{ featuredImagePostVertical }}" alt="{{ featuredImagePostVertical:alt }}">
+                        </a>
+                    </div>
 
-{{ current= {{slug}}}}
-{{? $array=[] ?}}
-<div class="max-w-[1140px] mx-auto">
-    <div>
-        <span class="iransans-bold">روایت های مشابه</span>
+                    <div class="my-[10px] ml-[10px] max-w-[129px]">
+                        <div>                            
+                            <p class="iransans-bold text-[16px] text-[#1E1E1E] truncate">{{ documentaryFarsiName }}</p>
+                        </div>
+                        <div class="mt-[5px]">
+                            <p class="iransans-normal text-[13px] text-white before:content-['کارگردان:_'] truncate">{{ director }}</p>
+                        </div>
+                        <div class="mt-[5px] h-[270px] iransans-normal text-[13px] text-[#1E1E1E] text-justify overflow-hidden">
+                            {{ documentarySummary }}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:documentary }}
+            
+        </div>
+        <!-- end Suggested document -->
+
+        <!-- Suggested booklet -->
+        <div class="mt-[20px]">
+            <div class="bg-[#1C4E00] shadow-md flex flex-row justify-between items-center rounded-[5px] w-full max-w-[387px] h-[35px]">    
+                <div class="ms-[3px] flex flex-row items-center justify-between iransans-bold text-[16px] text-white">
+                    <div class="mr-[2px]">
+                        <img src="{{vite:asset src='resources/assets/icon/spill-border.svg'}}" alt="">
+                    </div>
+                    <div class="mr-[6px]">
+                        <span>کتابچه پیشنهادی:</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ vite:asset src='resources/assets/icon/array.svg'}}" alt="">
+                </div>
+            </div>
+            {{ collection:booklets limit='1' sort="createdAt:desc" }}
+                <div class="flex flex-row justify-start item-center mt-[10px] bg-[#BDD5C3] w-full max-w-[387px] h-[341px] rounded-[8px] shadow-md">
+                    <div class="w-[228px] rounded-[5px] m-[10px]">
+                        <img class="h-full w-full object-cover rounded-[5px]" src="{{ featuredImagePostVertical }}" alt="{{ featuredImagePostVertica:alt }}">
+                    </div>
+
+                    <div class="my-[10px] ml-[10px] max-w-[129px]">
+                        <div>                            
+                            <p class="iransans-bold text-[16px] text-[#1E1E1E] truncate">{{ bookletName }}</p>
+                        </div>
+                        <div class="mt-[5px]">
+                            <p class="iransans-normal text-[13px] text-white before:content-['نویسنده:_'] truncate">{{ bookletAuthor }}</p>
+                        </div>
+                        <div class="mt-[5px] h-[270px] iransans-normal text-[13px] text-[#1E1E1E] text-justify overflow-hidden">
+                            {{ summaryPart1}}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:booklets }}
+        </div>
+        <!-- end Suggested booklet -->
     </div>
-    <ul class="list-disc">
-        {{ topics }}
-            {{ if {{ collection:count in="documentary" taxonomy:topics="{{ slug }}" slug:isnt="{{ current }}" sort="createdAt:desc" }} > 0 }}
-                {{ collection from='dailyReport' taxonomy:topics="{{ slug }}" slug:isnt="{{current}}" limit="2" sort="createdAt:desc"}}
-                    {{ if !($array | in_array(slug)) }}
-                        <li class="h-fit w-fit list-disc list-inside">
-                            <a class="text-[#264b2c] iransans-300 sansnum-300" href="{{ url }}">
-                                {{ storyTitle }}
-                            </a>
-                        </li>
-                        {{? array_push($array, $slug) ?}}
-                    {{ /if }}
-                
-                {{ /collection }}   
-            {{ /if }}     
-        {{ /topics}}
-    </ul>
-</div>
+</main>
+    <!--    -->
+    {{ vite src='resources/js/sidebar.js' }}
+    {{ vite src='resources/js/footer-slider.js' }}
+    {{ vite src='resources/js/search-bar.js' }}
+    
+    
 
+    
 
-{{# {{ partial:layouts/comments }} #}}
+</body>
+</html>
